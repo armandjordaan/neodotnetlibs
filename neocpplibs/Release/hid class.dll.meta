@@ -1,0 +1,26 @@
+Assembly HID class, Version=1.11.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=SHA1, flags=None
+Assembly Microsoft.VisualC, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=SHA1, flags=None
+Assembly System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=SHA1, flags=None
+Assembly System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=SHA1, flags=None
+Assembly System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=SHA1, flags=None
+Class HIDClass.MCHPHIDClass: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    HIDClassInit(UInt32, UInt32, UInt32, UInt32): PrivateScope, Public, Static, HideBySig
+    HIDClassInit(UInt32, UInt32, UInt32): PrivateScope, Public, Static, HideBySig
+    HIDWriteReport(Byte* IsConst IsConst, UInt32): PrivateScope, Public, Static, HideBySig
+    HIDReadReport(Byte* IsConst IsConst): PrivateScope, Public, Static, HideBySig
+    HIDCloseReport(): PrivateScope, Public, Static, HideBySig
+    HIDIsConnected(): PrivateScope, Public, Static, HideBySig
+    USBHIDClassInit(UInt32, UInt32, UInt32): PrivateScope, Public, Static, HideBySig
+    USBHIDWriteReport(Byte* IsConst IsConst, UInt32): PrivateScope, Public, Static, HideBySig
+    USBHIDReadReport(Byte* IsConst IsConst): PrivateScope, Public, Static, HideBySig
+    USBHIDIsConnected(): PrivateScope, Public, Static, HideBySig
+    HIDClassVersion(): PrivateScope, Public, Static, HideBySig

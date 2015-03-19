@@ -1,0 +1,2857 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Semalibs</name>
+    </assembly>
+    <members>
+        <member name="T:Sema.Dialogs.AboutBox">
+            <summary>
+            Generic, self-contained About Box dialog
+            </summary>
+            <remarks>
+            Jeff Atwood
+            http://www.codinghorror.com
+            converted to C# by Scott Ferguson
+            http://www.forestmoon.com
+            </remarks>
+        </member>
+        <member name="M:Sema.Dialogs.AboutBox.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="F:Sema.Dialogs.AboutBox.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Sema.Dialogs.AboutBox.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Sema.Dialogs.AboutBox.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Sema.Dialogs.AboutBox.AppEntryAssembly">
+            <summary>
+            returns the entry assembly for the current application domain
+            </summary>
+            <remarks>
+            This is usually read-only, but in some weird cases (Smart Client apps) 
+            you won't have an entry assembly, so you may want to set this manually.
+            </remarks>
+        </member>
+        <member name="P:Sema.Dialogs.AboutBox.AppTitle">
+            <summary>
+            single line of text to show in the application title section of the about box dialog
+            </summary>
+            <remarks>
+            defaults to "%title%" 
+            %title% = Assembly: AssemblyTitle
+            </remarks>
+        </member>
+        <member name="P:Sema.Dialogs.AboutBox.AppDescription">
+            <summary>
+            single line of text to show in the description section of the about box dialog
+            </summary>
+            <remarks>
+            defaults to "%description%"
+            %description% = Assembly: AssemblyDescription
+            </remarks>
+        </member>
+        <member name="P:Sema.Dialogs.AboutBox.AppVersion">
+            <summary>
+            single line of text to show in the version section of the about dialog
+            </summary>
+            <remarks>
+            defaults to "Version %version%"
+            %version% = Assembly: AssemblyVersion
+            </remarks>
+        </member>
+        <member name="P:Sema.Dialogs.AboutBox.AppCopyright">
+            <summary>
+            single line of text to show in the copyright section of the about dialog
+            </summary>
+            <remarks>
+            defaults to "Copyright © %year%, %company%"
+            %company% = Assembly: AssemblyCompany
+            %year% = current 4-digit year
+            </remarks>
+        </member>
+        <member name="P:Sema.Dialogs.AboutBox.AppImage">
+            <summary>
+            intended for the default 32x32 application icon to appear in the upper left of the about dialog
+            </summary>
+            <remarks>
+            if you open this form using .ShowDialog(Owner), the icon can be derived from the owning form
+            </remarks>
+        </member>
+        <member name="P:Sema.Dialogs.AboutBox.AppMoreInfo">
+            <summary>
+            multiple lines of miscellaneous text to show in rich text box
+            </summary>
+            <remarks>
+            defaults to "%product% is %copyright%, %trademark%"
+            %product% = Assembly: AssemblyProduct
+            %copyright% = Assembly: AssemblyCopyright
+            %trademark% = Assembly: AssemblyTrademark
+            </remarks>
+        </member>
+        <member name="P:Sema.Dialogs.AboutBox.AppDetailsButton">
+            <summary>
+            determines if the "Details" (advanced assembly details) button is shown
+            </summary>
+        </member>
+        <member name="T:Sema.ArrayUtils">
+            <summary>
+            Sema Array utilities
+            </summary>
+        </member>
+        <member name="M:Sema.ArrayUtils.ArrayCompare(System.Byte[],System.Byte[])">
+            <summary>
+            Compare two arrays
+            </summary>
+            <param name="a1">array 1</param>
+            <param name="a2">array 2</param>
+            <returns>bool (true if arrays are equal)</returns>
+        </member>
+        <member name="M:Sema.ArrayUtils.Fill(System.Byte[],System.Byte)">
+            <summary>
+            Fill a byte array with values (only tested for 2D array)
+            </summary>
+            <param name="x"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Sema.ArrayUtils.SumArray(System.Int32[])">
+            <summary>
+            Sum all the elements of an array
+            </summary>
+            <param name="arr">array of which the elemnts should be summed</param>
+        </member>
+        <member name="T:Sema.AsciiControlCodes">
+            <summary>
+            Ascii control characters
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_NUL">
+            <summary>
+            	^@ 	\0 	Null character
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_SOH">
+            <summary>
+            ^A 		Start of Header
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_STX">
+            <summary>
+            ^B 		Start of Text
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_ETX">
+            <summary>
+            ^C 		End of Text
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_EOT">
+            <summary>
+            ^D 		End of Transmission
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_ENQ">
+            <summary>
+            ^E 		Enquiry
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_ACK">
+            <summary>
+            ^F 		Acknowledgment
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_BEL">
+            <summary>
+            ^G 	\a 	Bell
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_BS">
+            <summary>
+            ^H 	\b 	Backspace[d][e]
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_HT">
+            <summary>
+            ^I 	\t 	Horizontal Tab[f]
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_LF">
+            <summary>
+            ^J 	\n 	Line feed
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_VT">
+            <summary>
+            ^K 	\v 	Vertical Tab
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_FF">
+            <summary>
+            ^L 	\f 	Form feed
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_CR">
+            <summary>
+            ^M 	\r 	Carriage return[g]
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_SO">
+            <summary>
+            ^N 		Shift Out
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_SI">
+            <summary>
+            ^O 		Shift In
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_DLE">
+            <summary>
+            ^P 		Data Link Escape
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_DC1">
+            <summary>
+            ^Q 		Device Control 1 (oft. XON)
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_DC2">
+            <summary>
+            ^R 		Device Control 2
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_DC3">
+            <summary>
+            ^S 		Device Control 3 (oft. XOFF)
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_DC4">
+            <summary>
+            ^T 		Device Control 4
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_NAK">
+            <summary>
+            ^U 		Negative Acknowledgement
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_SYN">
+            <summary>
+            ^V 		Synchronous idle
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_ETB">
+            <summary>
+            ^W 		End of Transmission Block
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_CAN">
+            <summary>
+            ^X 		Cancel
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_EM">
+            <summary>
+            ^Y 		End of Medium
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_SUB">
+            <summary>
+            ^Z 		Substitute
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_ESC">
+            <summary>
+            ^[ 	\e[h] 	Escape[i]
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_FS">
+            <summary>
+            ^\ 		File Separator
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_GS">
+            <summary>
+            ^] 		Group Separator
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_RS">
+            <summary>
+            ^^[j] 	Record Separator
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_US">
+            <summary>
+            ^_ 		Unit Separator
+            </summary>
+        </member>
+        <member name="F:Sema.AsciiControlCodes.ASCII_DEL">
+            <summary>
+            ^? 		Delete[k][e]
+            </summary>
+        </member>
+        <member name="T:Sema.Calibration.DataGridViewUtils">
+            <summary>
+            utility methods for DataGridView
+            </summary>
+        </member>
+        <member name="T:Sema.Calibration.Convert">
+            <summary>
+            Sema convert class - has other functionality than the default convert class
+            </summary>
+        </member>
+        <member name="M:Sema.Calibration.Convert.TextToFloat(System.String,System.Single,System.Single,System.Single)">
+            <summary>
+            Convert a string to a float (single precision)
+            </summary>
+            <param name="Text">String to convert</param>
+            <param name="Max">Maximum value allowed for entry</param>
+            <param name="Min">Minimum value allowed for entry</param>
+            <param name="Default">Default value to use in case of error</param>
+            <returns>float value of converted text</returns>
+        </member>
+        <member name="M:Sema.Calibration.Convert.TextToDouble(System.String,System.Double,System.Double,System.Double)">
+            <summary>
+            Convert a string to a double (double precision)
+            </summary>
+            <param name="Text">String to convert</param>
+            <param name="Min">Maximum value allowed for entry</param>
+            <param name="Max">Minimum value allowed for entry</param>
+            <param name="Default">Default value to use in case of error</param>
+            <returns>double value of converted text</returns>
+        </member>
+        <member name="M:Sema.Calibration.Convert.TextToUInt32(System.String,System.UInt32,System.UInt32,System.UInt32)">
+            <summary>
+            Convert Text to a uint value within certain limits
+            </summary>
+            <param name="Text">Text that contains the value to be converted</param>
+            <param name="Min">Minimum value to accept</param>
+            <param name="Max">Maximum value to accept</param>
+            <param name="Default">Defaut to use in case of error</param>
+            <returns>uint value of converted text</returns>
+        </member>
+        <member name="M:Sema.Calibration.Convert.TextToUInt16(System.String,System.UInt16,System.UInt16,System.UInt16)">
+            <summary>
+            Convert Text to a short value within certain limits
+            </summary>
+            <param name="Text">Text that contains the value to be converted</param>
+            <param name="Min">Minimum value to accept</param>
+            <param name="Max">Maximum value to accept</param>
+            <param name="Default">Defaut to use in case of error</param>
+            <returns>ushort value of converted text</returns>
+        </member>
+        <member name="M:Sema.Calibration.Convert.TextToInt8(System.String,System.SByte,System.SByte,System.SByte)">
+            <summary>
+            Convert Text to a signed byte value within certain limits
+            </summary>
+            <param name="Text">Text that contains the value to be converted</param>
+            <param name="Min">Minimum value to accept</param>
+            <param name="Max">Maximum value to accept</param>
+            <param name="Default">Defaut to use in case of error</param>
+            <returns>signed byte value of converted Text</returns>
+        </member>
+        <member name="M:Sema.Calibration.Convert.TextToUInt8(System.String,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Convert Text to a byte value within certain limits
+            </summary>
+            <param name="Text">Text that contains the value to be converted</param>
+            <param name="Min">Minimum value to accept</param>
+            <param name="Max">Maximum value to accept</param>
+            <param name="Default">Defaut to use in case of error</param>
+            <returns>byte value of converted Text</returns>
+        </member>
+        <member name="M:Sema.Calibration.Convert.ComboBoxToByte(System.Windows.Forms.ComboBox,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Get a byte from the selected index on a ComboBox
+            </summary>
+            <param name="cb">Combobox to use</param>
+            <param name="Min">Minimum value to accept</param>
+            <param name="Max">Maximum value to accept</param>
+            <param name="Default">Defaut to use in case of error</param>
+            <returns>byte value of ComboBox Selectedindex</returns>
+        </member>
+        <member name="M:Sema.Calibration.Convert.GetByteFromUpDownControl(System.Windows.Forms.NumericUpDown,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Get a byte value from the NumericUpDown Control
+            </summary>
+            <param name="nud">NumericUpDown control instance</param>
+            <param name="Min">Minimum value to accept</param>
+            <param name="Max">Maximum value to accept</param>
+            <param name="Default">Default value to accept</param>
+            <returns>byte</returns>
+        </member>
+        <member name="T:Sema.ControlUtils.ComboBoxUtils">
+            <summary>
+            Utilities for ComboBox
+            </summary>
+        </member>
+        <member name="M:Sema.ControlUtils.ComboBoxUtils.OptimumDropDownWidth(System.Windows.Forms.ComboBox,System.Int32)">
+            <summary>
+            Calculates the optimum width for a combobox
+            </summary>
+            <param name="x">Combobox instance</param>
+            <param name="initialDropDownWidth">Width to start with</param>
+        </member>
+        <member name="T:Sema.CurrencyConverter">
+            <summary>
+            Currency converter information
+            </summary>
+        </member>
+        <member name="F:Sema.CurrencyConverter.ConversionRate">
+            <summary>
+            Conversion rate from Source to Dest
+            </summary>
+        </member>
+        <member name="F:Sema.CurrencyConverter.SourceCurrency">
+            <summary>
+            Source Currency
+            </summary>
+        </member>
+        <member name="F:Sema.CurrencyConverter.DestCurrency">
+            <summary>
+            Dest Currency
+            </summary>
+        </member>
+        <member name="M:Sema.CurrencyConverter.#ctor(System.String,System.String,System.Double)">
+            <summary>
+            Constructor for CurrencyConverter struct
+            </summary>
+            <param name="Source">name of source eg "USD"</param>
+            <param name="Dest">name of Dest eg "ZAR"</param>
+            <param name="rate">rate eg ZAR = rate * USD</param>
+        </member>
+        <member name="T:Sema.Currency">
+            <summary>
+            Currency converter class
+            </summary>
+        </member>
+        <member name="F:Sema.Currency.Currencies">
+            <summary>
+            List of currency converter data that has been downloaded
+            </summary>
+        </member>
+        <member name="M:Sema.Currency.AddExhangeRate(System.String,System.String)">
+            <summary>
+            download currency info
+            </summary>
+            <param name="SourceCurr">Source currency eg "USD"</param>
+            <param name="DestCurr">Dest Currency eg "ZAR"</param>
+        </member>
+        <member name="M:Sema.Currency.Convert(System.String,System.String,System.Double)">
+            <summary>
+            Convert a value from one currency to something else
+            </summary>
+            <param name="source">name of source eg "USD"</param>
+            <param name="dest">name of Dest eg "ZAR"</param>
+            <param name="value">currency value to convert</param>
+            <returns>converted currency value</returns>
+        </member>
+        <member name="T:Sema.MD5Utils">
+            <summary>
+            A few utilities for use with MD5 hashing
+            </summary>
+        </member>
+        <member name="M:Sema.MD5Utils.GetMd5Hash(System.Security.Cryptography.MD5,System.String)">
+            <summary>
+            get the MD5 hash of a string
+            </summary>
+            <param name="md5Hash">MD5 instance</param>
+            <param name="input">string to be encrypted</param>
+            <returns>encrypted string</returns>
+        </member>
+        <member name="M:Sema.MD5Utils.VerifyMd5Hash(System.Security.Cryptography.MD5,System.String,System.String)">
+            <summary>
+            Verify a hash against a string. 
+            </summary>
+            <param name="md5Hash">MD5 class instance</param>
+            <param name="input">string to be hashed</param>
+            <param name="hash">has to verify against</param>
+            <returns>true if match, false otherwise</returns>
+        </member>
+        <member name="T:Sema.Extensions.Extensions">
+            <summary>
+            Sema Extensions
+            </summary>
+        </member>
+        <member name="M:Sema.Extensions.Extensions.toDate(System.String,System.String)">
+            <summary>
+            Convert a string to a dateTime value
+            example: var dt="2011-03-21 13:26".toDate("yyyy-MM-dd HH:mm");
+            </summary>
+            <param name="dateTimeStr">string to convert</param>
+            <param name="dateFmt">date Format</param>
+            <returns>DateTime struct</returns>
+        </member>
+        <member name="T:Sema.Extensions.SubstringExtensions">
+            <summary>
+            String extensions
+            </summary>
+        </member>
+        <member name="M:Sema.Extensions.SubstringExtensions.Between(System.String,System.String,System.String)">
+            <summary>
+            Get string value between [first] a and [last] b.
+            </summary>
+        </member>
+        <member name="M:Sema.Extensions.SubstringExtensions.Before(System.String,System.String)">
+            <summary>
+            Get string value after [first] a.
+            </summary>
+        </member>
+        <member name="M:Sema.Extensions.SubstringExtensions.After(System.String,System.String)">
+            <summary>
+            Get string value after [last] a.
+            </summary>
+        </member>
+        <member name="T:Sema.Extensions.ArrayExtensions">
+            <summary>
+            Array extensions
+            </summary>
+        </member>
+        <member name="M:Sema.Extensions.ArrayExtensions.RemoveAt``1(``0[],System.Int32)">
+            <summary>
+            remove an item at specific index from array
+            </summary>
+            <typeparam name="T">array class type</typeparam>
+            <param name="source">array to remove item from</param>
+            <param name="index">index to remove at</param>
+            <returns>new array with item removed</returns>
+        </member>
+        <member name="M:Sema.Extensions.ArrayExtensions.RemoveAll(System.String[],System.String)">
+            <summary>
+            Remove all specific string constants from an array
+            </summary>
+            <param name="source">array to remove from</param>
+            <param name="val">value to remove</param>
+            <returns>new string with removed items</returns>
+        </member>
+        <member name="T:Sema.FileUtils.HtmlFileWriter">
+            <summary>
+            Sema's HTML writer class (to write html to a file)
+            </summary>
+        </member>
+        <member name="F:Sema.FileUtils.HtmlFileWriter.SB">
+            <summary>
+            Stringbuilder instance for HTMLFIleWriter
+            </summary>
+        </member>
+        <member name="F:Sema.FileUtils.HtmlFileWriter.SW">
+            <summary>
+            StringWriter instance for  HTMLFIleWriter
+            </summary>
+        </member>
+        <member name="M:Sema.FileUtils.HtmlFileWriter.#ctor(System.IO.TextWriter)">
+            <summary>
+            Constructor 
+            </summary>
+            <param name="tw">TextWriter to use</param>
+        </member>
+        <member name="M:Sema.FileUtils.HtmlFileWriter.WriteToFile">
+            <summary>
+            Write the HTML to file
+            </summary>
+        </member>
+        <member name="M:Sema.FileUtils.HtmlFileWriter.NewHtmlFileWriter(System.String)">
+            <summary>
+            Use this static function to get a new HTMLFilewriter class instance
+            </summary>
+            <param name="filename">filename to write to</param>
+            <returns>HtmlFileWriter class instance</returns>
+        </member>
+        <member name="P:Sema.FileUtils.HtmlFileWriter.HMTLFilename">
+            <summary>
+            Filename to write HTML to
+            </summary>
+        </member>
+        <member name="T:Sema.FileUtils.General">
+            <summary>
+            General file utilities
+            </summary>
+        </member>
+        <member name="M:Sema.FileUtils.General.DoForAllFiles(System.String,System.String,Sema.FileUtils.General.DoForFile,System.Boolean)">
+            <summary>
+            Repeat df for all files matching the pattern
+            </summary>
+            <param name="FolderPath">Folder to search for files</param>
+            <param name="pattern">Pattern of files to look for</param>
+            <param name="df">delegate to call</param>
+            <param name="RecurseSubDirs">option to look in subfolders</param>
+        </member>
+        <member name="M:Sema.FileUtils.General.GetUniqueFilename">
+            <summary>
+            Get a unique filename based on the time and date
+            </summary>
+            <returns>a unique string usable as a filename</returns>
+        </member>
+        <member name="M:Sema.FileUtils.General.AskFileOverwrite(System.String)">
+            <summary>
+            Asks the user if a file should be overriden
+            </summary>
+            <param name="Filename">string containing the filename to ask about</param>
+            <returns>True if overwrite is OK, false if not to be overwritten.</returns>
+        </member>
+        <member name="M:Sema.FileUtils.General.GetSettingsFilename">
+            <summary>
+            Get the default name for the settings file of this application
+            </summary>
+            <returns>string = filename</returns>
+        </member>
+        <member name="M:Sema.FileUtils.General.GetLoggerFilename">
+            <summary>
+            Get a default logger filename
+            </summary>
+            <returns>string = filename</returns>
+        </member>
+        <member name="M:Sema.FileUtils.General.GetUserPath">
+            <summary>
+            Method to get easy access to the current users my Documents
+            </summary>
+            <returns>Folder path to current user's "My Documents"</returns>
+        </member>
+        <member name="M:Sema.FileUtils.General.GetUserAppDataPath(System.String)">
+            <summary>
+            Get the user data path for this app. If it does not exist then it is created
+            </summary>
+            <param name="AppPath">Name of the folder used to store files for the application</param>
+            <returns>The full folder path is returned.</returns>
+        </member>
+        <member name="M:Sema.FileUtils.General.GetApplicationFilename">
+            <summary>
+            returns the application filename
+            </summary>
+            <returns>filename of application</returns>
+        </member>
+        <member name="M:Sema.FileUtils.General.AppendTextToFile(System.String,System.String)">
+            <summary>
+            Append text to any file
+            </summary>
+            <param name="filename"></param>
+            <param name="text"></param>
+        </member>
+        <member name="T:Sema.FileUtils.General.DoForFile">
+            <summary>
+            Delegate method for repeated performing an operation on files
+            </summary>
+            <param name="Filename"></param>
+            <returns>true if success, false if error occured</returns>
+        </member>
+        <member name="T:Sema.FileUtils.Xml`1">
+            <summary>
+            Various XML tools
+            </summary>
+        </member>
+        <member name="M:Sema.FileUtils.Xml`1.SaveToXml(System.Object,System.String)">
+            <summary>
+            Stream an object to an XML file.
+            Note that this method might not work for derived classes
+            </summary>
+            <param name="o">Object reference</param>
+            <param name="filename">File to save to</param>
+        </member>
+        <member name="M:Sema.FileUtils.Xml`1.LoadFromXml(`0@,System.String)">
+            *******************************************************************
+            <summary>
+            Load the settings
+            Note that this method might not work for derived classes
+            </summary>
+            <param name="t">Object reference (type T)</param>
+            <param name="filename">File to save to</param>
+            *******************************************************************
+        </member>
+        <member name="T:Sema.FileUtils.CSVWriter">
+            <summary>
+            CSVWriter is based on StreamWriter and is used to write simple CSV files
+            </summary>
+        </member>
+        <member name="M:Sema.FileUtils.CSVWriter.#ctor(System.String)">
+            <summary>
+            Constructor for CSVWrite class to write to a CSV file
+            </summary>
+            <param name="path">filename to write to</param>
+        </member>
+        <member name="M:Sema.FileUtils.CSVWriter.WriteField(System.String)">
+            <summary>
+            Write a string value - the separation character will be added automatically
+            </summary>
+            <param name="x"></param>
+        </member>
+        <member name="M:Sema.FileUtils.CSVWriter.WriteNewLine">
+            <summary>
+            Write a newline to the CSV file
+            </summary>
+        </member>
+        <member name="P:Sema.FileUtils.CSVWriter.SeparationCharacter">
+            <summary>
+            SeparationCharacter is the CSV separation character
+            </summary>
+        </member>
+        <member name="T:Sema.FileUtils.SimpleLogger">
+            <summary>
+            A simple logger class to log application events
+            </summary>
+        </member>
+        <member name="M:Sema.FileUtils.SimpleLogger.#cctor">
+            <summary>
+            Simple logger static constructor 
+            </summary>
+        </member>
+        <member name="M:Sema.FileUtils.SimpleLogger.Log(Sema.FileUtils.SimpleLogger.LogLevel,System.String)">
+            <summary>
+            Log data to the current log file
+            </summary>
+            <param name="l">Loglevel to log this message</param>
+            <param name="s">message to log</param>
+        </member>
+        <member name="P:Sema.FileUtils.SimpleLogger.Level">
+            <summary>
+            Current logger level property 
+            </summary>
+        </member>
+        <member name="P:Sema.FileUtils.SimpleLogger.Filename">
+            <summary>
+            Current logger filename property
+            </summary>
+        </member>
+        <member name="T:Sema.FileUtils.SimpleLogger.LogLevel">
+            <summary>
+            LogLevel defines the different levels of logging (eg DEBUG, INFO etc)
+            </summary>
+        </member>
+        <member name="F:Sema.FileUtils.SimpleLogger.LogLevel.None">
+            <summary>
+            No logging
+            </summary>
+        </member>
+        <member name="F:Sema.FileUtils.SimpleLogger.LogLevel.Information">
+            <summary>
+            Log information 
+            </summary>
+        </member>
+        <member name="F:Sema.FileUtils.SimpleLogger.LogLevel.Warnings">
+            <summary>
+            Log Warnings
+            </summary>
+        </member>
+        <member name="F:Sema.FileUtils.SimpleLogger.LogLevel.Errors">
+            <summary>
+            Log Errors
+            </summary>
+        </member>
+        <member name="F:Sema.FileUtils.SimpleLogger.LogLevel.Debug">
+            <summary>
+            Log Debug info
+            </summary>
+        </member>
+        <member name="F:Sema.FileUtils.SimpleLogger.LogLevel.Critical">
+            <summary>
+            Log Critical info
+            </summary>
+        </member>
+        <member name="F:Sema.FileUtils.SimpleLogger.LogLevel.Trace">
+            <summary>
+            Log Trace information
+            </summary>
+        </member>
+        <member name="F:Sema.FileUtils.SimpleLogger.LogLevel.All">
+            <summary>
+            Log All
+            </summary>
+        </member>
+        <member name="T:Sema.IBaseApplication">
+            <summary>
+            Basic application interfaces
+            </summary>
+        </member>
+        <member name="M:Sema.IBaseApplication.ApplySettings">
+            <summary>
+            Apply settings
+            </summary>
+        </member>
+        <member name="M:Sema.IBaseApplication.LoadSettings">
+            <summary>
+            Load settings
+            </summary>
+        </member>
+        <member name="M:Sema.IBaseApplication.SaveSettings">
+            <summary>
+            Save settings
+            </summary>
+        </member>
+        <member name="M:Sema.IBaseApplication.OnApplicationStart">
+            <summary>
+            Application start handler
+            </summary>
+        </member>
+        <member name="M:Sema.IBaseApplication.OnApplicationClose">
+            <summary>
+            Application close handler
+            </summary>
+        </member>
+        <member name="T:Sema.ImageUtils">
+            <summary>
+            General image utilities
+            </summary>
+        </member>
+        <member name="M:Sema.ImageUtils.FixedSize(System.Drawing.Image,System.Int32,System.Int32)">
+            <summary>
+            resize to a fixed size
+            </summary>
+            <param name="imgPhoto"></param>
+            <param name="Width"></param>
+            <param name="Height"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.ImageUtils.resizeImageOld(System.Drawing.Image,System.Drawing.Size)">
+            <summary>
+            Resize an image
+            </summary>
+            <param name="imgToResize"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.ImageUtils.resizeImage(System.Drawing.Image,System.Drawing.Size)">
+            <summary>
+            Resize an image
+            </summary>
+            <param name="imgToResize"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.ImageUtils.cropImage(System.Drawing.Image,System.Drawing.Rectangle)">
+            <summary>
+            Crop image
+            </summary>
+            <param name="img"></param>
+            <param name="cropArea"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sema.ListBoxUtils">
+            <summary>
+            Listbox control utilities
+            </summary>
+        </member>
+        <member name="M:Sema.ListBoxUtils.LoadListFromFile(System.String,System.Windows.Forms.ListBox)">
+            <summary>
+            Load listbox items from a file
+            </summary>
+            <param name="fn">fn = filename to load from</param>
+            <param name="lb">lb = Listbox to populate</param>
+        </member>
+        <member name="M:Sema.ListBoxUtils.SaveListToFile(System.String,System.Windows.Forms.ListBox)">
+            <summary>
+            Write listbox contents to a file
+            </summary>
+            <param name="fn">fn = filename to write to</param>
+            <param name="lb">lb = Listbox items to write</param>
+        </member>
+        <member name="T:Semalibs.scanf">
+            <summary>
+            Class that provides functionality of the standard C library sscanf()
+            function.
+            </summary>
+        </member>
+        <member name="F:Semalibs.scanf._typeParsers">
+            <summary>
+            Lookup table to find parser by parser type 
+            </summary>
+        </member>
+        <member name="F:Semalibs.scanf.Results">
+            <summary>
+            Holds results after calling Parse()
+            </summary>
+        </member>
+        <member name="M:Semalibs.scanf.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Semalibs.scanf.Parse(System.String,System.String)">
+            <summary>
+            Parses the input string according to the rules in the
+            format string. Similar to the standard C library's
+            sscanf() function. Parsed fields are placed in the
+            class' Results member.
+            </summary>
+            <param name="input">String to parse</param>
+            <param name="format">Specifies rules for parsing input</param>
+        </member>
+        <member name="M:Semalibs.scanf.ParseFormatSpecifier(Semalibs.TextParser,Semalibs.scanf.FormatSpecifier)">
+            <summary>
+            Attempts to parse a field format specifier from the format string.
+            </summary>
+        </member>
+        <member name="M:Semalibs.scanf.ParseCharacter(Semalibs.TextParser,Semalibs.scanf.FormatSpecifier)">
+            <summary>
+            Parse a character field
+            </summary>
+        </member>
+        <member name="M:Semalibs.scanf.ParseDecimal(Semalibs.TextParser,Semalibs.scanf.FormatSpecifier)">
+            <summary>
+            Parse integer field
+            </summary>
+        </member>
+        <member name="M:Semalibs.scanf.ParseFloat(Semalibs.TextParser,Semalibs.scanf.FormatSpecifier)">
+            <summary>
+            Parse a floating-point field
+            </summary>
+        </member>
+        <member name="M:Semalibs.scanf.ParseHexadecimal(Semalibs.TextParser,Semalibs.scanf.FormatSpecifier)">
+            <summary>
+            Parse hexadecimal field
+            </summary>
+        </member>
+        <member name="M:Semalibs.scanf.ParseOctal(Semalibs.TextParser,Semalibs.scanf.FormatSpecifier)">
+            <summary>
+            Parse an octal field
+            </summary>
+        </member>
+        <member name="M:Semalibs.scanf.ParseScanSet(Semalibs.TextParser,Semalibs.scanf.FormatSpecifier)">
+            <summary>
+            Parse a scan-set field
+            </summary>
+        </member>
+        <member name="M:Semalibs.scanf.ParseString(Semalibs.TextParser,Semalibs.scanf.FormatSpecifier)">
+            <summary>
+            Parse a string field
+            </summary>
+        </member>
+        <member name="T:Semalibs.scanf.Types">
+            <summary>
+            Format type specifiers 
+            </summary>
+        </member>
+        <member name="F:Semalibs.scanf.Types.Character">
+            <summary>
+            Character format type
+            </summary>
+        </member>
+        <member name="F:Semalibs.scanf.Types.Decimal">
+            <summary>
+            Decimal format type
+            </summary>
+        </member>
+        <member name="F:Semalibs.scanf.Types.Float">
+            <summary>
+            Float format type
+            </summary>
+        </member>
+        <member name="F:Semalibs.scanf.Types.Hexadecimal">
+            <summary>
+            Hexedecimal format type
+            </summary>
+        </member>
+        <member name="F:Semalibs.scanf.Types.Octal">
+            <summary>
+            Octal format type
+            </summary>
+        </member>
+        <member name="F:Semalibs.scanf.Types.ScanSet">
+            <summary>
+            Scan a set - format specifier
+            </summary>
+        </member>
+        <member name="F:Semalibs.scanf.Types.String">
+            <summary>
+            string format specifier
+            </summary>
+        </member>
+        <member name="F:Semalibs.scanf.Types.Unsigned">
+            <summary>
+            Unsigned format specifier
+            </summary>
+        </member>
+        <member name="T:Semalibs.scanf.Modifiers">
+            <summary>
+            Format modifiers
+            </summary>
+        </member>
+        <member name="F:Semalibs.scanf.Modifiers.None">
+            <summary>
+            modifier - none
+            </summary>
+        </member>
+        <member name="F:Semalibs.scanf.Modifiers.ShortShort">
+            <summary>
+            modifier short short
+            </summary>
+        </member>
+        <member name="F:Semalibs.scanf.Modifiers.Short">
+            <summary>
+            modifier short
+            </summary>
+        </member>
+        <member name="F:Semalibs.scanf.Modifiers.Long">
+            <summary>
+            modifier long
+            </summary>
+        </member>
+        <member name="F:Semalibs.scanf.Modifiers.LongLong">
+            <summary>
+            modifier long long
+            </summary>
+        </member>
+        <member name="T:Semalibs.scanf.ParseValue">
+            <summary>
+            Delegate to parse a type
+            </summary>
+            <param name="input">Textparser</param>
+            <param name="spec">Format specifier</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:Semalibs.scanf.TypeParser">
+            <summary>
+            Type parser class
+            Class to associate format type with type parser
+            </summary>
+        </member>
+        <member name="P:Semalibs.scanf.TypeParser.Type">
+            <summary>
+            Types property
+            </summary>
+        </member>
+        <member name="P:Semalibs.scanf.TypeParser.Parser">
+            <summary>
+            Parser property
+            </summary>
+        </member>
+        <member name="T:Semalibs.scanf.FormatSpecifier">
+            <summary>
+            Class to hold format specifier information
+            </summary>
+        </member>
+        <member name="P:Semalibs.scanf.FormatSpecifier.Type">
+            <summary>
+            Types property
+            </summary>
+        </member>
+        <member name="P:Semalibs.scanf.FormatSpecifier.Modifier">
+            <summary>
+            Modfiers property
+            </summary>
+        </member>
+        <member name="P:Semalibs.scanf.FormatSpecifier.Width">
+            <summary>
+            Width property
+            </summary>
+        </member>
+        <member name="P:Semalibs.scanf.FormatSpecifier.NoResult">
+            <summary>
+            No result property
+            </summary>
+        </member>
+        <member name="P:Semalibs.scanf.FormatSpecifier.ScanSet">
+            <summary>
+            Scanset property
+            </summary>
+        </member>
+        <member name="P:Semalibs.scanf.FormatSpecifier.ScanSetExclude">
+            <summary>
+            Scanset exclude
+            </summary>
+        </member>
+        <member name="T:Sema.Scanning.Scanner">
+            <summary>
+            Summary description for Scanner.
+            </summary>
+        </member>
+        <member name="F:Sema.Scanning.Scanner.typePatterns">
+            <summary>
+            Typepatterns hashtable (???!!)
+            </summary>
+        </member>
+        <member name="M:Sema.Scanning.Scanner.#ctor">
+            <summary>
+            Constructor for Scanner class
+            </summary>
+        </member>
+        <member name="M:Sema.Scanning.Scanner.Scan(System.String,System.String)">
+            <summary>
+            Scan memics scanf.
+            A master regular expression pattern is created that will group each "word" in the text and using regex grouping
+            extract the values for the field specifications.
+            Example text: "Hello true 6.5"  fieldSpecification: "{String} {Boolean} {Double}"
+            The fieldSpecification will result in the generation of a master Pattern:
+            ([\w\d\S]+)\s+(true|false)\s+([-]|[.]|[-.]|[0-9][0-9]*[.]*[0-9]+)
+            This masterPattern is ran against the text string and the groups are extracted.
+            </summary>
+            <param name="text"></param>
+            <param name="fieldSpecification">A string that may contain simple field specifications of the form {Int16}, {String}, etc</param>
+            <returns>object[] that contains values for each field</returns>
+        </member>
+        <member name="M:Sema.Scanning.Scanner.Scan(System.String,System.String,System.Object[])">
+            Scan memics scanf.
+            A master regular expression pattern is created that will group each "word" in the text and using regex grouping
+            extract the values for the field specifications.
+            Example text: "Hello true 6.5"  fieldSpecification: "{0} {1} {2}" and the target array has objects of these types: "String, ,Boolean, Double"
+            The targets are scanned and each target type is extracted in order to build a master pattern based on these types
+            The fieldSpecification and target types will result in the generation of a master Pattern:
+            ([\w\d\S]+)\s+(true|false)\s+([-]|[.]|[-.]|[0-9][0-9]*[.]*[0-9]+)
+            This masterPattern is ran against the text string and the groups are extracted and placed back into the targets
+            <param name="text"></param>
+            <param name="fieldSpecification"></param>
+            <param name="targets"></param>
+        </member>
+        <member name="M:Sema.Scanning.Scanner.ReturnValue(System.String,System.String)">
+            <summary>
+            Return the Value inside of an object that boxes the built in type or references the string
+            </summary>
+            <param name="typeName"></param>
+            <param name="sValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.Scanning.Scanner.ReturnPattern(System.String)">
+            <summary>
+            Return a pattern for regular expressions that will match the built in type specified by name
+            </summary>
+            <param name="typeName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sema.Scanning.ScanExeption">
+            <summary>
+            Exceptions that are thrown by this namespace and the Scanner Class
+            </summary>
+        </member>
+        <member name="T:Sema.Dialogs.SelectErrorModeForm">
+            <summary>
+            SelectErrorModeForm is a predefined form for selecting error display modes
+            </summary>
+        </member>
+        <member name="M:Sema.Dialogs.SelectErrorModeForm.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="F:Sema.Dialogs.SelectErrorModeForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Sema.Dialogs.SelectErrorModeForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Sema.Dialogs.SelectErrorModeForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Sema.Dialogs.SelectErrorModeForm.ErrorMode">
+            <summary>
+            ErrorMode is a property that reflects the error mode currently in the form
+            </summary>
+        </member>
+        <member name="T:Sema.Forms.FormUtils">
+            <summary>
+            FormUtils is a class with a number of helper routines for forms
+            </summary>
+        </member>
+        <member name="M:Sema.Forms.FormUtils.DisableAllControls(System.Windows.Forms.Form)">
+            <summary>
+            Disable all the controls in a form
+            </summary>
+            <param name="x">Pass a reference to the form of which the controls are to be disabled</param>
+        </member>
+        <member name="M:Sema.Forms.FormUtils.EnableAllControls(System.Windows.Forms.Form)">
+            <summary>
+            Enable all the controls in a form
+            </summary>
+            <param name="x">Pass a reference to the form of which the controls are to be enabled</param>
+        </member>
+        <member name="T:Sema.InstrumentationTextFailed">
+            <summary>
+            Exception thrown when text on a control cannot be set
+            </summary>
+        </member>
+        <member name="T:Sema.SemaException">
+            <summary>
+            SemaException is a Custom exception for Sema appplications
+            </summary>
+        </member>
+        <member name="F:Sema.SemaException.LastError">
+            <summary>
+            A string containing the last error than was recorded
+            </summary>
+        </member>
+        <member name="M:Sema.SemaException.#ctor(System.String,System.Exception)">
+            <summary>
+            SemaException Constructor
+            </summary>
+            <param name="Err">Last Error message</param>
+            <param name="e">e is the inner exception that caused the problem</param>
+        </member>
+        <member name="M:Sema.SemaException.#ctor(System.String)">
+            <summary>
+            SemaException Constructor
+            </summary>
+            <param name="Err">Last Error message</param>
+        </member>
+        <member name="M:Sema.InstrumentationTextFailed.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="reason">Text description of error</param>
+        </member>
+        <member name="M:Sema.InstrumentationTextFailed.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="reason">Text description of error</param>
+            <param name="e">Inner exception</param>
+        </member>
+        <member name="M:Sema.InstrumentationTextFailed.#ctor(System.String,System.Exception,System.Windows.Forms.Control,System.String,System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="reason">Text description of error</param>
+            <param name="e">Inner exception</param>
+            <param name="control">Control that was used</param>
+            <param name="TextString">Text that was passed to write to control</param>
+            <param name="ValidValue">Value was valid</param>
+        </member>
+        <member name="M:Sema.InstrumentationTextFailed.#ctor(System.String,System.Windows.Forms.Control,System.String,System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="reason">Text description of error</param>
+            <param name="control">Control that was used</param>
+            <param name="TextString">Text that was passed to write to control</param>
+            <param name="ValidValue">Value was valid</param>
+        </member>
+        <member name="T:Sema.Instrumentation">
+            <summary>
+            Instrumentation class - contains various methods used to display values for telemetry
+            </summary>
+        </member>
+        <member name="M:Sema.Instrumentation.SetControlText(System.Windows.Forms.Control,System.String,System.Boolean)">
+            <summary>
+            Set the text of a control for telemetry
+            </summary>
+            <param name="ctrl">Control of which the text is to be set</param>
+            <param name="txt">Text to use</param>
+            <param name="Valid">Is the display valid or not?</param>
+        </member>
+        <member name="M:Sema.Instrumentation.SetControlText(System.Windows.Forms.Control,System.UInt16,System.Boolean)">
+            <summary>
+            Set control text to a number
+            </summary>
+            <param name="ctrl">Control to display in</param>
+            <param name="num">value to display</param>
+            <param name="Valid">Is the display valid or not?</param>
+        </member>
+        <member name="M:Sema.Instrumentation.SetObjectText(System.Object,System.String,System.Boolean)">
+            <summary>
+            Set the text of an object (if possible). Note that if SetObjectText is called with an object inherited from the Control
+            class, then SetControlText will be called from SetObjectText to perform the task.
+            </summary>
+            <param name="x">Object of which to set the text</param>
+            <param name="txt">Text to set to</param>
+            <param name="Valid">Is the display valid or not?</param>
+        </member>
+        <member name="M:Sema.Instrumentation.ShowFlagsInListview(System.Windows.Forms.ListView,System.UInt32,System.Int32,System.Boolean)">
+            <summary>
+            Shows the flags of a uint value in a listview
+            </summary>
+            <param name="lv">Listview object</param>
+            <param name="value">Value to display</param>
+            <param name="numflags">Number of flags (assuming all flags are right aligned, ie start at LSB)</param>
+            <param name="Valid">Flag to indicate if value is valid or not</param>
+        </member>
+        <member name="M:Sema.Instrumentation.ShowValuesInListviewColumn(System.Windows.Forms.ListView,System.Single[],System.Int32,System.Boolean,System.String)">
+            <summary>
+            Show the values from a float array in a listview column
+            </summary>
+            <param name="lv">Listview to show int</param>
+            <param name="values">array of values to show</param>
+            <param name="col">column to display in</param>
+            <param name="fValid">flag to indicate if the values are valid or not</param>
+            <param name="fmtstr">formatting string</param>
+        </member>
+        <member name="M:Sema.Instrumentation.ShowValuesInListviewColumn(System.Windows.Forms.ListView,System.Int32[],System.Int32,System.Boolean,System.String)">
+            <summary>
+            Show the values from a float array in a listview column 
+            </summary>
+            <param name="lv">Listview to show in</param>
+            <param name="values">array of integers</param>
+            <param name="col">column number toshow in</param>
+            <param name="fValid">flag to indicate if the values are valid or not</param>
+            <param name="fmtstr">format string</param>
+        </member>
+        <member name="M:Sema.Instrumentation.SetComboBoxSelectedIndex(System.Windows.Forms.ComboBox,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Assign a value to the SelectedIndex of a ComboBox
+            </summary>
+            <param name="cb">ComboBox to use</param>
+            <param name="value">value to assign</param>
+            <param name="Min">minimum value to accept</param>
+            <param name="Max">maximum value to accept</param>
+            <param name="Default">Default in case of error</param>
+        </member>
+        <member name="M:Sema.Instrumentation.ShowProgress(System.Windows.Forms.Control,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Generic routine to show progress in a number of different controls
+            </summary>
+            <param name="c">Control to use</param>
+            <param name="min">minimum value</param>
+            <param name="max">maximum value</param>
+            <param name="value">progress value</param>
+        </member>
+        <member name="M:Sema.Instrumentation.ShowProgress(System.Windows.Forms.ToolStripItem,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Generic routine to show progress in a number of different controls
+            </summary>
+            <param name="c">Control to use</param>
+            <param name="min">minimum value</param>
+            <param name="max">maximum value</param>
+            <param name="value">progress value</param>
+        </member>
+        <member name="P:Sema.Instrumentation.InvalidDisplayString">
+            <summary>
+            Text used to indicate that a display is invalid
+            </summary>
+        </member>
+        <member name="T:Sema.InstrumentConnectorBase">
+            <summary>
+            Connects data to some display
+            WARNING: class not complete - to be developed
+            </summary>
+        </member>
+        <member name="M:Sema.InstrumentConnectorBase.#ctor">
+            <summary>
+            InstrumentConnectorBase constructor
+            </summary>
+        </member>
+        <member name="T:Sema.ControlUtils.DoubleBufferedListView">
+            <summary>
+            DoubbleBufferedListView can be used for a listview that does not flicker when updated
+            </summary>
+        </member>
+        <member name="M:Sema.ControlUtils.DoubleBufferedListView.#ctor">
+            <summary>
+            DoubbleBufferedListView constructor
+            </summary>
+        </member>
+        <member name="T:Sema.ControlUtils.ListViewUtils">
+            <summary>
+            ListviewUtils contains various static methods for use with listviews
+            </summary>
+        </member>
+        <member name="M:Sema.ControlUtils.ListViewUtils.SaveListview(System.Windows.Forms.ListView,System.String)">
+            <summary>
+            Save the contents of a listview to a file (Columns are tab separated)
+            </summary>
+            <param name="lv">Listview component</param>
+            <param name="Filename">Name of file to save to</param>
+        </member>
+        <member name="M:Sema.ControlUtils.ListViewUtils.LoadListview(System.Windows.Forms.ListView,System.String)">
+            <summary>
+            LoadListview loads the contents of a listview from a file  (Columns are tab separated)
+            </summary>
+            <param name="lv">Listview component</param>
+            <param name="Filename">Name of file to read from</param>
+        </member>
+        <member name="M:Sema.ControlUtils.ListViewUtils.ShowFlagsInListview(System.Windows.Forms.ListView,System.UInt32,System.Int32)">
+            <summary>
+            ShowFlagsInListview can be used to display a uint flag's values in a listview
+            </summary>
+            <param name="lv">Listview object</param>
+            <param name="value">uint Value to break down</param>
+            <param name="numflags">Number of flags (assume packed from LSB)</param>
+        </member>
+        <member name="M:Sema.ControlUtils.ListViewUtils.GetFlagsFromListview(System.Windows.Forms.ListView,System.Int32)">
+            <summary>
+            GetFlagsFromListview can be used to pack the checkboxes in a listview into a uint
+            </summary>
+            <param name="lv">Listview object</param>
+            <param name="numflags">Number of flags (will be packed from LSB to MSB)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.ControlUtils.ListViewUtils.ClearAllFlagsInListview(System.Windows.Forms.ListView)">
+            <summary>
+            Clear all the checkboxes in a listview
+            </summary>
+            <param name="lv">Listview object</param>     
+        </member>
+        <member name="T:Sema.Math">
+            <summary>
+            Sema Math libraries
+            </summary>
+        </member>
+        <member name="M:Sema.Math.RotateRight(System.UInt32,System.Int32)">
+            <summary>
+            Rotate a uint value right
+            </summary>
+            <param name="original">The value to rotate</param>
+            <param name="bits">Number of bits to rotate by</param>
+            <returns>uint value equals the rotated answer</returns>
+        </member>
+        <member name="M:Sema.Math.RotateLeft(System.UInt32,System.Int32)">
+            <summary>
+            Rotate a uint value left
+            </summary>
+            <param name="original">The value to rotate</param>
+            <param name="bits">Number of bits to rotate by</param>
+            <returns>uint value equals the rotated answer</returns>
+        </member>
+        <member name="M:Sema.Math.ArithmeticShiftRight(System.UInt32,System.Int32)">
+            <summary>
+            Perform an arithmetic shift right
+            </summary>
+            <param name="original">The value to arithmetically shift</param>
+            <param name="bits">Number of bits to shift by</param>
+            <returns>uint value equals the arithmetically shifted answer</returns>
+        </member>
+        <member name="T:Sema.Math.RollingAverage`1">
+            <summary>
+            Rolling average class
+            </summary>
+            <typeparam name="T">type to use for rolling average calculation</typeparam>
+        </member>
+        <member name="M:Sema.Math.RollingAverage`1.#ctor(System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="ra_size">Number of elements in rolling buffer</param>
+        </member>
+        <member name="M:Sema.Math.RollingAverage`1.#ctor">
+            <summary>
+            Constructor (defaults to 100 elements in buffer)
+            </summary>
+        </member>
+        <member name="M:Sema.Math.RollingAverage`1.Input(`0)">
+            <summary>
+            Add a new sample into the rolling buffer.
+            </summary>
+            <param name="val">Type of the buffer</param>
+        </member>
+        <member name="M:Sema.Math.RollingAverage`1.GetAverage">
+            <summary>
+            Returns the current value of the rolling average
+            </summary>
+            <returns>double = value of the average</returns>
+        </member>
+        <member name="T:Sema.General.SimpleCountDownTimer">
+            <summary>
+            A very simple countdown timer. Drawback: it has to be polled.
+            In future the class can be derived to give a more complex and fully featured timer
+            (or it could be easier to inherit a new class from one of the .NET classes)
+            </summary>
+        </member>
+        <member name="M:Sema.General.SimpleCountDownTimer.#ctor(System.Int64)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="Seconds">The number of seconds the countdown timer is to count down</param>
+        </member>
+        <member name="M:Sema.General.SimpleCountDownTimer.Reload(System.Int64)">
+            <summary>
+            Method to reload the timer with a new timeout value
+            </summary>
+            <param name="Seconds">Time to reload the timer with</param>
+        </member>
+        <member name="P:Sema.General.SimpleCountDownTimer.Timeout">
+            <summary>
+            Timeout is a property that can be read to determine if teh countdown has expired.
+            It is true if the set amount of time has passed, false otherwise
+            </summary>
+        </member>
+        <member name="T:Sema.General.TimeUtils">
+            <summary>
+            TimeUtils contain a number of time related functions
+            </summary>
+        </member>
+        <member name="M:Sema.General.TimeUtils.DateTimeToSeconds(System.DateTime)">
+            <summary>
+            Get the number of seconds since 1 Jan 0000, at 0:00:00 time
+            </summary>
+            <param name="t">Give a DateTime as parameter</param>
+            <returns>Number of seconds</returns>
+        </member>
+        <member name="T:Sema.General.EnumUtils">
+            <summary>
+            class with utilities to work with enums
+            </summary>
+        </member>
+        <member name="M:Sema.General.EnumUtils.GetNumberElements(System.String)">
+            <summary>
+            Method to get the number of elements in an enum
+            IMPORTANT NOTE: this has not been tested at all. Not guearanteed to 
+            work!!!!!!
+            </summary>
+            <param name="EnumName">string containing the enum name</param>
+            <returns>number of elements in the enum name</returns>
+        </member>
+        <member name="M:Sema.General.EnumUtils.FillComboBoxWithEnum(System.Type,System.Windows.Forms.ComboBox)">
+            <summary>
+            Fill the items in a combobox with the elements of an enum
+            </summary>
+            <param name="enumType">Type of enum</param>
+            <param name="cb">cb is the combobox to fill</param>
+        </member>
+        <member name="M:Sema.General.EnumUtils.GetDescription(System.Enum)">
+            <summary>
+            Retrieve the description on the enum, e.g.
+            [Description("Bright Pink")]
+            BrightPink = 2,
+            Then when you pass in the enum, it will retrieve the description
+            </summary>
+            <param name="en">The Enumeration</param>
+            <returns>A string representing the friendly name</returns>
+        </member>
+        <member name="M:Sema.General.EnumUtils.GetDescriptions(System.Type)">
+            <summary>
+            Get an array of descriptions from a enumeration
+            </summary>
+            <param name="enumType">enumeration type to get the descriptions for</param>
+            <returns>Array of strings containg the descriptions</returns>
+        </member>
+        <member name="M:Sema.General.EnumUtils.FillComboBoxWithEnumDescriptions(System.Type,System.Windows.Forms.ComboBox)">
+            <summary>
+            Fill the items in a combobox with the description attributes of an enum
+            </summary>
+            <param name="enumType">The enum type</param>
+            <param name="cb">The combobox</param>
+        </member>
+        <member name="M:Sema.General.EnumUtils.SetupComboBox(System.Windows.Forms.ComboBox,System.Enum)">
+            <summary>
+            Populate the COmbobox with the enum type descriptions and select the
+            current index based on the enum
+            </summary>
+            <param name="cb">Combobox to populate</param>
+            <param name="en">enum value to use for combobox</param>
+        </member>
+        <member name="T:Sema.General.Error">
+            <summary>
+            various error handling methods
+            </summary>
+        </member>
+        <member name="F:Sema.General.Error.ErrorMode">
+            <summary>
+            ErrorMode controls the way errors are displayed currently
+            </summary>
+        </member>
+        <member name="M:Sema.General.Error.ChooseErrorMode">
+            <summary>
+            Show a dialog to choose the error mode
+            </summary>
+            <returns>Returns the user's selection (ie OK or cancel)</returns>
+        </member>
+        <member name="M:Sema.General.Error.ChooseErrorMode(System.Int32@)">
+            <summary>
+            Show a dialog to choose the error mode
+            </summary>
+            <param name="errmode">reference to an error mode variable</param>
+            <returns>Returns the user's selection (ie OK or cancel)</returns>
+        </member>
+        <member name="M:Sema.General.Error.Show(System.Exception)">
+            <summary>
+            Show Error in a messagebox - shows exception text
+            </summary>
+            <param name="e">Exception handler</param>
+        </member>
+        <member name="M:Sema.General.Error.Show(System.String,System.Exception)">
+            <summary>
+            Show Error in a messagebox with a specific message in addition to exception text
+            </summary>
+            <param name="msg">This is the user text message</param>
+            <param name="e">This is the exception to display</param>
+        </member>
+        <member name="T:Sema.General.Error.ErrorModeType">
+            <summary>
+            ErrorModeType has the settings that can be applied to the way an error is displayed
+            </summary>
+        </member>
+        <member name="F:Sema.General.Error.ErrorModeType.DisplayFullMessage">
+            <summary>
+            DisplayFullMessage can be used to display all error codes with the full exception context
+            </summary>
+        </member>
+        <member name="F:Sema.General.Error.ErrorModeType.DisplayShortMessage">
+            <summary>
+            DisplayShortMessage is used to display an error, but without the full exception context
+            </summary>
+        </member>
+        <member name="T:Sema.General.TypeUtils">
+            <summary>
+            TypeUtils contains various static methods to do type conversions and to extract
+            data from other types.
+            </summary>
+        </member>
+        <member name="M:Sema.General.TypeUtils.GetLowByte(System.Int16)">
+            <summary>
+            Get the Low byte of a short value
+            </summary>
+            <param name="value">short int</param>
+            <returns>lowest byte</returns>
+        </member>
+        <member name="M:Sema.General.TypeUtils.GetHighByte(System.Int16)">
+            <summary>
+            Get the high byte of a short int
+            </summary>
+            <param name="value">short int</param>
+            <returns>highest byte</returns>
+        </member>
+        <member name="M:Sema.General.TypeUtils.GetLowestByte(System.UInt32)">
+            <summary>
+            GetLowestByte returns the least signifacant of all 4 the bytes in an uint
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.General.TypeUtils.GetLowerByte(System.UInt32)">
+            <summary>
+            GetLowerByte returns the second least signifacant of all 4 the bytes in an uint
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.General.TypeUtils.GetHigherByte(System.UInt32)">
+            <summary>
+            GetHigherByte returns the second most signifacant of all 4 the bytes in an uint
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.General.TypeUtils.GetHighestByte(System.UInt32)">
+            <summary>
+            GetHigherByte returns the most signifacant of all 4 the bytes in an uint
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sema.General.SerialComms">
+            <summary>
+            General Serialcomms functions
+            </summary>
+        </member>
+        <member name="M:Sema.General.SerialComms.GetMaxBaudrate(System.String)">
+            <summary>
+            GetMaxBaudrate determines the maximum baudrate for portName
+            </summary>
+            <param name="portName">Name of com port</param>
+            <returns>Maximum Buadrate or -1 if an error occurred</returns>
+        </member>
+        <member name="M:Sema.General.SerialComms.BuadrateMaskToString(System.Int32)">
+            <summary>
+            Convert a baudrate mask to a string to display
+            </summary>
+            <param name="x">x = baudrate capability mask</param>
+            <returns>string containing available baudrates</returns>
+        </member>
+        <member name="T:Sema.General.SerialComms.BaudFlags">
+            <summary>
+            Baudrate flags
+            </summary>
+        </member>
+        <member name="F:Sema.General.SerialComms.BaudFlags.BAUD_075">
+            <summary>75 bps</summary>
+        </member>
+        <member name="F:Sema.General.SerialComms.BaudFlags.BAUD_110">
+            <summary>110 bps</summary>
+        </member>
+        <member name="F:Sema.General.SerialComms.BaudFlags.BAUD_134_5">
+            <summary>134.5 bps</summary>
+        </member>
+        <member name="F:Sema.General.SerialComms.BaudFlags.BAUD_150">
+            <summary>150 bps</summary>
+        </member>
+        <member name="F:Sema.General.SerialComms.BaudFlags.BAUD_300">
+            <summary>300 bps</summary>
+        </member>
+        <member name="F:Sema.General.SerialComms.BaudFlags.BAUD_600">
+            <summary>600 bps</summary>
+        </member>
+        <member name="F:Sema.General.SerialComms.BaudFlags.BAUD_1200">
+            <summary>1200 bps</summary>
+        </member>
+        <member name="F:Sema.General.SerialComms.BaudFlags.BAUD_1800">
+            <summary>1800 bps</summary>
+        </member>
+        <member name="F:Sema.General.SerialComms.BaudFlags.BAUD_2400">
+            <summary>2400 bps</summary>
+        </member>
+        <member name="F:Sema.General.SerialComms.BaudFlags.BAUD_4800">
+            <summary>4800 bps</summary>
+        </member>
+        <member name="F:Sema.General.SerialComms.BaudFlags.BAUD_7200">
+            <summary>7200 bps</summary>
+        </member>
+        <member name="F:Sema.General.SerialComms.BaudFlags.BAUD_9600">
+            <summary>9600 bps</summary>
+        </member>
+        <member name="F:Sema.General.SerialComms.BaudFlags.BAUD_14400">
+            <summary>14400 bps</summary>
+        </member>
+        <member name="F:Sema.General.SerialComms.BaudFlags.BAUD_19200">
+            <summary>19200 bps</summary>
+        </member>
+        <member name="F:Sema.General.SerialComms.BaudFlags.BAUD_38400">
+            <summary>38400 bps</summary>
+        </member>
+        <member name="F:Sema.General.SerialComms.BaudFlags.BAUD_56K">
+            <summary>56000 bps</summary>
+        </member>
+        <member name="F:Sema.General.SerialComms.BaudFlags.BAUD_57600">
+            <summary>57600 bps</summary>
+        </member>
+        <member name="F:Sema.General.SerialComms.BaudFlags.BAUD_115200">
+            <summary>115200 bps</summary>
+        </member>
+        <member name="F:Sema.General.SerialComms.BaudFlags.BAUD_128K">
+            <summary>128 kbps</summary>
+        </member>
+        <member name="F:Sema.General.SerialComms.BaudFlags.BAUD_USER">
+            <summary>User bps</summary>
+        </member>
+        <member name="T:Sema.General.Commandline">
+            <summary>
+            Command lines utilities class
+            </summary>
+        </member>
+        <member name="M:Sema.General.Commandline.ApplicationExit(System.Object,System.EventArgs)">
+            <summary>
+            Handler for when the application exits
+            </summary>
+            <param name="sender">sender object</param>
+            <param name="e">event args object</param>
+        </member>
+        <member name="M:Sema.General.Commandline.CommandLineHelp">
+            <summary>
+            Method to construct a command line help file
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.General.Commandline.AddCmdLineHelpLine(System.String,System.String)">
+            <summary>
+            Add a command line help description
+            </summary>
+            <param name="cmdlineopt">the command line option</param>
+            <param name="Descr">Description of commandline option</param>
+        </member>
+        <member name="M:Sema.General.Commandline.FindParam(System.String)">
+            *******************************************************************
+            <summary>
+            See how many command line params contain a specified string
+            </summary>
+            <param name="x">string to check for</param>
+            <returns>number of parameters that contain the string</returns>
+        </member>
+        <member name="M:Sema.General.Commandline.FindParamExact(System.String)">
+            *******************************************************************
+            <summary>
+            See how many command line params is equal to a specified string
+            </summary>
+            <param name="x">string to check for</param>
+            <returns>number of parameters that is equal to the string</returns>
+        </member>
+        <member name="M:Sema.General.Commandline.FindParamExact(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="x"></param>
+            <param name="Description"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.General.Commandline.SetStringParam(System.String,System.String@,System.String)">
+            <summary>
+            check if a command line parameter value was passed and replace val with the value (if found)
+            </summary>
+            <param name="param">command line parameter to look for (eg --logfile, to look for --logfile=somefilename.txt)</param>
+            <param name="val">ref value to be override by command line value if found</param>
+            <param name="Description">Description of the command line parameter</param>
+            <returns>true if value was changed, false if not</returns>
+        </member>
+        <member name="M:Sema.General.Commandline.FindParamValue(System.String)">
+            <summary>
+            return a string for a command line parameter of the --[parameter]=value
+            </summary>
+            <param name="x">command line paramater text</param>
+            <returns></returns>
+        </member>
+        <member name="P:Sema.General.Commandline.LegacyCommandLine">
+            <summary>
+            indicator of legacy command line methods (ie command line methods without proper descriptions)
+            </summary>
+        </member>
+        <member name="F:Sema.General.Commandline.CmdLineHelpLine.cmdlineopt">
+            <summary>
+            The command line option format
+            </summary>
+        </member>
+        <member name="F:Sema.General.Commandline.CmdLineHelpLine.Descr">
+            <summary>
+            A description of the command line
+            </summary>
+        </member>
+        <member name="M:Sema.General.Commandline.CmdLineHelpLine.#ctor(System.String,System.String)">
+            <summary>
+            struct constructor
+            </summary>
+            <param name="x">command line format</param>
+            <param name="y">command line description</param>
+        </member>
+        <member name="T:Sema.General.AppUtils">
+            <summary>
+            General application utilities
+            </summary>
+        </member>
+        <member name="M:Sema.General.AppUtils.ConfirmQuit">
+            <summary>
+            Show a dialog to confirm if the user wants to quit
+            </summary>
+            <returns>True if app can quit, false if not</returns>
+        </member>
+        <member name="T:Sema.General.ReflectionUtils">
+            <summary>
+            Utility class for reflection
+            </summary>
+        </member>
+        <member name="M:Sema.General.ReflectionUtils.GetMethodParameters">
+            <summary>
+            Get a method's parameters
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Sema.General.BCDutils">
+            <summary>
+            BCD utilities
+            </summary>
+        </member>
+        <member name="M:Sema.General.BCDutils.Int2Bcd4(System.Int32)">
+            <summary>
+            Convert a value to a BCD (4 digits)
+            </summary>
+            <param name="val">Integer to convert to BCD</param>
+            <returns>byte array (2 bytes)</returns>
+        </member>
+        <member name="T:Sema.SerializableList.GenericListSerializer`1">
+            <summary>
+            Generic list serializer 
+            </summary>
+        </member>
+        <member name="M:Sema.SerializableList.GenericListSerializer`1.#ctor(System.Collections.Generic.List{`0})">
+            <summary>
+            Creates a new instance of generic list serializer 
+            </summary>
+            <param name="interfaceList">Generic list of interface type</param>
+        </member>
+        <member name="M:Sema.SerializableList.GenericListSerializer`1.InitializeSerializers">
+            <summary>
+            Initializes all the type of XML serializers the
+            generic list requires 
+            </summary>
+        </member>
+        <member name="M:Sema.SerializableList.GenericListSerializer`1.Serialize(System.Xml.XmlWriter)">
+            <summary>
+            Serializes list 
+            </summary>
+            <param name="outputStream">Ouput stream to write the
+            serialized data</param>
+        </member>
+        <member name="M:Sema.SerializableList.GenericListSerializer`1.GetSerializerByTypeName(System.String)">
+            <summary>
+            Gets serializer by type name from internal XML serializers list 
+            If specific serializers doesn't exists adds it and returns it 
+            </summary>
+            <param name="typeName">Class type name</param>
+            <returns>XmlSerializer</returns>
+        </member>
+        <member name="T:Sema.SerializableList.GenericListDeSerializer`1">
+            <summary>
+            Generic List deserialiser class
+            </summary>
+            <typeparam name="T">List class to deserialise</typeparam>
+        </member>
+        <member name="M:Sema.SerializableList.GenericListDeSerializer`1.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Sema.SerializableList.GenericListDeSerializer`1.Deserialize(System.Xml.XmlReader,System.Collections.Generic.List{`0})">
+            <summary>
+            Deserializes list 
+            </summary>
+            <param name="inputStream">Input stream to write the
+            serialized data </param>
+            <param name="interfaceList">List to write </param>
+        </member>
+        <member name="M:Sema.SerializableList.GenericListDeSerializer`1.GetSerializerByTypeName(System.String)">
+            <summary>
+            Gets serializer by type name from internal XML serializers list 
+            If specific serializers doesn't exists adds it and returns it 
+            </summary>
+            <param name="typeName">Class type name</param>
+            <returns>XmlSerializer</returns> 
+        </member>
+        <member name="T:Sema.Dialogs.SerialportSetupForm">
+            <summary>
+            SerialportSetupForm is a form that can be displayed to allow the user to select
+            a communications port.
+            </summary>
+        </member>
+        <member name="M:Sema.Dialogs.SerialportSetupForm.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Sema.Dialogs.SerialportSetupForm.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            OK Button
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Sema.Dialogs.SerialportSetupForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Sema.Dialogs.SerialportSetupForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Sema.Dialogs.SerialportSetupForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Sema.Dialogs.SerialportSetupForm.SelectedComport">
+            <summary>
+            SelectedComport returns the selected communications port
+            </summary>
+        </member>
+        <member name="P:Sema.Dialogs.SerialportSetupForm.IRWakeupEnabled">
+            <summary>
+            Infra red wakeup enable option
+            </summary>
+        </member>
+        <member name="P:Sema.Dialogs.SerialportSetupForm.AllowBuadrateSelection">
+            <summary>
+            Property determines if the Buadrate selection is enabled
+            </summary>
+        </member>
+        <member name="P:Sema.Dialogs.SerialportSetupForm.ShowBaudRatesUponSelection">
+            <summary>
+            Flag to control whether the available buadrates should be shown if a COM port select is made;
+            </summary>
+        </member>
+        <member name="T:Sema.Xml.Serialization.XmlSerializable">
+            <summary>
+            Serializable object - inherit to use
+            WARNING - This class has never been tested! load Method is not completed!
+            </summary>
+        </member>
+        <member name="M:Sema.Xml.Serialization.XmlSerializable.Save(System.String)">
+            <summary>
+            Save method
+            </summary>
+            <param name="path">path to save to</param>
+        </member>
+        <member name="M:Sema.Xml.Serialization.XmlSerializable.Load(System.String)">
+            <summary>
+            Load method - NOT IMPLEMENTED - To be done in future!
+            </summary>
+            <param name="path">Path to load from</param>
+        </member>
+        <member name="T:Sema.StringUtils">
+            <summary>
+            Sema String utilities
+            </summary>
+        </member>
+        <member name="M:Sema.StringUtils.StringToNumericsOnly(System.String)">
+            <summary>
+            return only the numerics from dirty string 
+            </summary>
+            <param name="dirtystring">The string containng all kinds of chars</param>
+            <returns>Clean string</returns>
+        </member>
+        <member name="M:Sema.StringUtils.GetTextBetweenMarkers(System.String,System.String,System.String)">
+            <summary>
+            Returns the text string from a string between two other string markers
+            </summary>
+            <param name="origtext">Original Text to search in</param>
+            <param name="marker1">Text marker 1 to look for</param>
+            <param name="marker2">Text marker 2 to look for</param>
+            <returns>Text between markers (or empty string if nothing found)</returns>
+        </member>
+        <member name="M:Sema.StringUtils.RemoveComment(System.String,System.Char)">
+            <summary>
+            Remove a comment from a line, 
+            </summary>
+            <param name="s">string to remove comment from</param>
+            <param name="commentchar">character that starts the comment</param>
+            <returns>the string with the comment removed</returns>
+        </member>
+        <member name="M:Sema.StringUtils.FillToLength(System.String,System.Char,System.Int32)">
+            <summary>
+            Fill a string s to length l, using char c
+            </summary>
+            <param name="s">string to fill</param>
+            <param name="c">character to fill with</param>
+            <param name="l">length to fill to</param>
+            <returns>filled up string</returns>
+        </member>
+        <member name="M:Sema.StringUtils.VersionString(System.UInt16)">
+            <summary>
+            Convert a software version represented in a word to a version string
+            (ie 12345 = V 1.23.45)
+            </summary>
+            <param name="version">word representing the version</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.StringUtils.ConstCharArray(System.Char,System.Int32)">
+            <summary>
+            Method to create and return a constant character array of a specified length
+            </summary>
+            <param name="c">character to use in the initialisation of the array</param>
+            <param name="length">number of elemenets in the array</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.StringUtils.TextToFloat(System.String,System.Single,System.Single,System.Single)">
+            <summary>
+            Convert the text to a float, within the parameters given
+            </summary>
+            <param name="str">string to convert to a float</param>
+            <param name="min">minimum allowed value. If the string is less than this value, this value will be used</param>
+            <param name="def">default value. If an invalid value is entered, the answer will be equal to the default</param>
+            <param name="max">maximum allowed value. If the string is more than this value, this value will be used</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.StringUtils.BoolToString(System.Boolean,System.String,System.String)">
+            <summary>
+            Convert a boolean value to a string
+            </summary>
+            <param name="Value">Boolean to display</param>
+            <param name="truestring">String to return for a value that is true</param>
+            <param name="falsestring">String to return for a value that is false</param>
+        </member>
+        <member name="M:Sema.StringUtils.MaskedBoolToStr(System.UInt32,System.UInt32,System.String,System.String)">
+            <summary>
+            Returns a true/false string for a masked bit in a u32 (uint in C#, or System.UInt32) value
+            </summary>
+            <param name="value">Bitmasked value</param>
+            <param name="mask">Mask to test for</param>
+            <param name="truestring">Text for a value of non zero (Default = "True")</param>
+            <param name="falsestring">Text for a value of zero (Default = "False")</param>
+            <returns>string containg truestring or falsestring </returns>
+        </member>
+        <member name="M:Sema.StringUtils.MaskedBoolToYesNo(System.UInt32,System.UInt32)">
+            <summary>
+            Returns a "Yes"/"No" string for a masked bit in a u32 (uint in C#, or System.UInt32) value
+            </summary>
+            <param name="value">Bitmasked value</param>
+            <param name="mask">Mask to test for</param>
+            <returns>string containg "Yes" or "No"</returns>
+        </member>
+        <member name="M:Sema.StringUtils.MaskedBoolToActiveInactive(System.UInt32,System.UInt32)">
+            <summary>
+            Returns a "Active"/"Inactive" string for a masked bit in a u32 (uint in C#, or System.UInt32) value
+            </summary>
+            <param name="value">Bitmasked value</param>
+            <param name="mask">Mask to test for</param>
+            <returns>string containg "Active" or "Inactive"</returns>
+        </member>
+        <member name="M:Sema.StringUtils.MultiCharReplace(System.String,System.Char,System.String)">
+            <summary>
+            Replace multiple characters in a string with a particaluar character
+            </summary>
+            <param name="old_multichars">a string containg the characters to be replaced</param>
+            <param name="newchar">the new character to replace with</param>
+            <param name="str">the result string where characters hace been replaced</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.StringUtils.StringToIdentifier(System.String)">
+            <summary>
+            Convert a string so that it can be used as a identifier
+            </summary>
+            <param name="str">string description</param>
+            <returns>string to be used as an identifier</returns>
+        </member>
+        <member name="M:Sema.StringUtils.ConstCharStr(System.Char,System.Int32)">
+            <summary>
+            Returns a string filled with count x the specified char
+            </summary>
+            <param name="c">char to use</param>
+            <param name="count">number of chars</param>
+            <returns>string contain count x specified char</returns>
+        </member>
+        <member name="M:Sema.StringUtils.SplitOnSize(System.String,System.Int32,Sema.StringUtils.SplitOnSizeOptions)">
+            <summary>
+            Split a string into seperate string not bigger than a specified size
+            </summary>
+            <param name="str">string to split</param>
+            <param name="maxsize">maximum string size</param>
+            <param name="opt">split options</param>
+            <returns>array of strings</returns>
+        </member>
+        <member name="M:Sema.StringUtils.CountLeading(System.String,System.Char)">
+            <summary>
+            Count the number of occurences of the leading char c in string s
+            </summary>
+            <param name="s">string s to look in</param>
+            <param name="c">leading char c</param>
+            <returns>the number of leading characters c in string s</returns>
+        </member>
+        <member name="M:Sema.StringUtils.TrimFromLast(System.String,System.Char)">
+            <summary>
+            Trim all the text in s to the end from the last occurence of c
+            </summary>
+            <param name="s">string to trim</param>
+            <param name="c">c - last character to trim from onwards</param>
+            <returns>new trimmed string</returns>
+        </member>
+        <member name="M:Sema.StringUtils.IsZARCellPhoneNumber(System.String)">
+            <summary>
+            Tests if a string is a South African cellphone number
+            </summary>
+            <param name="num">Phone Number string</param>
+            <returns>true if cellphone number, false if not a cellphone number</returns>
+        </member>
+        <member name="T:Sema.StringUtils.SplitOnSizeOptions">
+            <summary>
+            Options for the SplitOnSize method
+            </summary>
+        </member>
+        <member name="F:Sema.StringUtils.SplitOnSizeOptions.WholeWords">
+            <summary>
+            When splitting, make sure whole words are kept together
+            </summary>
+        </member>
+        <member name="T:Sema.Supplier.PricingInfo">
+            <summary>
+            Pricing information on an item
+            </summary>
+        </member>
+        <member name="F:Sema.Supplier.PricingInfo.CallForPricing">
+            <summary>
+            Flag to indicate that web pricing is not available - supplier has given instructions to call 
+            for pricing
+            </summary>
+        </member>
+        <member name="F:Sema.Supplier.PricingInfo.SrcCost">
+            <summary>
+            Source cost value
+            </summary>
+        </member>
+        <member name="F:Sema.Supplier.PricingInfo.DestCost">
+            <summary>
+            Dest cost
+            </summary>
+        </member>
+        <member name="F:Sema.Supplier.PricingInfo.srcCurr">
+            <summary>
+            Source Currency
+            </summary>
+        </member>
+        <member name="F:Sema.Supplier.PricingInfo.destCurr">
+            <summary>
+            Dest Currency
+            </summary>
+        </member>
+        <member name="F:Sema.Supplier.PricingInfo.minqty">
+            <summary>
+            minimum quantity for which this price is valid
+            </summary>
+        </member>
+        <member name="F:Sema.Supplier.PricingInfo.maxqty">
+            <summary>
+            maximum quantity for which the price is valid
+            </summary>
+        </member>
+        <member name="M:Sema.Supplier.PricingInfo.#ctor(System.String,System.String,System.Double,System.Double,System.Int32,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="SrcCurrency">Source currency eg "USD"</param>
+            <param name="DestCurrency">Source currency eg "ZAR"</param>
+            <param name="SrcVal">Source Cost value (eg USD value)</param>
+            <param name="DestVal">Dest Cost value (eg ZAR value)</param>
+            <param name="min">Minimum for which the price is valid</param>
+            <param name="max">Maximum for which the price is valid</param>
+        </member>
+        <member name="M:Sema.Supplier.PricingInfo.#ctor(System.Boolean)">
+            <summary>
+            Constructor - use when we have to call for pricing (or on request only)
+            </summary>
+            <param name="fCallForPricing">Must be set to true, or an exception will be thrown</param>
+        </member>
+        <member name="T:Sema.Supplier.SupplierWebToolsBase">
+            <summary>
+            Base class for SupplierWebTools
+            </summary>
+        </member>
+        <member name="M:Sema.Supplier.SupplierWebToolsBase.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Sema.Supplier.SupplierWebToolsBase.Finalize">
+            <summary>
+            Destructor
+            </summary>
+        </member>
+        <member name="M:Sema.Supplier.SupplierWebToolsBase.BuildUrl(System.String)">
+            <summary>
+            Abstract function to build URL from partnumber
+            </summary>
+            <param name="pn">partnumber string</param>
+        </member>
+        <member name="M:Sema.Supplier.SupplierWebToolsBase.LoadPageData(System.String,System.String)">
+            <summary>
+            Load the page data for this supplier
+            </summary>
+            <param name="pn"></param>
+            <param name="ToCurrency">Currency to report the values in</param>
+        </member>
+        <member name="M:Sema.Supplier.SupplierWebToolsBase.GetPricingInfo">
+            <summary>
+            Get pricing information
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.Supplier.SupplierWebToolsBase.GetManufacturer">
+            <summary>
+            Abstract method to get string
+            </summary>
+            <returns>Manufacturer name</returns>
+        </member>
+        <member name="M:Sema.Supplier.SupplierWebToolsBase.GetManufacturerPartNo">
+            <summary>
+            Abstract Get Manufacturer Part number
+            </summary>
+            <returns>Manufacturer part number</returns>
+        </member>
+        <member name="P:Sema.Supplier.SupplierWebToolsBase.DefDestCurrency">
+            <summary>
+            Default destination currency
+            </summary>
+        </member>
+        <member name="P:Sema.Supplier.SupplierWebToolsBase.WebPageData">
+            <summary>
+            Webpage raw data
+            </summary>
+        </member>
+        <member name="P:Sema.Supplier.SupplierWebToolsBase.WebPageLines">
+            <summary>
+            WebpageLines = array of lines of html file
+            </summary>
+        </member>
+        <member name="P:Sema.Supplier.SupplierWebToolsBase.Url">
+            <summary>
+            Url property
+            </summary>
+        </member>
+        <member name="P:Sema.Supplier.SupplierWebToolsBase.PartNumber">
+            <summary>
+            Partnumber property
+            </summary>
+        </member>
+        <member name="P:Sema.Supplier.SupplierWebToolsBase.WebPageContent">
+            <summary>
+            Single string containing the entire webpage
+            </summary>
+        </member>
+        <member name="T:Sema.Supplier.DigikeyTools">
+            <summary>
+            Digikey supplier tools
+            </summary>
+        </member>
+        <member name="M:Sema.Supplier.DigikeyTools.#ctor">
+            <summary>
+            Digikey supplier class constructor
+            </summary>
+        </member>
+        <member name="M:Sema.Supplier.DigikeyTools.BuildUrl(System.String)">
+            <summary>
+            Build URL for Digikey
+            </summary>
+            <param name="pn">Partnumber</param>
+        </member>
+        <member name="M:Sema.Supplier.DigikeyTools.GetPricingInfo">
+            <summary>
+            Obtain pricing information from Digikey website
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.Supplier.DigikeyTools.GetManufacturer">
+            <summary>
+            Get the manufacturer from the webpage
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.Supplier.DigikeyTools.GetManufacturerPartNo">
+            <summary>
+            Get Manufacturer Part number for digikey page
+            </summary>
+            <returns>Manufacturer part number</returns>
+        </member>
+        <member name="T:Sema.Supplier.RFDesignWebTools">
+            <summary>
+            RF Design webtools base
+            </summary>
+        </member>
+        <member name="M:Sema.Supplier.RFDesignWebTools.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Sema.Supplier.RFDesignWebTools.GetManufacturerPartNo">
+            <summary>
+            Get The manufacturer part number
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.Supplier.RFDesignWebTools.GetManufacturer">
+            <summary>
+            Get the manufacturer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.Supplier.RFDesignWebTools.GetPricingInfo">
+            <summary>
+            Get the pricing info on the part from the website
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.Supplier.RFDesignWebTools.BuildUrl(System.String)">
+            <summary>
+            Build the website url
+            </summary>
+            <param name="pn"></param>
+        </member>
+        <member name="T:Sema.Supplier.MantechWebTools">
+            <summary>
+            Mantech Electronics website tools
+            </summary>
+        </member>
+        <member name="M:Sema.Supplier.MantechWebTools.BuildUrl(System.String)">
+            <summary>
+            Build the Mantech URL
+            </summary>
+            <param name="pn">Mantech stockcode</param>
+        </member>
+        <member name="M:Sema.Supplier.MantechWebTools.GetManufacturer">
+            <summary>
+            Get the manufacturer from the Mantech webpage
+            </summary>
+            <returns>Manufacturer string</returns>
+        </member>
+        <member name="M:Sema.Supplier.MantechWebTools.GetManufacturerPartNo">
+            <summary>
+            Get the manufacturer's partnumber from the mantech website
+            </summary>
+            <returns>Manufacturer's part number string</returns>
+        </member>
+        <member name="M:Sema.Supplier.MantechWebTools.GetPricingInfo">
+            <summary>
+             Get the pricing of the part from the Mantech website
+            </summary>
+            <returns>PricingInfo[] array</returns>
+        </member>
+        <member name="T:Sema.Supplier.OttoMarketingWebTools">
+            <summary>
+            Otto marketing webtools class
+            </summary>
+        </member>
+        <member name="M:Sema.Supplier.OttoMarketingWebTools.BuildUrl(System.String)">
+            <summary>
+            Build Url for Otto marketing
+            </summary>
+            <param name="pn"></param>
+        </member>
+        <member name="M:Sema.Supplier.OttoMarketingWebTools.GetManufacturer">
+            <summary>
+            Get manufacturer from otto marketing website
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.Supplier.OttoMarketingWebTools.GetManufacturerPartNo">
+            <summary>
+            Get the partnumber from the Otto marketing website
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.Supplier.OttoMarketingWebTools.GetPricingInfo">
+            <summary>
+            Get the pricing information from the otto marketing website
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Sema.Supplier.other_comp_tools">
+            <summary>
+            Inplementation for other components
+            In this case the component pricing is read from a database, thus strictly speaking
+            this class on not a webtool but a database tool.
+            </summary>
+        </member>
+        <member name="M:Sema.Supplier.other_comp_tools.#ctor">
+            <summary>
+            Constructor for other_comp_tools
+            </summary>
+        </member>
+        <member name="M:Sema.Supplier.other_comp_tools.GetManufacturer">
+            <summary>
+            Returns the manufacturer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.Supplier.other_comp_tools.GetSupplier">
+            <summary>
+            Returns the supplier
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.Supplier.other_comp_tools.GetSupplierCode">
+            <summary>
+            Returns the suppliercode
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.Supplier.other_comp_tools.GetManufacturerPartNo">
+            <summary>
+            returns the manuf part number
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.Supplier.other_comp_tools.GetPricingInfo">
+            <summary>
+            returns the pricing information
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.Supplier.other_comp_tools.LoadPricingInfo(System.String,MySql.Data.MySqlClient.MySqlConnection,System.String)">
+            <summary>
+            Load the pricing info for"other" parts from database
+            </summary>
+            <param name="pn"></param>
+            <param name="toCurrency"></param>
+            <param name="conn"></param>
+        </member>
+        <member name="T:Sema.Supplier.rswebtools">
+            <summary>
+            RS components supplier web tools
+            </summary>
+        </member>
+        <member name="M:Sema.Supplier.rswebtools.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="url">Url of part of the web (excl RS partnumer itself)</param>
+        </member>
+        <member name="M:Sema.Supplier.rswebtools.BuildUrl(System.String)">
+            <summary>
+            Build the RS web URL
+            </summary>
+            <param name="pn"></param>
+        </member>
+        <member name="M:Sema.Supplier.rswebtools.GetManufacturer">
+            <summary>
+            Get manufacturer from the RS website
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.Supplier.rswebtools.GetManufacturerPartNo">
+            <summary>
+            Get the manufacturer from the RS website
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.Supplier.rswebtools.GetPricingInfo">
+            <summary>
+            Get the pricing information from the RS website
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Sema.Supplier.MouserWebtools">
+            <summary>
+            Mouser website webtools
+            NOTE: mouser generic search url :
+            http://www.mouser.com/_/N-scv7?Keyword=
+            </summary>
+        </member>
+        <member name="M:Sema.Supplier.MouserWebtools.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Sema.Supplier.MouserWebtools.BuildUrl(System.String)">
+            <summary>
+            Build the URL string
+            </summary>
+            <param name="pn"></param>
+        </member>
+        <member name="M:Sema.Supplier.MouserWebtools.GetManufacturer">
+            <summary>
+            Gte manufacturer from Mouser website
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.Supplier.MouserWebtools.GetManufacturerPartNo">
+            <summary>
+            Get Manufcaturer partnumber from the mouser website
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sema.Supplier.MouserWebtools.GetPricingInfo">
+            <summary>
+            Return pricing info from the mouser website
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Sema.Supplier.OrderLine">
+            <summary>
+            Orderline structure - for individual lines on the order
+            </summary>
+        </member>
+        <member name="F:Sema.Supplier.OrderLine.Supplier_pn">
+            <summary>
+            The supplier's code
+            </summary>
+        </member>
+        <member name="F:Sema.Supplier.OrderLine.Manufacturer">
+            <summary>
+            Part manufacturer
+            </summary>
+        </member>
+        <member name="F:Sema.Supplier.OrderLine.Manufacturer_pn">
+            <summary>
+            Manufacturer's part number
+            </summary>
+        </member>
+        <member name="F:Sema.Supplier.OrderLine.CustomerRef">
+            <summary>
+            A customer reference item
+            </summary>
+        </member>
+        <member name="F:Sema.Supplier.OrderLine.qty">
+            <summary>
+            Quantity on orderline
+            </summary>
+        </member>
+        <member name="F:Sema.Supplier.OrderLine.recommended_moq">
+            <summary>
+            Recommended minimum buying quantity
+            </summary>
+        </member>
+        <member name="T:Sema.Supplier.SupplierOrderBase">
+            <summary>
+            Base class for automatic order generation
+            </summary>
+        </member>
+        <member name="F:Sema.Supplier.SupplierOrderBase.OrderLines">
+            <summary>
+            Order Lines (List of OrderLine)
+            </summary>
+        </member>
+        <member name="M:Sema.Supplier.SupplierOrderBase.ItemIsOnOrder(System.String)">
+            <summary>
+            Check if an item is already in the order
+            </summary>
+            <param name="pn">partnumber</param>
+            <returns>true if it is, false if it is not</returns>
+        </member>
+        <member name="M:Sema.Supplier.SupplierOrderBase.AddToOrderLine(System.String,System.Int32)">
+            <summary>
+            Add an amount to an existing partno on the orderlist
+            </summary>
+            <param name="pn"></param>
+            <param name="q"></param>
+        </member>
+        <member name="M:Sema.Supplier.SupplierOrderBase.#ctor">
+            <summary>
+            Constructor 
+            </summary>
+        </member>
+        <member name="M:Sema.Supplier.SupplierOrderBase.Finalize">
+            <summary>
+            Destructor
+            </summary>
+        </member>
+        <member name="M:Sema.Supplier.SupplierOrderBase.SaveToFile(System.String)">
+            <summary>
+            Abstract method to save order information to a file
+            </summary>
+            <param name="fn"></param>
+        </member>
+        <member name="T:Sema.Supplier.GenericOrder">
+            <summary>
+            A generic order class
+            </summary>
+        </member>
+        <member name="M:Sema.Supplier.GenericOrder.AddToOrder(System.String,System.Int32)">
+            <summary>
+            Add Item to order
+            </summary>
+            <param name="ordercode"></param>
+            <param name="qty"></param>
+        </member>
+        <member name="M:Sema.Supplier.GenericOrder.SaveToFile(System.String)">
+            <summary>
+            Save the order to a file that can be imported into spreadsheet software
+            </summary>
+            <param name="fn">filename to save to</param>
+        </member>
+        <member name="T:Sema.Supplier.RFDesignOrder">
+            <summary>
+            RF design orders are generic orders
+            </summary>
+        </member>
+        <member name="T:Sema.Supplier.MantechOrder">
+            <summary>
+            Mantech Electronics Order
+            </summary>
+        </member>
+        <member name="T:Sema.Supplier.OttoOrder">
+            <summary>
+            Otto Order class
+            </summary>
+        </member>
+        <member name="T:Sema.Supplier.RsOrder">
+            <summary>
+            RS component order class
+            </summary>
+        </member>
+        <member name="T:Sema.Supplier.OtherOrder">
+            <summary>
+            Other component orders
+            </summary>
+        </member>
+        <member name="T:Sema.Supplier.MouserOrder">
+            <summary>
+            Mouser orders
+            </summary>
+        </member>
+        <member name="T:Sema.Supplier.DigikeyOrder">
+            <summary>
+            Class to generate digikey orders
+            </summary>
+        </member>
+        <member name="M:Sema.Supplier.DigikeyOrder.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Sema.Supplier.DigikeyOrder.AddToOrder(System.String,System.String,System.String,System.Int32,System.String,System.Int32)">
+            <summary>
+            Add an item to the order
+            </summary>
+            <param name="dk_pn">Digikey partnumber</param>
+            <param name="manuf">Manufacturer</param>
+            <param name="Manuf_pn">Manufacturer partnumber</param>
+            <param name="Custref">Customer reference</param>
+            <param name="qty">Quantity</param>
+            <param name="rec_moq">Recommended buying quantity</param>
+        </member>
+        <member name="M:Sema.Supplier.DigikeyOrder.SaveToFile(System.String)">
+            <summary>
+            Save the order to a file that can be uploaded on digikey website
+            </summary>
+            <param name="fn">filename to save to</param>
+        </member>
+        <member name="T:Semalibs.TextParser">
+            <summary>
+            Text Parser class
+            </summary>
+        </member>
+        <member name="F:Semalibs.TextParser.NullChar">
+            <summary>
+            Null character
+            </summary>
+        </member>
+        <member name="M:Semalibs.TextParser.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Semalibs.TextParser.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="text">Text to parse</param>
+        </member>
+        <member name="M:Semalibs.TextParser.Reset">
+            <summary>
+            Resets the current position to the start of the current document
+            </summary>
+        </member>
+        <member name="M:Semalibs.TextParser.Reset(System.String)">
+            <summary>
+            Sets the current document and resets the current position to the start of it
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:Semalibs.TextParser.Peek">
+            <summary>
+            Returns the character at the current position, or a null character if we're
+            at the end of the document
+            </summary>
+            <returns>The character at the current position</returns>
+        </member>
+        <member name="M:Semalibs.TextParser.Peek(System.Int32)">
+            <summary>
+            Returns the character at the specified number of characters beyond the current
+            position, or a null character if the specified position is at the end of the
+            document
+            </summary>
+            <param name="ahead">The number of characters beyond the current position</param>
+            <returns>The character at the specified position</returns>
+        </member>
+        <member name="M:Semalibs.TextParser.Extract(System.Int32)">
+            <summary>
+            Extracts a substring from the specified position to the end of the text
+            </summary>
+            <param name="start"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Semalibs.TextParser.Extract(System.Int32,System.Int32)">
+            <summary>
+            Extracts a substring from the specified range of the current text
+            </summary>
+            <param name="start"></param>
+            <param name="end"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Semalibs.TextParser.MoveAhead">
+            <summary>
+            Moves the current position ahead one character
+            </summary>
+        </member>
+        <member name="M:Semalibs.TextParser.MoveAhead(System.Int32)">
+            <summary>
+            Moves the current position ahead the specified number of characters
+            </summary>
+            <param name="ahead">The number of characters to move ahead</param>
+        </member>
+        <member name="M:Semalibs.TextParser.MoveTo(System.String,System.Boolean)">
+            <summary>
+            Moves to the next occurrence of the specified string
+            </summary>
+            <param name="s">String to find</param>
+            <param name="ignoreCase">Indicates if case-insensitive comparisons
+            are used</param>
+        </member>
+        <member name="M:Semalibs.TextParser.MoveTo(System.Char)">
+            <summary>
+            Moves to the next occurrence of the specified character
+            </summary>
+            <param name="c">Character to find</param>
+        </member>
+        <member name="M:Semalibs.TextParser.MoveTo(System.Char[])">
+            <summary>
+            Moves to the next occurrence of any one of the specified
+            characters
+            </summary>
+            <param name="chars">Array of characters to find</param>
+        </member>
+        <member name="M:Semalibs.TextParser.MovePast(System.Char[])">
+            <summary>
+            Moves to the next occurrence of any character that is not one
+            of the specified characters
+            </summary>
+            <param name="chars">Array of characters to move past</param>
+        </member>
+        <member name="M:Semalibs.TextParser.IsInArray(System.Char,System.Char[])">
+            <summary>
+            Determines if the specified character exists in the specified
+            character array.
+            </summary>
+            <param name="c">Character to find</param>
+            <param name="chars">Character array to search</param>
+            <returns></returns>
+        </member>
+        <member name="M:Semalibs.TextParser.MoveToEndOfLine">
+            <summary>
+            Moves the current position to the first character that is part of a newline
+            </summary>
+        </member>
+        <member name="M:Semalibs.TextParser.MovePastWhitespace">
+            <summary>
+            Moves the current position to the next character that is not whitespace
+            </summary>
+        </member>
+        <member name="P:Semalibs.TextParser.Text">
+            <summary>
+            Text to parse
+            </summary>
+        </member>
+        <member name="P:Semalibs.TextParser.Position">
+            <summary>
+            Current Position
+            </summary>
+        </member>
+        <member name="P:Semalibs.TextParser.Remaining">
+            <summary>
+            Text remaining to be parsed
+            </summary>
+        </member>
+        <member name="P:Semalibs.TextParser.EndOfText">
+            <summary>
+            Indicates if the current position is at the end of the current document
+            </summary>
+        </member>
+        <member name="T:Sema.WebUtils">
+            <summary>
+            Various web utilities
+            </summary>
+        </member>
+        <member name="M:Sema.WebUtils.DownloadWebPage(System.String)">
+            <summary>
+            Returns the content of a given web adress as string.
+            </summary>
+            <param name="Url">URL of the webpage</param>
+            <returns>Website content</returns>
+        </member>
+        <member name="M:Sema.WebUtils.DoPOST(System.String,Sema.WebUtils.FormData[])">
+            <summary>
+            Do a post to a site and return the response in a string
+            </summary>
+            <param name="url">Website address</param>
+            <param name="frmdat">Array of formdata</param>
+            <returns>string response from website/service</returns>
+        </member>
+        <member name="T:Sema.WebUtils.FormData">
+            <summary>
+            structure to hold form POST data
+            </summary>
+        </member>
+        <member name="F:Sema.WebUtils.FormData.field">
+            <summary>
+            Field name
+            </summary>
+        </member>
+        <member name="F:Sema.WebUtils.FormData.value">
+            <summary>
+            Field value
+            </summary>
+        </member>
+        <member name="T:Sema.EmailUtilities">
+            <summary>
+            Email address utilities
+            </summary>
+        </member>
+        <member name="M:Sema.EmailUtilities.IsValidEmail(System.String)">
+            <summary>
+            Check if a string is a vlid email address
+            </summary>
+            <param name="strIn">E-mail address to check</param>
+            <returns>true if input text is a valid email address, false otherwise</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Semalibs">
+</Property><Property Name="Solution File" Value="C:\Sema\Projects\libs\dotNET\Semalibs\Semalibs.sln">
+</Property><Property Name="User Options File" Value="C:\Sema\Projects\libs\dotNET\Semalibs\Semalibs.suo">
+</Property><Property Name="Date" Value="05 September 2010">
+</Property><Property Name="Time" Value="11:06 AM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Semalibs.sln" Description="File successfully backed up as C:\Sema\Projects\libs\dotNET\Semalibs\Backup\Semalibs.sln">
+</Event><Event ErrorLevel="0" Project="" Source="Semalibs.suo" Description="File successfully backed up as C:\Sema\Projects\libs\dotNET\Semalibs\Backup\Semalibs.suo">
+</Event><Event ErrorLevel="0" Project="Semalibs" Source="Semalibs\Semalibs.csproj" Description="Project file successfully backed up as C:\Sema\Projects\libs\dotNET\Semalibs\Backup\Semalibs\Semalibs.csproj">
+</Event><Event ErrorLevel="0" Project="Semalibs" Source="Semalibs\Semalibs.csproj.user" Description="Project user file successfully backed up as C:\Sema\Projects\libs\dotNET\Semalibs\Backup\Semalibs\Semalibs.csproj.user">
+</Event><Event ErrorLevel="0" Project="Semalibs" Source="Semalibs\AboutBox.cs" Description="File successfully backed up as C:\Sema\Projects\libs\dotNET\Semalibs\Backup\Semalibs\AboutBox.cs">
+</Event><Event ErrorLevel="0" Project="Semalibs" Source="Semalibs\AboutBox.designer.cs" Description="File successfully backed up as C:\Sema\Projects\libs\dotNET\Semalibs\Backup\Semalibs\AboutBox.designer.cs">
+</Event><Event ErrorLevel="0" Project="Semalibs" Source="Semalibs\ArrayUtils.cs" Description="File successfully backed up as C:\Sema\Projects\libs\dotNET\Semalibs\Backup\Semalibs\ArrayUtils.cs">
+</Event><Event ErrorLevel="0" Project="Semalibs" Source="Semalibs\CalibrationEntry.cs" Description="File successfully backed up as C:\Sema\Projects\libs\dotNET\Semalibs\Backup\Semalibs\CalibrationEntry.cs">
+</Event><Event ErrorLevel="0" Project="Semalibs" Source="Semalibs\FileUtils.cs" Description="File successfully backed up as C:\Sema\Projects\libs\dotNET\Semalibs\Backup\Semalibs\FileUtils.cs">
+</Event><Event ErrorLevel="0" Project="Semalibs" Source="Semalibs\FormUtils.cs" Description="File successfully backed up as C:\Sema\Projects\libs\dotNET\Semalibs\Backup\Semalibs\FormUtils.cs">
+</Event><Event ErrorLevel="0" Project="Semalibs" Source="Semalibs\Instrumentation.cs" Description="File successfully backed up as C:\Sema\Projects\libs\dotNET\Semalibs\Backup\Semalibs\Instrumentation.cs">
+</Event><Event ErrorLevel="0" Project="Semalibs" Source="Semalibs\ListView.cs" Description="File successfully backed up as C:\Sema\Projects\libs\dotNET\Semalibs\Backup\Semalibs\ListView.cs">
+</Event><Event ErrorLevel="0" Project="Semalibs" Source="Semalibs\sema.cs" Description="File successfully backed up as C:\Sema\Projects\libs\dotNET\Semalibs\Backup\Semalibs\sema.cs">
+</Event><Event ErrorLevel="0" Project="Semalibs" Source="Semalibs\General.cs" Description="File successfully backed up as C:\Sema\Projects\libs\dotNET\Semalibs\Backup\Semalibs\General.cs">
+</Event><Event ErrorLevel="0" Project="Semalibs" Source="Semalibs\Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\Sema\Projects\libs\dotNET\Semalibs\Backup\Semalibs\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Semalibs" Source="Semalibs\SerialportSetupForm.cs" Description="File successfully backed up as C:\Sema\Projects\libs\dotNET\Semalibs\Backup\Semalibs\SerialportSetupForm.cs">
+</Event><Event ErrorLevel="0" Project="Semalibs" Source="Semalibs\SerialportSetupForm.designer.cs" Description="File successfully backed up as C:\Sema\Projects\libs\dotNET\Semalibs\Backup\Semalibs\SerialportSetupForm.designer.cs">
+</Event><Event ErrorLevel="0" Project="Semalibs" Source="Semalibs\Settings.cs" Description="File successfully backed up as C:\Sema\Projects\libs\dotNET\Semalibs\Backup\Semalibs\Settings.cs">
+</Event><Event ErrorLevel="0" Project="Semalibs" Source="Semalibs\String.cs" Description="File successfully backed up as C:\Sema\Projects\libs\dotNET\Semalibs\Backup\Semalibs\String.cs">
+</Event><Event ErrorLevel="0" Project="Semalibs" Source="Semalibs\AboutBox.resx" Description="File successfully backed up as C:\Sema\Projects\libs\dotNET\Semalibs\Backup\Semalibs\AboutBox.resx">
+</Event><Event ErrorLevel="0" Project="Semalibs" Source="Semalibs\SerialportSetupForm.resx" Description="File successfully backed up as C:\Sema\Projects\libs\dotNET\Semalibs\Backup\Semalibs\SerialportSetupForm.resx">
+</Event><Event ErrorLevel="0" Project="Semalibs" Source="Semalibs\Semalibs.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Semalibs" Source="Semalibs\Semalibs.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Semalibs.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Semalibs.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Semalibs" Source="Semalibs\Semalibs.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>
