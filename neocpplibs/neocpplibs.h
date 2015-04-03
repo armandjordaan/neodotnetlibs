@@ -173,7 +173,7 @@ Library.
 
 using namespace System;
 
-namespace Sema {
+namespace neolibs {
 namespace CPP {
 
 	public ref class ClassTypes
@@ -199,4 +199,4 @@ namespace CPP {
 	};
 
 } // end namespace CPP
-} // end namespace Sema
+} // end namespace neolibs

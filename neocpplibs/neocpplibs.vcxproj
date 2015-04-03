@@ -55,7 +55,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>C:\Sema\Projects\libs\clibs\header;C:\sema\projects\Libs\dotNET\Semacpplibs\Semacpplibs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\armand\ownCloud\Projects\Libs\dotnet\neolibs\neoclibs\header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>S_COMMS_MAX_DATA=128;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -75,7 +75,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Sema\Projects\libs\clibs\header;C:\sema\projects\Libs\dotNET\Semacpplibs\Semacpplibs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\armand\ownCloud\Projects\Libs\dotnet\neolibs\neoclibs\header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>S_COMMS_MAX_DATA=2048;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -95,6 +95,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Reference Include="HID class">
+      <HintPath>..\ext\HID class.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
       <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
@@ -117,7 +120,7 @@
     <ClCompile Include="comms.cpp" />
     <ClCompile Include="FormUtils.cpp" />
     <ClCompile Include="Hexreader.cpp" />
-    <ClCompile Include="Semacpplibs.cpp" />
+    <ClCompile Include="neocpplibs.cpp" />
     <ClCompile Include="Stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -127,8 +130,8 @@
     <ClInclude Include="comms.h" />
     <ClInclude Include="FormUtils.h" />
     <ClInclude Include="Hexreader.h" />
+    <ClInclude Include="neocpplibs.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="Semacpplibs.h" />
     <ClInclude Include="Stdafx.h" />
   </ItemGroup>
   <ItemGroup>

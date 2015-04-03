@@ -170,10 +170,10 @@ Library.
 // This is the main DLL file.
 
 #include "stdafx.h"
-#include "Semacpplibs.h"
+#include "neocpplibs.h"
 #include <memory.h>
 
-namespace Sema {
+namespace neolibs {
 namespace CPP {
 
 
@@ -197,7 +197,7 @@ array<unsigned char>^ Convert::ConvertToCLIArray(void* ptr, int len)
 	}
 	catch(Exception^ e)
 	{
-		throw gcnew Sema::SemaException("Cannot create CLI array in Convert::ConvertToCLIArray.",e);
+		throw gcnew neolibs::NeoException("Cannot create CLI array in Convert::ConvertToCLIArray.",e);
 	}
 }
 
@@ -220,7 +220,7 @@ void Convert::ConvertCLIArrayToCArray(array<unsigned char>^ arr, void* ptr, int 
 	}
 	catch(Exception^ e)
 	{
-		throw gcnew Sema::SemaException("Cannot copy CLI array in Convert::ConvertCLIArrayToCArray.",e);
+		throw gcnew neolibs::NeoException("Cannot copy CLI array in Convert::ConvertCLIArrayToCArray.",e);
 	}
 }
 
@@ -243,7 +243,7 @@ void Convert::ConvertStringtoCharArray(String^ str, char* chstr, int maxlen)
 	}
 	catch(Exception^ e)
 	{
-		throw gcnew Sema::SemaException("Cannot convert String^ to char array.",e);
+		throw gcnew neolibs::NeoException("Cannot convert String^ to char array.",e);
 	}
 }
 
@@ -268,7 +268,7 @@ String^ NullTerminatedStringUtils::GetTextByIndex(char *Text, int strlength, int
 	}
 	catch(...)
 	{
-		throw gcnew SemaException("Error in determining Text based on index");
+		throw gcnew NeoException("Error in determining Text based on index");
 	}
 }		
 

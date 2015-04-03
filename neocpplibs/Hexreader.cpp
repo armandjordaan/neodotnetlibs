@@ -473,7 +473,7 @@ bool THexUtils::WriteFile(String^ Filename,array<Byte>^ Buffer,
     }
     catch(Exception^ e)
     {
-		throw gcnew Sema::SemaException("Problem with THexUtils::WriteFile",e);
+		throw gcnew neolibs::NeoException("Problem with THexUtils::WriteFile",e);
     }
 }
 

@@ -537,6 +537,18 @@
             <param name="val">value to remove</param>
             <returns>new string with removed items</returns>
         </member>
+        <member name="T:neolibs.Extensions.ListViewExtensions">
+            <summary>
+            ListView class extension methods
+            </summary>
+        </member>
+        <member name="M:neolibs.Extensions.ListViewExtensions.ShowStringList(System.Windows.Forms.ListView,System.Collections.Generic.List{System.String})">
+            <summary>
+            Show a list of strings in a listview
+            </summary>
+            <param name="lv">Listview</param>
+            <param name="s">list of strings</param>
+        </member>
         <member name="T:neolibs.FileUtils.HtmlFileWriter">
             <summary>
             Neo Systems's HTML writer class (to write html to a file)
@@ -855,6 +867,87 @@
             </summary>
             <param name="fn">fn = filename to write to</param>
             <param name="lb">lb = Listbox items to write</param>
+        </member>
+        <member name="T:neolibs.Math">
+            <summary>
+            Neo Systems Math libraries
+            </summary>
+        </member>
+        <member name="M:neolibs.Math.RotateRight(System.UInt32,System.Int32)">
+            <summary>
+            Rotate a uint value right
+            </summary>
+            <param name="original">The value to rotate</param>
+            <param name="bits">Number of bits to rotate by</param>
+            <returns>uint value equals the rotated answer</returns>
+        </member>
+        <member name="M:neolibs.Math.RotateLeft(System.UInt32,System.Int32)">
+            <summary>
+            Rotate a uint value left
+            </summary>
+            <param name="original">The value to rotate</param>
+            <param name="bits">Number of bits to rotate by</param>
+            <returns>uint value equals the rotated answer</returns>
+        </member>
+        <member name="M:neolibs.Math.ArithmeticShiftRight(System.UInt32,System.Int32)">
+            <summary>
+            Perform an arithmetic shift right
+            </summary>
+            <param name="original">The value to arithmetically shift</param>
+            <param name="bits">Number of bits to shift by</param>
+            <returns>uint value equals the arithmetically shifted answer</returns>
+        </member>
+        <member name="T:neolibs.Math.RollingAverage`1">
+            <summary>
+            Rolling average class
+            </summary>
+            <typeparam name="T">type to use for rolling average calculation</typeparam>
+        </member>
+        <member name="M:neolibs.Math.RollingAverage`1.#ctor(System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="ra_size">Number of elements in rolling buffer</param>
+        </member>
+        <member name="M:neolibs.Math.RollingAverage`1.#ctor">
+            <summary>
+            Constructor (defaults to 100 elements in buffer)
+            </summary>
+        </member>
+        <member name="M:neolibs.Math.RollingAverage`1.Input(`0)">
+            <summary>
+            Add a new sample into the rolling buffer.
+            </summary>
+            <param name="val">Type of the buffer</param>
+        </member>
+        <member name="M:neolibs.Math.RollingAverage`1.GetAverage">
+            <summary>
+            Returns the current value of the rolling average
+            </summary>
+            <returns>double = value of the average</returns>
+        </member>
+        <member name="T:neolibs.NeoException">
+            <summary>
+            NeoException is a Custom exception for Neo Systems appplications
+            </summary>
+        </member>
+        <member name="F:neolibs.NeoException.LastError">
+            <summary>
+            A string containing the last error than was recorded
+            </summary>
+        </member>
+        <member name="M:neolibs.NeoException.#ctor(System.String,System.Exception)">
+            <summary>
+            NeoException Constructor
+            </summary>
+            <param name="Err">Last Error message</param>
+            <param name="e">e is the inner exception that caused the problem</param>
+        </member>
+        <member name="M:neolibs.NeoException.#ctor(System.String)">
+            <summary>
+            neoException Constructor
+            </summary>
+            <param name="Err">Last Error message</param>
         </member>
         <member name="T:neolibs.scanf">
             <summary>
@@ -1177,29 +1270,6 @@
             Exception thrown when text on a control cannot be set
             </summary>
         </member>
-        <member name="T:neolibs.NeoException">
-            <summary>
-            NeoException is a Custom exception for Neo Systems appplications
-            </summary>
-        </member>
-        <member name="F:neolibs.NeoException.LastError">
-            <summary>
-            A string containing the last error than was recorded
-            </summary>
-        </member>
-        <member name="M:neolibs.NeoException.#ctor(System.String,System.Exception)">
-            <summary>
-            NeoException Constructor
-            </summary>
-            <param name="Err">Last Error message</param>
-            <param name="e">e is the inner exception that caused the problem</param>
-        </member>
-        <member name="M:neolibs.NeoException.#ctor(System.String)">
-            <summary>
-            neoException Constructor
-            </summary>
-            <param name="Err">Last Error message</param>
-        </member>
         <member name="M:neolibs.InstrumentationTextFailed.#ctor(System.String)">
             <summary>
             Constructor
@@ -1385,64 +1455,6 @@
             Clear all the checkboxes in a listview
             </summary>
             <param name="lv">Listview object</param>     
-        </member>
-        <member name="T:neolibs.Math">
-            <summary>
-            Neo Systems Math libraries
-            </summary>
-        </member>
-        <member name="M:neolibs.Math.RotateRight(System.UInt32,System.Int32)">
-            <summary>
-            Rotate a uint value right
-            </summary>
-            <param name="original">The value to rotate</param>
-            <param name="bits">Number of bits to rotate by</param>
-            <returns>uint value equals the rotated answer</returns>
-        </member>
-        <member name="M:neolibs.Math.RotateLeft(System.UInt32,System.Int32)">
-            <summary>
-            Rotate a uint value left
-            </summary>
-            <param name="original">The value to rotate</param>
-            <param name="bits">Number of bits to rotate by</param>
-            <returns>uint value equals the rotated answer</returns>
-        </member>
-        <member name="M:neolibs.Math.ArithmeticShiftRight(System.UInt32,System.Int32)">
-            <summary>
-            Perform an arithmetic shift right
-            </summary>
-            <param name="original">The value to arithmetically shift</param>
-            <param name="bits">Number of bits to shift by</param>
-            <returns>uint value equals the arithmetically shifted answer</returns>
-        </member>
-        <member name="T:neolibs.Math.RollingAverage`1">
-            <summary>
-            Rolling average class
-            </summary>
-            <typeparam name="T">type to use for rolling average calculation</typeparam>
-        </member>
-        <member name="M:neolibs.Math.RollingAverage`1.#ctor(System.Int32)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="ra_size">Number of elements in rolling buffer</param>
-        </member>
-        <member name="M:neolibs.Math.RollingAverage`1.#ctor">
-            <summary>
-            Constructor (defaults to 100 elements in buffer)
-            </summary>
-        </member>
-        <member name="M:neolibs.Math.RollingAverage`1.Input(`0)">
-            <summary>
-            Add a new sample into the rolling buffer.
-            </summary>
-            <param name="val">Type of the buffer</param>
-        </member>
-        <member name="M:neolibs.Math.RollingAverage`1.GetAverage">
-            <summary>
-            Returns the current value of the rolling average
-            </summary>
-            <returns>double = value of the average</returns>
         </member>
         <member name="T:neolibs.General.SimpleCountDownTimer">
             <summary>
@@ -2852,6 +2864,26 @@
             </summary>
             <param name="strIn">E-mail address to check</param>
             <returns>true if input text is a valid email address, false otherwise</returns>
+        </member>
+        <member name="T:neolibs.WebUtilsExtensions">
+            <summary>
+            webutils extension methods class
+            </summary>
+        </member>
+        <member name="M:neolibs.WebUtilsExtensions.WaitForDownload(System.Windows.Forms.WebBrowser)">
+            <summary>
+            Extension method to wait until a page is fully downloaded.
+            Will fully block any further execution on thread unitl page complete
+            </summary>
+            <param name="wb">webbrowser ref</param>
+        </member>
+        <member name="M:neolibs.WebUtilsExtensions.WaitTime(System.Windows.Forms.WebBrowser,System.Int32)">
+            <summary>
+            Wait for a certain time to expire while the browser does its thing
+            This routine will wait in chunks of 100 ms
+            </summary>
+            <param name="wb">webbrowser ref</param>
+            <param name="time_in_ms">time in ms to wait</param>
         </member>
     </members>
 </doc>
