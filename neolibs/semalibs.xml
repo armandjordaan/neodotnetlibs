@@ -20,23 +20,6 @@
             Constructor
             </summary>
         </member>
-        <member name="F:neolibs.Dialogs.AboutBox.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:neolibs.Dialogs.AboutBox.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:neolibs.Dialogs.AboutBox.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
         <member name="P:neolibs.Dialogs.AboutBox.AppEntryAssembly">
             <summary>
             returns the entry assembly for the current application domain
@@ -105,6 +88,110 @@
         <member name="P:neolibs.Dialogs.AboutBox.AppDetailsButton">
             <summary>
             determines if the "Details" (advanced assembly details) button is shown
+            </summary>
+        </member>
+        <member name="F:neolibs.Dialogs.AboutBox.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:neolibs.Dialogs.AboutBox.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:neolibs.Dialogs.AboutBox.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:neolibs.Dialogs.SelectErrorModeForm">
+            <summary>
+            SelectErrorModeForm is a predefined form for selecting error display modes
+            </summary>
+        </member>
+        <member name="M:neolibs.Dialogs.SelectErrorModeForm.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:neolibs.Dialogs.SelectErrorModeForm.ErrorMode">
+            <summary>
+            ErrorMode is a property that reflects the error mode currently in the form
+            </summary>
+        </member>
+        <member name="F:neolibs.Dialogs.SelectErrorModeForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:neolibs.Dialogs.SelectErrorModeForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:neolibs.Dialogs.SelectErrorModeForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:neolibs.Dialogs.SerialportSetupForm">
+            <summary>
+            SerialportSetupForm is a form that can be displayed to allow the user to select
+            a communications port.
+            </summary>
+        </member>
+        <member name="P:neolibs.Dialogs.SerialportSetupForm.SelectedComport">
+            <summary>
+            SelectedComport returns the selected communications port
+            </summary>
+        </member>
+        <member name="P:neolibs.Dialogs.SerialportSetupForm.IRWakeupEnabled">
+            <summary>
+            Infra red wakeup enable option
+            </summary>
+        </member>
+        <member name="P:neolibs.Dialogs.SerialportSetupForm.AllowBuadrateSelection">
+            <summary>
+            Property determines if the Buadrate selection is enabled
+            </summary>
+        </member>
+        <member name="P:neolibs.Dialogs.SerialportSetupForm.ShowBaudRatesUponSelection">
+            <summary>
+            Flag to control whether the available buadrates should be shown if a COM port select is made;
+            </summary>
+        </member>
+        <member name="M:neolibs.Dialogs.SerialportSetupForm.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:neolibs.Dialogs.SerialportSetupForm.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            OK Button
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:neolibs.Dialogs.SerialportSetupForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:neolibs.Dialogs.SerialportSetupForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:neolibs.Dialogs.SerialportSetupForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
             </summary>
         </member>
         <member name="T:neolibs.ArrayUtils">
@@ -405,6 +492,57 @@
             <param name="x">Combobox instance</param>
             <param name="initialDropDownWidth">Width to start with</param>
         </member>
+        <member name="T:neolibs.ControlUtils.DoubleBufferedListView">
+            <summary>
+            DoubbleBufferedListView can be used for a listview that does not flicker when updated
+            </summary>
+        </member>
+        <member name="M:neolibs.ControlUtils.DoubleBufferedListView.#ctor">
+            <summary>
+            DoubbleBufferedListView constructor
+            </summary>
+        </member>
+        <member name="T:neolibs.ControlUtils.ListViewUtils">
+            <summary>
+            ListviewUtils contains various static methods for use with listviews
+            </summary>
+        </member>
+        <member name="M:neolibs.ControlUtils.ListViewUtils.SaveListview(System.Windows.Forms.ListView,System.String)">
+            <summary>
+            Save the contents of a listview to a file (Columns are tab separated)
+            </summary>
+            <param name="lv">Listview component</param>
+            <param name="Filename">Name of file to save to</param>
+        </member>
+        <member name="M:neolibs.ControlUtils.ListViewUtils.LoadListview(System.Windows.Forms.ListView,System.String)">
+            <summary>
+            LoadListview loads the contents of a listview from a file  (Columns are tab separated)
+            </summary>
+            <param name="lv">Listview component</param>
+            <param name="Filename">Name of file to read from</param>
+        </member>
+        <member name="M:neolibs.ControlUtils.ListViewUtils.ShowFlagsInListview(System.Windows.Forms.ListView,System.UInt32,System.Int32)">
+            <summary>
+            ShowFlagsInListview can be used to display a uint flag's values in a listview
+            </summary>
+            <param name="lv">Listview object</param>
+            <param name="value">uint Value to break down</param>
+            <param name="numflags">Number of flags (assume packed from LSB)</param>
+        </member>
+        <member name="M:neolibs.ControlUtils.ListViewUtils.GetFlagsFromListview(System.Windows.Forms.ListView,System.Int32)">
+            <summary>
+            GetFlagsFromListview can be used to pack the checkboxes in a listview into a uint
+            </summary>
+            <param name="lv">Listview object</param>
+            <param name="numflags">Number of flags (will be packed from LSB to MSB)</param>
+            <returns></returns>
+        </member>
+        <member name="M:neolibs.ControlUtils.ListViewUtils.ClearAllFlagsInListview(System.Windows.Forms.ListView)">
+            <summary>
+            Clear all the checkboxes in a listview
+            </summary>
+            <param name="lv">Listview object</param>     
+        </member>
         <member name="T:neolibs.CurrencyConverter">
             <summary>
             Currency converter information
@@ -549,6 +687,33 @@
             <param name="lv">Listview</param>
             <param name="s">list of strings</param>
         </member>
+        <member name="T:neolibs.Extensions.ListExtensions">
+            <summary>
+            List extension methods
+            </summary>
+        </member>
+        <member name="M:neolibs.Extensions.ListExtensions.ContainsAnyOf``1(System.Collections.Generic.List{``0},``0[])">
+            <summary>
+            Checks if a list contains any of the items in an array
+            </summary>
+            <typeparam name="T">Type</typeparam>
+            <param name="list">list class ref</param>
+            <param name="arr">array of items to check against</param>
+        </member>
+        <member name="T:neolibs.Extensions.StringExtensions">
+            <summary>
+            string class extensions
+            </summary>
+        </member>
+        <member name="M:neolibs.Extensions.StringExtensions.Contains(System.String,System.String,System.StringComparison)">
+            <summary>
+            case insensitive contains
+            </summary>
+            <param name="source">source class</param>
+            <param name="toCheck">string to check for contains</param>
+            <param name="comp">comparison type</param>
+            <returns></returns>
+        </member>
         <member name="T:neolibs.FileUtils.HtmlFileWriter">
             <summary>
             Neo Systems's HTML writer class (to write html to a file)
@@ -562,6 +727,11 @@
         <member name="F:neolibs.FileUtils.HtmlFileWriter.SW">
             <summary>
             StringWriter instance for  HTMLFIleWriter
+            </summary>
+        </member>
+        <member name="P:neolibs.FileUtils.HtmlFileWriter.HMTLFilename">
+            <summary>
+            Filename to write HTML to
             </summary>
         </member>
         <member name="M:neolibs.FileUtils.HtmlFileWriter.#ctor(System.IO.TextWriter)">
@@ -582,15 +752,17 @@
             <param name="filename">filename to write to</param>
             <returns>HtmlFileWriter class instance</returns>
         </member>
-        <member name="P:neolibs.FileUtils.HtmlFileWriter.HMTLFilename">
-            <summary>
-            Filename to write HTML to
-            </summary>
-        </member>
         <member name="T:neolibs.FileUtils.General">
             <summary>
             General file utilities
             </summary>
+        </member>
+        <member name="T:neolibs.FileUtils.General.DoForFile">
+            <summary>
+            Delegate method for repeated performing an operation on files
+            </summary>
+            <param name="Filename"></param>
+            <returns>true if success, false if error occured</returns>
         </member>
         <member name="M:neolibs.FileUtils.General.DoForAllFiles(System.String,System.String,neolibs.FileUtils.General.DoForFile,System.Boolean)">
             <summary>
@@ -652,13 +824,6 @@
             <param name="filename"></param>
             <param name="text"></param>
         </member>
-        <member name="T:neolibs.FileUtils.General.DoForFile">
-            <summary>
-            Delegate method for repeated performing an operation on files
-            </summary>
-            <param name="Filename"></param>
-            <returns>true if success, false if error occured</returns>
-        </member>
         <member name="T:neolibs.FileUtils.Xml`1">
             <summary>
             Various XML tools
@@ -687,6 +852,11 @@
             CSVWriter is based on StreamWriter and is used to write simple CSV files
             </summary>
         </member>
+        <member name="P:neolibs.FileUtils.CSVWriter.SeparationCharacter">
+            <summary>
+            SeparationCharacter is the CSV separation character
+            </summary>
+        </member>
         <member name="M:neolibs.FileUtils.CSVWriter.#ctor(System.String)">
             <summary>
             Constructor for CSVWrite class to write to a CSV file
@@ -704,36 +874,9 @@
             Write a newline to the CSV file
             </summary>
         </member>
-        <member name="P:neolibs.FileUtils.CSVWriter.SeparationCharacter">
-            <summary>
-            SeparationCharacter is the CSV separation character
-            </summary>
-        </member>
         <member name="T:neolibs.FileUtils.SimpleLogger">
             <summary>
             A simple logger class to log application events
-            </summary>
-        </member>
-        <member name="M:neolibs.FileUtils.SimpleLogger.#cctor">
-            <summary>
-            Simple logger static constructor 
-            </summary>
-        </member>
-        <member name="M:neolibs.FileUtils.SimpleLogger.Log(neolibs.FileUtils.SimpleLogger.LogLevel,System.String)">
-            <summary>
-            Log data to the current log file
-            </summary>
-            <param name="l">Loglevel to log this message</param>
-            <param name="s">message to log</param>
-        </member>
-        <member name="P:neolibs.FileUtils.SimpleLogger.Level">
-            <summary>
-            Current logger level property 
-            </summary>
-        </member>
-        <member name="P:neolibs.FileUtils.SimpleLogger.Filename">
-            <summary>
-            Current logger filename property
             </summary>
         </member>
         <member name="T:neolibs.FileUtils.SimpleLogger.LogLevel">
@@ -780,6 +923,56 @@
             <summary>
             Log All
             </summary>
+        </member>
+        <member name="P:neolibs.FileUtils.SimpleLogger.Level">
+            <summary>
+            Current logger level property 
+            </summary>
+        </member>
+        <member name="P:neolibs.FileUtils.SimpleLogger.Filename">
+            <summary>
+            Current logger filename property
+            </summary>
+        </member>
+        <member name="M:neolibs.FileUtils.SimpleLogger.#cctor">
+            <summary>
+            Simple logger static constructor 
+            </summary>
+        </member>
+        <member name="M:neolibs.FileUtils.SimpleLogger.Log(neolibs.FileUtils.SimpleLogger.LogLevel,System.String)">
+            <summary>
+            Log data to the current log file
+            </summary>
+            <param name="l">Loglevel to log this message</param>
+            <param name="s">message to log</param>
+        </member>
+        <member name="T:neolibs.FileUtils.PatternMatch">
+            <summary>
+            class with file pattern match methods
+            </summary>
+        </member>
+        <member name="M:neolibs.FileUtils.PatternMatch.FindMatchingFiles(System.String,System.String[])">
+            <summary>
+            Find matching file patterns in an array
+            </summary>
+            <param name="pattern">pattern to find</param>
+            <param name="names">file name array</param>
+            <returns>string with matching names</returns>
+        </member>
+        <member name="T:neolibs.FileUtils.FindFilesPatternToRegex">
+            <summary>
+            Class with method to convert a file pattern to a Regex value
+            
+            Courtesy of user sprite on http://stackoverflow.com/questions/652037/how-do-i-check-if-a-filename-matches-a-wildcard-pattern
+            
+            </summary>
+        </member>
+        <member name="M:neolibs.FileUtils.FindFilesPatternToRegex.Convert(System.String)">
+            <summary>
+            Convert a file pattern to a regex value
+            </summary>
+            <param name="pattern">File Pattern</param>
+            <returns>Regex value</returns>
         </member>
         <member name="T:neolibs.IBaseApplication">
             <summary>
@@ -868,34 +1061,39 @@
             <param name="fn">fn = filename to write to</param>
             <param name="lb">lb = Listbox items to write</param>
         </member>
+        <member name="T:neolibs.NeoConsole">
+            <summary>
+            neo Systems specific console methods
+            </summary>
+        </member>
+        <member name="M:neolibs.NeoConsole.WriteError(System.String)">
+            <summary>
+            Write error (changes color to red for error text)
+            </summary>
+            <param name="s">Text to write</param>
+        </member>
+        <member name="M:neolibs.NeoConsole.WriteLineError(System.String)">
+            <summary>
+            Write Line error (changes color to red for error text)
+            </summary>
+            <param name="s">Text to write</param>
+        </member>
+        <member name="M:neolibs.NeoConsole.WriteSuccess(System.String)">
+            <summary>
+            Write success (changes color to green for success text)
+            </summary>
+            <param name="s">Text to write</param>
+        </member>
+        <member name="M:neolibs.NeoConsole.WriteLineSuccess(System.String)">
+            <summary>
+            Write Line success (changes color to green for success text)
+            </summary>
+            <param name="s">Text to write</param>
+        </member>
         <member name="T:neolibs.Math">
             <summary>
             Neo Systems Math libraries
             </summary>
-        </member>
-        <member name="M:neolibs.Math.RotateRight(System.UInt32,System.Int32)">
-            <summary>
-            Rotate a uint value right
-            </summary>
-            <param name="original">The value to rotate</param>
-            <param name="bits">Number of bits to rotate by</param>
-            <returns>uint value equals the rotated answer</returns>
-        </member>
-        <member name="M:neolibs.Math.RotateLeft(System.UInt32,System.Int32)">
-            <summary>
-            Rotate a uint value left
-            </summary>
-            <param name="original">The value to rotate</param>
-            <param name="bits">Number of bits to rotate by</param>
-            <returns>uint value equals the rotated answer</returns>
-        </member>
-        <member name="M:neolibs.Math.ArithmeticShiftRight(System.UInt32,System.Int32)">
-            <summary>
-            Perform an arithmetic shift right
-            </summary>
-            <param name="original">The value to arithmetically shift</param>
-            <param name="bits">Number of bits to shift by</param>
-            <returns>uint value equals the arithmetically shifted answer</returns>
         </member>
         <member name="T:neolibs.Math.RollingAverage`1">
             <summary>
@@ -926,6 +1124,30 @@
             </summary>
             <returns>double = value of the average</returns>
         </member>
+        <member name="M:neolibs.Math.RotateRight(System.UInt32,System.Int32)">
+            <summary>
+            Rotate a uint value right
+            </summary>
+            <param name="original">The value to rotate</param>
+            <param name="bits">Number of bits to rotate by</param>
+            <returns>uint value equals the rotated answer</returns>
+        </member>
+        <member name="M:neolibs.Math.RotateLeft(System.UInt32,System.Int32)">
+            <summary>
+            Rotate a uint value left
+            </summary>
+            <param name="original">The value to rotate</param>
+            <param name="bits">Number of bits to rotate by</param>
+            <returns>uint value equals the rotated answer</returns>
+        </member>
+        <member name="M:neolibs.Math.ArithmeticShiftRight(System.UInt32,System.Int32)">
+            <summary>
+            Perform an arithmetic shift right
+            </summary>
+            <param name="original">The value to arithmetically shift</param>
+            <param name="bits">Number of bits to shift by</param>
+            <returns>uint value equals the arithmetically shifted answer</returns>
+        </member>
         <member name="T:neolibs.NeoException">
             <summary>
             NeoException is a Custom exception for Neo Systems appplications
@@ -953,71 +1175,6 @@
             <summary>
             Class that provides functionality of the standard C library sscanf()
             function.
-            </summary>
-        </member>
-        <member name="F:neolibs.scanf._typeParsers">
-            <summary>
-            Lookup table to find parser by parser type 
-            </summary>
-        </member>
-        <member name="F:neolibs.scanf.Results">
-            <summary>
-            Holds results after calling Parse()
-            </summary>
-        </member>
-        <member name="M:neolibs.scanf.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
-        <member name="M:neolibs.scanf.Parse(System.String,System.String)">
-            <summary>
-            Parses the input string according to the rules in the
-            format string. Similar to the standard C library's
-            sscanf() function. Parsed fields are placed in the
-            class' Results member.
-            </summary>
-            <param name="input">String to parse</param>
-            <param name="format">Specifies rules for parsing input</param>
-        </member>
-        <member name="M:neolibs.scanf.ParseFormatSpecifier(neolibs.TextParser,neolibs.scanf.FormatSpecifier)">
-            <summary>
-            Attempts to parse a field format specifier from the format string.
-            </summary>
-        </member>
-        <member name="M:neolibs.scanf.ParseCharacter(neolibs.TextParser,neolibs.scanf.FormatSpecifier)">
-            <summary>
-            Parse a character field
-            </summary>
-        </member>
-        <member name="M:neolibs.scanf.ParseDecimal(neolibs.TextParser,neolibs.scanf.FormatSpecifier)">
-            <summary>
-            Parse integer field
-            </summary>
-        </member>
-        <member name="M:neolibs.scanf.ParseFloat(neolibs.TextParser,neolibs.scanf.FormatSpecifier)">
-            <summary>
-            Parse a floating-point field
-            </summary>
-        </member>
-        <member name="M:neolibs.scanf.ParseHexadecimal(neolibs.TextParser,neolibs.scanf.FormatSpecifier)">
-            <summary>
-            Parse hexadecimal field
-            </summary>
-        </member>
-        <member name="M:neolibs.scanf.ParseOctal(neolibs.TextParser,neolibs.scanf.FormatSpecifier)">
-            <summary>
-            Parse an octal field
-            </summary>
-        </member>
-        <member name="M:neolibs.scanf.ParseScanSet(neolibs.TextParser,neolibs.scanf.FormatSpecifier)">
-            <summary>
-            Parse a scan-set field
-            </summary>
-        </member>
-        <member name="M:neolibs.scanf.ParseString(neolibs.TextParser,neolibs.scanf.FormatSpecifier)">
-            <summary>
-            Parse a string field
             </summary>
         </member>
         <member name="T:neolibs.scanf.Types">
@@ -1154,6 +1311,71 @@
             Scanset exclude
             </summary>
         </member>
+        <member name="F:neolibs.scanf._typeParsers">
+            <summary>
+            Lookup table to find parser by parser type 
+            </summary>
+        </member>
+        <member name="F:neolibs.scanf.Results">
+            <summary>
+            Holds results after calling Parse()
+            </summary>
+        </member>
+        <member name="M:neolibs.scanf.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:neolibs.scanf.Parse(System.String,System.String)">
+            <summary>
+            Parses the input string according to the rules in the
+            format string. Similar to the standard C library's
+            sscanf() function. Parsed fields are placed in the
+            class' Results member.
+            </summary>
+            <param name="input">String to parse</param>
+            <param name="format">Specifies rules for parsing input</param>
+        </member>
+        <member name="M:neolibs.scanf.ParseFormatSpecifier(neolibs.TextParser,neolibs.scanf.FormatSpecifier)">
+            <summary>
+            Attempts to parse a field format specifier from the format string.
+            </summary>
+        </member>
+        <member name="M:neolibs.scanf.ParseCharacter(neolibs.TextParser,neolibs.scanf.FormatSpecifier)">
+            <summary>
+            Parse a character field
+            </summary>
+        </member>
+        <member name="M:neolibs.scanf.ParseDecimal(neolibs.TextParser,neolibs.scanf.FormatSpecifier)">
+            <summary>
+            Parse integer field
+            </summary>
+        </member>
+        <member name="M:neolibs.scanf.ParseFloat(neolibs.TextParser,neolibs.scanf.FormatSpecifier)">
+            <summary>
+            Parse a floating-point field
+            </summary>
+        </member>
+        <member name="M:neolibs.scanf.ParseHexadecimal(neolibs.TextParser,neolibs.scanf.FormatSpecifier)">
+            <summary>
+            Parse hexadecimal field
+            </summary>
+        </member>
+        <member name="M:neolibs.scanf.ParseOctal(neolibs.TextParser,neolibs.scanf.FormatSpecifier)">
+            <summary>
+            Parse an octal field
+            </summary>
+        </member>
+        <member name="M:neolibs.scanf.ParseScanSet(neolibs.TextParser,neolibs.scanf.FormatSpecifier)">
+            <summary>
+            Parse a scan-set field
+            </summary>
+        </member>
+        <member name="M:neolibs.scanf.ParseString(neolibs.TextParser,neolibs.scanf.FormatSpecifier)">
+            <summary>
+            Parse a string field
+            </summary>
+        </member>
         <member name="T:neolibs.Scanning.Scanner">
             <summary>
             Summary description for Scanner.
@@ -1216,38 +1438,6 @@
             Exceptions that are thrown by this namespace and the Scanner Class
             </summary>
         </member>
-        <member name="T:neolibs.Dialogs.SelectErrorModeForm">
-            <summary>
-            SelectErrorModeForm is a predefined form for selecting error display modes
-            </summary>
-        </member>
-        <member name="M:neolibs.Dialogs.SelectErrorModeForm.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
-        <member name="F:neolibs.Dialogs.SelectErrorModeForm.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:neolibs.Dialogs.SelectErrorModeForm.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:neolibs.Dialogs.SelectErrorModeForm.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="P:neolibs.Dialogs.SelectErrorModeForm.ErrorMode">
-            <summary>
-            ErrorMode is a property that reflects the error mode currently in the form
-            </summary>
-        </member>
         <member name="T:neolibs.Forms.FormUtils">
             <summary>
             FormUtils is a class with a number of helper routines for forms
@@ -1305,6 +1495,11 @@
         <member name="T:neolibs.Instrumentation">
             <summary>
             Instrumentation class - contains various methods used to display values for telemetry
+            </summary>
+        </member>
+        <member name="P:neolibs.Instrumentation.InvalidDisplayString">
+            <summary>
+            Text used to indicate that a display is invalid
             </summary>
         </member>
         <member name="M:neolibs.Instrumentation.SetControlText(System.Windows.Forms.Control,System.String,System.Boolean)">
@@ -1389,11 +1584,6 @@
             <param name="max">maximum value</param>
             <param name="value">progress value</param>
         </member>
-        <member name="P:neolibs.Instrumentation.InvalidDisplayString">
-            <summary>
-            Text used to indicate that a display is invalid
-            </summary>
-        </member>
         <member name="T:neolibs.InstrumentConnectorBase">
             <summary>
             Connects data to some display
@@ -1404,57 +1594,6 @@
             <summary>
             InstrumentConnectorBase constructor
             </summary>
-        </member>
-        <member name="T:neolibs.ControlUtils.DoubleBufferedListView">
-            <summary>
-            DoubbleBufferedListView can be used for a listview that does not flicker when updated
-            </summary>
-        </member>
-        <member name="M:neolibs.ControlUtils.DoubleBufferedListView.#ctor">
-            <summary>
-            DoubbleBufferedListView constructor
-            </summary>
-        </member>
-        <member name="T:neolibs.ControlUtils.ListViewUtils">
-            <summary>
-            ListviewUtils contains various static methods for use with listviews
-            </summary>
-        </member>
-        <member name="M:neolibs.ControlUtils.ListViewUtils.SaveListview(System.Windows.Forms.ListView,System.String)">
-            <summary>
-            Save the contents of a listview to a file (Columns are tab separated)
-            </summary>
-            <param name="lv">Listview component</param>
-            <param name="Filename">Name of file to save to</param>
-        </member>
-        <member name="M:neolibs.ControlUtils.ListViewUtils.LoadListview(System.Windows.Forms.ListView,System.String)">
-            <summary>
-            LoadListview loads the contents of a listview from a file  (Columns are tab separated)
-            </summary>
-            <param name="lv">Listview component</param>
-            <param name="Filename">Name of file to read from</param>
-        </member>
-        <member name="M:neolibs.ControlUtils.ListViewUtils.ShowFlagsInListview(System.Windows.Forms.ListView,System.UInt32,System.Int32)">
-            <summary>
-            ShowFlagsInListview can be used to display a uint flag's values in a listview
-            </summary>
-            <param name="lv">Listview object</param>
-            <param name="value">uint Value to break down</param>
-            <param name="numflags">Number of flags (assume packed from LSB)</param>
-        </member>
-        <member name="M:neolibs.ControlUtils.ListViewUtils.GetFlagsFromListview(System.Windows.Forms.ListView,System.Int32)">
-            <summary>
-            GetFlagsFromListview can be used to pack the checkboxes in a listview into a uint
-            </summary>
-            <param name="lv">Listview object</param>
-            <param name="numflags">Number of flags (will be packed from LSB to MSB)</param>
-            <returns></returns>
-        </member>
-        <member name="M:neolibs.ControlUtils.ListViewUtils.ClearAllFlagsInListview(System.Windows.Forms.ListView)">
-            <summary>
-            Clear all the checkboxes in a listview
-            </summary>
-            <param name="lv">Listview object</param>     
         </member>
         <member name="T:neolibs.General.SimpleCountDownTimer">
             <summary>
@@ -1469,17 +1608,17 @@
             </summary>
             <param name="Seconds">The number of seconds the countdown timer is to count down</param>
         </member>
-        <member name="M:neolibs.General.SimpleCountDownTimer.Reload(System.Int64)">
-            <summary>
-            Method to reload the timer with a new timeout value
-            </summary>
-            <param name="Seconds">Time to reload the timer with</param>
-        </member>
         <member name="P:neolibs.General.SimpleCountDownTimer.Timeout">
             <summary>
             Timeout is a property that can be read to determine if teh countdown has expired.
             It is true if the set amount of time has passed, false otherwise
             </summary>
+        </member>
+        <member name="M:neolibs.General.SimpleCountDownTimer.Reload(System.Int64)">
+            <summary>
+            Method to reload the timer with a new timeout value
+            </summary>
+            <param name="Seconds">Time to reload the timer with</param>
         </member>
         <member name="T:neolibs.General.TimeUtils">
             <summary>
@@ -1551,6 +1690,21 @@
             various error handling methods
             </summary>
         </member>
+        <member name="T:neolibs.General.Error.ErrorModeType">
+            <summary>
+            ErrorModeType has the settings that can be applied to the way an error is displayed
+            </summary>
+        </member>
+        <member name="F:neolibs.General.Error.ErrorModeType.DisplayFullMessage">
+            <summary>
+            DisplayFullMessage can be used to display all error codes with the full exception context
+            </summary>
+        </member>
+        <member name="F:neolibs.General.Error.ErrorModeType.DisplayShortMessage">
+            <summary>
+            DisplayShortMessage is used to display an error, but without the full exception context
+            </summary>
+        </member>
         <member name="F:neolibs.General.Error.ErrorMode">
             <summary>
             ErrorMode controls the way errors are displayed currently
@@ -1581,21 +1735,6 @@
             </summary>
             <param name="msg">This is the user text message</param>
             <param name="e">This is the exception to display</param>
-        </member>
-        <member name="T:neolibs.General.Error.ErrorModeType">
-            <summary>
-            ErrorModeType has the settings that can be applied to the way an error is displayed
-            </summary>
-        </member>
-        <member name="F:neolibs.General.Error.ErrorModeType.DisplayFullMessage">
-            <summary>
-            DisplayFullMessage can be used to display all error codes with the full exception context
-            </summary>
-        </member>
-        <member name="F:neolibs.General.Error.ErrorModeType.DisplayShortMessage">
-            <summary>
-            DisplayShortMessage is used to display an error, but without the full exception context
-            </summary>
         </member>
         <member name="T:neolibs.General.TypeUtils">
             <summary>
@@ -1649,20 +1788,6 @@
             <summary>
             General Serialcomms functions
             </summary>
-        </member>
-        <member name="M:neolibs.General.SerialComms.GetMaxBaudrate(System.String)">
-            <summary>
-            GetMaxBaudrate determines the maximum baudrate for portName
-            </summary>
-            <param name="portName">Name of com port</param>
-            <returns>Maximum Buadrate or -1 if an error occurred</returns>
-        </member>
-        <member name="M:neolibs.General.SerialComms.BuadrateMaskToString(System.Int32)">
-            <summary>
-            Convert a baudrate mask to a string to display
-            </summary>
-            <param name="x">x = baudrate capability mask</param>
-            <returns>string containing available baudrates</returns>
         </member>
         <member name="T:neolibs.General.SerialComms.BaudFlags">
             <summary>
@@ -1729,6 +1854,20 @@
         <member name="F:neolibs.General.SerialComms.BaudFlags.BAUD_USER">
             <summary>User bps</summary>
         </member>
+        <member name="M:neolibs.General.SerialComms.GetMaxBaudrate(System.String)">
+            <summary>
+            GetMaxBaudrate determines the maximum baudrate for portName
+            </summary>
+            <param name="portName">Name of com port</param>
+            <returns>Maximum Buadrate or -1 if an error occurred</returns>
+        </member>
+        <member name="M:neolibs.General.SerialComms.BuadrateMaskToString(System.Int32)">
+            <summary>
+            Convert a baudrate mask to a string to display
+            </summary>
+            <param name="x">x = baudrate capability mask</param>
+            <returns>string containing available baudrates</returns>
+        </member>
         <member name="T:neolibs.General.Commandline">
             <summary>
             Command lines utilities class
@@ -1740,6 +1879,28 @@
             </summary>
             <param name="sender">sender object</param>
             <param name="e">event args object</param>
+        </member>
+        <member name="P:neolibs.General.Commandline.LegacyCommandLine">
+            <summary>
+            indicator of legacy command line methods (ie command line methods without proper descriptions)
+            </summary>
+        </member>
+        <member name="F:neolibs.General.Commandline.CmdLineHelpLine.cmdlineopt">
+            <summary>
+            The command line option format
+            </summary>
+        </member>
+        <member name="F:neolibs.General.Commandline.CmdLineHelpLine.Descr">
+            <summary>
+            A description of the command line
+            </summary>
+        </member>
+        <member name="M:neolibs.General.Commandline.CmdLineHelpLine.#ctor(System.String,System.String)">
+            <summary>
+            struct constructor
+            </summary>
+            <param name="x">command line format</param>
+            <param name="y">command line description</param>
         </member>
         <member name="M:neolibs.General.Commandline.CommandLineHelp">
             <summary>
@@ -1792,29 +1953,7 @@
             return a string for a command line parameter of the --[parameter]=value
             </summary>
             <param name="x">command line paramater text</param>
-            <returns></returns>
-        </member>
-        <member name="P:neolibs.General.Commandline.LegacyCommandLine">
-            <summary>
-            indicator of legacy command line methods (ie command line methods without proper descriptions)
-            </summary>
-        </member>
-        <member name="F:neolibs.General.Commandline.CmdLineHelpLine.cmdlineopt">
-            <summary>
-            The command line option format
-            </summary>
-        </member>
-        <member name="F:neolibs.General.Commandline.CmdLineHelpLine.Descr">
-            <summary>
-            A description of the command line
-            </summary>
-        </member>
-        <member name="M:neolibs.General.Commandline.CmdLineHelpLine.#ctor(System.String,System.String)">
-            <summary>
-            struct constructor
-            </summary>
-            <param name="x">command line format</param>
-            <param name="y">command line description</param>
+            <returns>returns the value of the parameter</returns>
         </member>
         <member name="T:neolibs.General.AppUtils">
             <summary>
@@ -1908,61 +2047,6 @@
             </summary>
             <param name="typeName">Class type name</param>
             <returns>XmlSerializer</returns> 
-        </member>
-        <member name="T:neolibs.Dialogs.SerialportSetupForm">
-            <summary>
-            SerialportSetupForm is a form that can be displayed to allow the user to select
-            a communications port.
-            </summary>
-        </member>
-        <member name="M:neolibs.Dialogs.SerialportSetupForm.#ctor">
-            <summary>
-            Constructor
-            </summary>
-        </member>
-        <member name="M:neolibs.Dialogs.SerialportSetupForm.button1_Click(System.Object,System.EventArgs)">
-            <summary>
-            OK Button
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="F:neolibs.Dialogs.SerialportSetupForm.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:neolibs.Dialogs.SerialportSetupForm.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:neolibs.Dialogs.SerialportSetupForm.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="P:neolibs.Dialogs.SerialportSetupForm.SelectedComport">
-            <summary>
-            SelectedComport returns the selected communications port
-            </summary>
-        </member>
-        <member name="P:neolibs.Dialogs.SerialportSetupForm.IRWakeupEnabled">
-            <summary>
-            Infra red wakeup enable option
-            </summary>
-        </member>
-        <member name="P:neolibs.Dialogs.SerialportSetupForm.AllowBuadrateSelection">
-            <summary>
-            Property determines if the Buadrate selection is enabled
-            </summary>
-        </member>
-        <member name="P:neolibs.Dialogs.SerialportSetupForm.ShowBaudRatesUponSelection">
-            <summary>
-            Flag to control whether the available buadrates should be shown if a COM port select is made;
-            </summary>
         </member>
         <member name="T:neolibs.Xml.Serialization.XmlSerializable">
             <summary>
@@ -2104,6 +2188,16 @@
             <param name="count">number of chars</param>
             <returns>string contain count x specified char</returns>
         </member>
+        <member name="T:neolibs.StringUtils.SplitOnSizeOptions">
+            <summary>
+            Options for the SplitOnSize method
+            </summary>
+        </member>
+        <member name="F:neolibs.StringUtils.SplitOnSizeOptions.WholeWords">
+            <summary>
+            When splitting, make sure whole words are kept together
+            </summary>
+        </member>
         <member name="M:neolibs.StringUtils.SplitOnSize(System.String,System.Int32,neolibs.StringUtils.SplitOnSizeOptions)">
             <summary>
             Split a string into seperate string not bigger than a specified size
@@ -2135,16 +2229,6 @@
             </summary>
             <param name="num">Phone Number string</param>
             <returns>true if cellphone number, false if not a cellphone number</returns>
-        </member>
-        <member name="T:neolibs.StringUtils.SplitOnSizeOptions">
-            <summary>
-            Options for the SplitOnSize method
-            </summary>
-        </member>
-        <member name="F:neolibs.StringUtils.SplitOnSizeOptions.WholeWords">
-            <summary>
-            When splitting, make sure whole words are kept together
-            </summary>
         </member>
         <member name="T:neolibs.Supplier.PricingInfo">
             <summary>
@@ -2219,6 +2303,36 @@
             Destructor
             </summary>
         </member>
+        <member name="P:neolibs.Supplier.SupplierWebToolsBase.DefDestCurrency">
+            <summary>
+            Default destination currency
+            </summary>
+        </member>
+        <member name="P:neolibs.Supplier.SupplierWebToolsBase.WebPageData">
+            <summary>
+            Webpage raw data
+            </summary>
+        </member>
+        <member name="P:neolibs.Supplier.SupplierWebToolsBase.WebPageLines">
+            <summary>
+            WebpageLines = array of lines of html file
+            </summary>
+        </member>
+        <member name="P:neolibs.Supplier.SupplierWebToolsBase.Url">
+            <summary>
+            Url property
+            </summary>
+        </member>
+        <member name="P:neolibs.Supplier.SupplierWebToolsBase.PartNumber">
+            <summary>
+            Partnumber property
+            </summary>
+        </member>
+        <member name="P:neolibs.Supplier.SupplierWebToolsBase.WebPageContent">
+            <summary>
+            Single string containing the entire webpage
+            </summary>
+        </member>
         <member name="M:neolibs.Supplier.SupplierWebToolsBase.BuildUrl(System.String)">
             <summary>
             Abstract function to build URL from partnumber
@@ -2249,36 +2363,6 @@
             Abstract Get Manufacturer Part number
             </summary>
             <returns>Manufacturer part number</returns>
-        </member>
-        <member name="P:neolibs.Supplier.SupplierWebToolsBase.DefDestCurrency">
-            <summary>
-            Default destination currency
-            </summary>
-        </member>
-        <member name="P:neolibs.Supplier.SupplierWebToolsBase.WebPageData">
-            <summary>
-            Webpage raw data
-            </summary>
-        </member>
-        <member name="P:neolibs.Supplier.SupplierWebToolsBase.WebPageLines">
-            <summary>
-            WebpageLines = array of lines of html file
-            </summary>
-        </member>
-        <member name="P:neolibs.Supplier.SupplierWebToolsBase.Url">
-            <summary>
-            Url property
-            </summary>
-        </member>
-        <member name="P:neolibs.Supplier.SupplierWebToolsBase.PartNumber">
-            <summary>
-            Partnumber property
-            </summary>
-        </member>
-        <member name="P:neolibs.Supplier.SupplierWebToolsBase.WebPageContent">
-            <summary>
-            Single string containing the entire webpage
-            </summary>
         </member>
         <member name="T:neolibs.Supplier.DigikeyTools">
             <summary>
@@ -2682,6 +2766,21 @@
             Text Parser class
             </summary>
         </member>
+        <member name="P:neolibs.TextParser.Text">
+            <summary>
+            Text to parse
+            </summary>
+        </member>
+        <member name="P:neolibs.TextParser.Position">
+            <summary>
+            Current Position
+            </summary>
+        </member>
+        <member name="P:neolibs.TextParser.Remaining">
+            <summary>
+            Text remaining to be parsed
+            </summary>
+        </member>
         <member name="F:neolibs.TextParser.NullChar">
             <summary>
             Null character
@@ -2708,6 +2807,11 @@
             Sets the current document and resets the current position to the start of it
             </summary>
             <param name="text"></param>
+        </member>
+        <member name="P:neolibs.TextParser.EndOfText">
+            <summary>
+            Indicates if the current position is at the end of the current document
+            </summary>
         </member>
         <member name="M:neolibs.TextParser.Peek">
             <summary>
@@ -2798,26 +2902,6 @@
             Moves the current position to the next character that is not whitespace
             </summary>
         </member>
-        <member name="P:neolibs.TextParser.Text">
-            <summary>
-            Text to parse
-            </summary>
-        </member>
-        <member name="P:neolibs.TextParser.Position">
-            <summary>
-            Current Position
-            </summary>
-        </member>
-        <member name="P:neolibs.TextParser.Remaining">
-            <summary>
-            Text remaining to be parsed
-            </summary>
-        </member>
-        <member name="P:neolibs.TextParser.EndOfText">
-            <summary>
-            Indicates if the current position is at the end of the current document
-            </summary>
-        </member>
         <member name="T:neolibs.WebUtils">
             <summary>
             Various web utilities
@@ -2829,14 +2913,6 @@
             </summary>
             <param name="Url">URL of the webpage</param>
             <returns>Website content</returns>
-        </member>
-        <member name="M:neolibs.WebUtils.DoPOST(System.String,neolibs.WebUtils.FormData[])">
-            <summary>
-            Do a post to a site and return the response in a string
-            </summary>
-            <param name="url">Website address</param>
-            <param name="frmdat">Array of formdata</param>
-            <returns>string response from website/service</returns>
         </member>
         <member name="T:neolibs.WebUtils.FormData">
             <summary>
@@ -2852,6 +2928,14 @@
             <summary>
             Field value
             </summary>
+        </member>
+        <member name="M:neolibs.WebUtils.DoPOST(System.String,neolibs.WebUtils.FormData[])">
+            <summary>
+            Do a post to a site and return the response in a string
+            </summary>
+            <param name="url">Website address</param>
+            <param name="frmdat">Array of formdata</param>
+            <returns>string response from website/service</returns>
         </member>
         <member name="T:neolibs.EmailUtilities">
             <summary>

@@ -71,6 +71,7 @@
     <Compile Include="IBaseApplication.cs" />
     <Compile Include="ImageUtils.cs" />
     <Compile Include="ListBoxUtils.cs" />
+    <Compile Include="NeoConsole.cs" />
     <Compile Include="neolibs.cs" />
     <Compile Include="scanf.cs" />
     <Compile Include="Scanner.cs" />

@@ -940,7 +940,7 @@ namespace neolibs.General
         /// return a string for a command line parameter of the --[parameter]=value
         /// </summary>
         /// <param name="x">command line paramater text</param>
-        /// <returns></returns>
+        /// <returns>returns the value of the parameter</returns>
         public static string FindParamValue(string x)
         {
             string   param = x + "=";

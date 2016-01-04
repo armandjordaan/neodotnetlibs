@@ -176,6 +176,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Diagnostics;
 using System.Web.UI;
+using System.Text.RegularExpressions;
 
 using neolibs;
 
@@ -637,6 +638,88 @@ namespace neolibs.FileUtils
             sw.Close();
 
             mut.ReleaseMutex();
+        }
+    }
+
+    /// <summary>
+    /// class with file pattern match methods
+    /// </summary>
+    public static class PatternMatch
+    {
+        /// <summary>
+        /// Find matching file patterns in an array
+        /// </summary>
+        /// <param name="pattern">pattern to find</param>
+        /// <param name="names">file name array</param>
+        /// <returns>string with matching names</returns>
+        public static string[] FindMatchingFiles(string pattern, string[] names)
+        {
+            List<string> matches = new List<string>();
+            Regex regex = FindFilesPatternToRegex.Convert(pattern);
+            foreach (string s in names)
+            {
+                if (regex.IsMatch(s))
+                {
+                    matches.Add(s);
+                }
+            }
+            return matches.ToArray();
+        }
+    }
+
+    /// <summary>
+    /// Class with method to convert a file pattern to a Regex value
+    /// 
+    /// Courtesy of user sprite on http://stackoverflow.com/questions/652037/how-do-i-check-if-a-filename-matches-a-wildcard-pattern
+    /// 
+    /// </summary>
+    public static class FindFilesPatternToRegex
+    {
+        private static Regex HasQuestionMarkRegEx = new Regex(@"\?", RegexOptions.Compiled);
+        private static Regex IllegalCharactersRegex = new Regex("[" + @"\/:<>|" + "\"]", RegexOptions.Compiled);
+        private static Regex CatchExtentionRegex = new Regex(@"^\s*.+\.([^\.]+)\s*$", RegexOptions.Compiled);
+        private static string NonDotCharacters = @"[^.]*";
+
+        /// <summary>
+        /// Convert a file pattern to a regex value
+        /// </summary>
+        /// <param name="pattern">File Pattern</param>
+        /// <returns>Regex value</returns>
+        public static Regex Convert(string pattern)
+        {
+            if (pattern == null)
+            {
+                throw new ArgumentNullException();
+            }
+            pattern = pattern.Trim();
+            if (pattern.Length == 0)
+            {
+                throw new ArgumentException("Pattern is empty.");
+            }
+            if (IllegalCharactersRegex.IsMatch(pattern))
+            {
+                throw new ArgumentException("Pattern contains illegal characters.");
+            }
+            bool hasExtension = CatchExtentionRegex.IsMatch(pattern);
+            bool matchExact = false;
+            if (HasQuestionMarkRegEx.IsMatch(pattern))
+            {
+                matchExact = true;
+            }
+            else if (hasExtension)
+            {
+                matchExact = CatchExtentionRegex.Match(pattern).Groups[1].Length != 3;
+            }
+            string regexString = Regex.Escape(pattern);
+            regexString = "^" + Regex.Replace(regexString, @"\\\*", ".*");
+            regexString = Regex.Replace(regexString, @"\\\?", ".");
+            if (!matchExact && hasExtension)
+            {
+                regexString += NonDotCharacters;
+            }
+            regexString += "$";
+            Regex regex = new Regex(regexString, RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            return regex;
         }
     }
 }
