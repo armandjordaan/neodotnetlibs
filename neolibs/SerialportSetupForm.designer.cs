@@ -90,6 +90,19 @@
             // cbBaudrate
             // 
             this.cbBaudrate.FormattingEnabled = true;
+            this.cbBaudrate.Items.AddRange(new object[] {
+            "2400",
+            "4800",
+            "9600",
+            "19200",
+            "38400",
+            "57600",
+            "115200",
+            "230400",
+            "500000",
+            "860800",
+            "1000000",
+            "2000000"});
             this.cbBaudrate.Location = new System.Drawing.Point(137, 42);
             this.cbBaudrate.Name = "cbBaudrate";
             this.cbBaudrate.Size = new System.Drawing.Size(121, 21);

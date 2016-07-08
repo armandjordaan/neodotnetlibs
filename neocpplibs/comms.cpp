@@ -169,6 +169,7 @@ Library.
 
 #include "stdafx.h"
 #include "comms.h"
+#include "typedef.h"
 #include <string.h>
 
 namespace neolibs {
@@ -2340,4 +2341,4 @@ TGeneralPICUSBComms::~TGeneralPICUSBComms(void)
 } // end namespace Serial
 } // end namespace Comms
 } // end namespace CPP
-} // end namespace Sema
+} // end namespace neolibs

@@ -27,4 +27,3 @@ C:\Users\armand\ownCloud\Projects\CharlvNiekerk\DCTUtility\Design\Software\Utili
 C:\Users\armand\ownCloud\Projects\CharlvNiekerk\DCTUtility\Design\Software\Utility\neodotnetlibs\neolibs\obj\Debug\neolibs.csproj.GenerateResource.Cache
 C:\Users\armand\ownCloud\Projects\CharlvNiekerk\DCTUtility\Design\Software\Utility\neodotnetlibs\neolibs\obj\Debug\neolibs.dll
 C:\Users\armand\ownCloud\Projects\CharlvNiekerk\DCTUtility\Design\Software\Utility\neodotnetlibs\neolibs\obj\Debug\neolibs.pdb
-C:\Users\armand\ownCloud\Projects\CharlvNiekerk\DCTUtility\Design\Software\Utility\neodotnetlibs\neolibs\obj\Debug\neolibs.csprojResolveAssemblyReference.cache

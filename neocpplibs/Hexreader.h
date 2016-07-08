@@ -172,7 +172,7 @@ Library.
 #ifndef HEXUTILS_DEFINED
 #define HEXUTILS_DEFINED
 
-namespace Sema {
+namespace neolibs {
 namespace CPP {
 
 	using namespace System;
@@ -212,6 +212,6 @@ namespace CPP {
 	};
 
 } // end namespace CPP
-} // end namespace Sema
+} // end namespace neolibs
 
 #endif

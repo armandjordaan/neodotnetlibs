@@ -150,6 +150,11 @@
             SelectedComport returns the selected communications port
             </summary>
         </member>
+        <member name="P:neolibs.Dialogs.SerialportSetupForm.SelectedBaudrate">
+            <summary>
+            return the selected baudrate
+            </summary>
+        </member>
         <member name="P:neolibs.Dialogs.SerialportSetupForm.IRWakeupEnabled">
             <summary>
             Infra red wakeup enable option

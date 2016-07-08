@@ -207,6 +207,18 @@ namespace neolibs.Dialogs
         }
 
         /// <summary>
+        /// return the selected baudrate
+        /// </summary>
+        public int SelectedBaudrate
+        {
+            get
+            {
+                int baud = 9600;
+                Int32.TryParse(cbBaudrate.Text, out baud);
+                return baud;
+            }
+        }
+        /// <summary>
         /// Infra red wakeup enable option
         /// </summary>
         public bool IRWakeupEnabled

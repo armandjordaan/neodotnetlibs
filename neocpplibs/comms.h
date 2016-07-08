@@ -168,12 +168,12 @@ Library.
  */
 
 #include "typedef.h"
-#include <commsdefs.h>
+#include "commsdefs.h"
 
 #pragma once
 
-#ifndef SEMA_CPP_COMMS_SERIAL_COMMS_H
-#define SEMA_CPP_COMMS_SERIAL_COMMS_H
+#ifndef NEO_CPP_COMMS_SERIAL_COMMS_H
+#define NEO_CPP_COMMS_SERIAL_COMMS_H
 
 
 namespace neolibs {
@@ -474,8 +474,8 @@ namespace Serial {
 } // end namespace Serial
 } // end namespace Comms
 } // end namespace CPP
-} // end namespace Sema
+} // end namespace neolibs
 
-#endif //SEMA_CPP_COMMS_SERIAL_COMMS_H
+#endif //NEO_CPP_COMMS_SERIAL_COMMS_H
 
 

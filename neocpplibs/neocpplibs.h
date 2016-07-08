@@ -173,7 +173,7 @@ Library.
 
 using namespace System;
 
-namespace Sema {
+namespace neolibs {
 namespace CPP {
 
 	public ref class ClassTypes
@@ -186,7 +186,7 @@ namespace CPP {
 		}
 	};
 
-	public ref class Convert
+	public ref class NeoConvert
 	{
 		public: static array<unsigned char>^ ConvertToCLIArray(void* ptr, int len);
 		public: static void ConvertCLIArrayToCArray(array<unsigned char>^ arr, void* ptr, int maxlen);
