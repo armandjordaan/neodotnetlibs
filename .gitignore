@@ -1,9 +1,5 @@
-/neocpplibs/Debug/neocpplibs.tlog/CL.read.1.tlog
-/neocpplibs/Debug/neocpplibs.tlog/CL.write.1.tlog
-/neocpplibs/Debug/neocpplibs.tlog/cl.command.1.tlog
-/neocpplibs/Debug/neocpplibs.tlog/metagen.write.1.tlog
-/neocpplibs/Debug/neocpplibs.tlog/neocpplibs.lastbuildstate
-/neocpplibs/Debug/neocpplibs.tlog/neocpplibs.write.1u.tlog
-/neolibs/bin/Debug/neolibs.dll
-/neolibs/obj/Debug/neolibs.csproj.FileListAbsolute.txt
-/neolibs/obj/Debug/neolibs.dll
+*.tlog
+*.metagen
+*.lastbuildstate
+*.asm
+*.res
