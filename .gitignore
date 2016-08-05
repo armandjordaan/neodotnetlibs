@@ -1,0 +1,11 @@
+*.tlog
+*.metagen
+*.lastbuildstate
+*.asm
+*.res
+*.orig
+*.obj
+*.log
+*.pch
+*.cache
+*.pdb

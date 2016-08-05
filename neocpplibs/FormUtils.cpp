@@ -178,9 +178,10 @@ Library.
 #endif
 
 
-namespace Sema {
+namespace neolibs {
 namespace CPP {
 
+    using namespace neolibs;
     using namespace System;
 	using namespace System::Windows::Forms;
 
@@ -357,12 +358,12 @@ void DataGridViewUtils::GetTableData(S_BYTE* sbData, DataGridView^ dgv, int coun
 		for(int i=0; (i<count) && (i<dgv->ColumnCount); i++)
 		{
 			String^ t = (String^)dgv->Rows[0]->Cells[i]->Value;
-			sbData[i] = Sema::Calibration::Convert::TextToUInt8(t,Min,Max,Default);
+			sbData[i] = neolibs::Calibration::Convert::TextToUInt8(t,Min,Max,Default);
 		}
 	}
 	catch(Exception^ e)
 	{
-		throw gcnew Sema::SemaException("Error in table conversion.",e);
+		throw gcnew neolibs::NeoException("Error in table conversion.",e);
 	}
 }
 
@@ -381,12 +382,12 @@ void DataGridViewUtils::GetTableData(S_SBYTE* sbData, DataGridView^ dgv, int cou
 		for(int i=0; (i<count) && (i<dgv->ColumnCount); i++)
 		{
 			String^ t = (String^)dgv->Rows[0]->Cells[i]->Value;
-			sbData[i] = Sema::Calibration::Convert::TextToInt8(t,Min,Max,Default);
+			sbData[i] = neolibs::Calibration::Convert::TextToInt8(t,Min,Max,Default);
 		}
 	}
 	catch(Exception^ e)
 	{
-		throw gcnew Sema::SemaException("Error in table conversion.",e);
+		throw gcnew neolibs::NeoException("Error in table conversion.",e);
 	}
 }
 
@@ -501,7 +502,7 @@ void ListViewUtils::PopulateListView(char *Strings, ListView^ lv, int count, int
 	}
 	catch (Exception^ e) 
 	{
-		throw gcnew SemaException(gcnew String("PopulateListView Error occurred in ")+lv->Name,e);
+		throw gcnew NeoException(gcnew String("PopulateListView Error occurred in ")+lv->Name,e);
 	}
 }
 
@@ -532,7 +533,7 @@ void ListViewUtils::PopulateListView(char *Strings, ListView^ lv, int count, int
 	}
 	catch (Exception^ e) 
 	{
-		throw gcnew SemaException(gcnew String("PopulateListView Error occurred in ")+lv->Name,e);
+		throw gcnew NeoException(gcnew String("PopulateListView Error occurred in ")+lv->Name,e);
 	}
 }
 
@@ -559,7 +560,7 @@ S_u32 ListViewUtils::GetFlagsFromListView(ListView^ lv)
 	}
 	catch(Exception^ e)
 	{
-		throw gcnew Sema::SemaException("Error in getting flags from listview.",e);
+		throw gcnew neolibs::NeoException("Error in getting flags from listview.",e);
 	}
 }
 
@@ -583,11 +584,15 @@ void ComboBoxUtils::Populate(char *Strings, ComboBox^ cb, int count, int strleng
 			Strings += strlength;
 		}
 
-		Sema::ControlUtils::ComboBoxUtils::OptimumDropDownWidth(cb,10);
+		neolibs::ControlUtils::ComboBoxUtils::OptimumDropDownWidth(cb,10);
 	}
 	catch (Exception^ e) 
 	{
-		throw gcnew SemaException(gcnew String("ComboBoxUtils::Populate Error occurred in ")+cb->Name,e);
+<<<<<<< HEAD
+		throw gcnew neolibs::NeoException(gcnew String("ComboBoxUtils::Populate Error occurred in ")+cb->Name,e);
+=======
+		throw gcnew NeoException(gcnew String("ComboBoxUtils::Populate Error occurred in ")+cb->Name,e);
+>>>>>>> develop
 	}
 }
 
@@ -612,7 +617,7 @@ void CheckedListBoxUtils::Populate(char *Strings, CheckedListBox^ cb, int count,
 	}
 	catch (Exception^ e) 
 	{
-		throw gcnew SemaException(gcnew String("ComboBoxUtils::Populate Error occurred in ")+cb->Name,e);
+		throw gcnew NeoException(gcnew String("ComboBoxUtils::Populate Error occurred in ")+cb->Name,e);
 	}
 }
 
@@ -633,7 +638,7 @@ void CheckedListBoxUtils::CopyTicks(CheckedListBox^ cbSrc, CheckedListBox^ cbDes
 	}
 	catch(Exception^ e)
 	{
-		throw gcnew SemaException(gcnew String("CheckedListBoxUtils::CopyTicks Error occurred in ")+cbDest->Name +"/" + cbSrc->Name,e);
+		throw gcnew NeoException(gcnew String("CheckedListBoxUtils::CopyTicks Error occurred in ")+cbDest->Name +"/" + cbSrc->Name,e);
 	}
 }
 
@@ -654,7 +659,7 @@ void CheckedListBoxUtils::ClearAllTicks(CheckedListBox^ cb)
 	}
 	catch(Exception^ e)
 	{
-		throw gcnew SemaException(gcnew String("CheckedListBoxUtils::CopyTicks Error occurred in ")+cb->Name,e);
+		throw gcnew NeoException(gcnew String("CheckedListBoxUtils::CopyTicks Error occurred in ")+cb->Name,e);
 	}
 }
 
@@ -681,7 +686,7 @@ S_u32 CheckedListBoxUtils::GetFlagsFromCheckListBox(CheckedListBox^ cb)
 	}
 	catch(Exception^ e)
 	{
-		throw gcnew Sema::SemaException("Error in getting flags from checkbox.",e);
+		throw gcnew neolibs::NeoException("Error in getting flags from checkbox.",e);
 	}
 }
 
@@ -709,9 +714,9 @@ void  CheckedListBoxUtils::SetFlagsInCheckListBox(CheckedListBox^ cb, S_u32 valu
 	}
 	catch(Exception^ e)
 	{
-		throw gcnew SemaException("Cannot set checkboxes",e);
+		throw gcnew NeoException("Cannot set checkboxes",e);
 	}
 }
 
-} // end namespace Sema
+} // end namespace neolibs
 } // end namespace CPP

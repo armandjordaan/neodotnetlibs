@@ -11,12 +11,12 @@ using namespace System::Security::Permissions;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 //
-[assembly:AssemblyTitleAttribute("Semacpplibs")];
+[assembly:AssemblyTitleAttribute("neocpplibs")];
 [assembly:AssemblyDescriptionAttribute("")];
 [assembly:AssemblyConfigurationAttribute("")];
 [assembly:AssemblyCompanyAttribute("")];
-[assembly:AssemblyProductAttribute("Semacpplibs")];
-[assembly:AssemblyCopyrightAttribute("Copyright (c)  2009")];
+[assembly:AssemblyProductAttribute("neocpplibs")];
+[assembly:AssemblyCopyrightAttribute("Copyright (c)  2016")];
 [assembly:AssemblyTrademarkAttribute("")];
 [assembly:AssemblyCultureAttribute("")];
 
