@@ -502,7 +502,7 @@ namespace neolibs.General
                     }
                     else
                     {
-                        MessageBox.Show("An exception occured.", "Error occured.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("An exception occured: "+e.Message, "Error occured.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -521,15 +521,32 @@ namespace neolibs.General
         /// <param name="e">This is the exception to display</param>
         public static void Show(string msg,Exception e)
         {
-            if (ErrorMode == ErrorModeType.DisplayFullMessage)
+            try
             {
-                MessageBox.Show(msg + " - " + e.ToString(), "Error occurred.", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                if (ErrorMode == ErrorModeType.DisplayFullMessage)
+                {
+                    MessageBox.Show(msg + " - " + e.ToString(), "Error occurred.", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if (e is NeoException)
+                    {
+                        NeoException te = e as NeoException;
+                        MessageBox.Show(te.LastError, "Error occured.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show(msg + ": " + e.Message, "Error occurred", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show(msg, "Error occurred.", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show("Internal error: unable to display Exception error", "Internal error occured",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
