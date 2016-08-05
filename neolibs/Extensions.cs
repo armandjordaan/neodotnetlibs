@@ -383,5 +383,16 @@ namespace neolibs.Extensions
         {
             return source.IndexOf(toCheck, comp) >= 0;
         }
+
+        /// <summary>
+        /// test if a string contains ASCII characters only
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static bool IsASCIIOnly(this string source)
+        {
+            // ASCII encoding replaces non-ascii with question marks, so we use UTF8 to see if multi-byte sequences are there
+            return Encoding.UTF8.GetByteCount(source) == source.Length;
+        }
     }
 }

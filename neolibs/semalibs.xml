@@ -714,6 +714,13 @@
             <param name="comp">comparison type</param>
             <returns></returns>
         </member>
+        <member name="M:neolibs.Extensions.StringExtensions.IsASCIIOnly(System.String)">
+            <summary>
+            test if a string contains ASCII characters only
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
         <member name="T:neolibs.FileUtils.HtmlFileWriter">
             <summary>
             Neo Systems's HTML writer class (to write html to a file)
