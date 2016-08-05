@@ -176,6 +176,8 @@ using System.Net;
 using System.IO;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Threading;
 
 namespace neolibs
 {
@@ -323,5 +325,41 @@ namespace neolibs
             }      
             return match.Groups[1].Value + domainName;
        }
+    }
+
+    /// <summary>
+    /// webutils extension methods class
+    /// </summary>
+    public static class WebUtilsExtensions
+    {
+        /// <summary>
+        /// Extension method to wait until a page is fully downloaded.
+        /// Will fully block any further execution on thread unitl page complete
+        /// </summary>
+        /// <param name="wb">webbrowser ref</param>
+        public static void WaitForDownload(this WebBrowser wb)
+        {
+            while (wb.ReadyState != WebBrowserReadyState.Complete)
+            {
+                Application.DoEvents();
+            }
+        }
+
+        /// <summary>
+        /// Wait for a certain time to expire while the browser does its thing
+        /// This routine will wait in chunks of 100 ms
+        /// </summary>
+        /// <param name="wb">webbrowser ref</param>
+        /// <param name="time_in_ms">time in ms to wait</param>
+        public static void WaitTime(this WebBrowser wb, int time_in_ms)
+        {
+            int cnt = (time_in_ms / 100) + 1;
+
+            for(int i=0; i<cnt; i++)
+            {
+                Thread.Sleep(100);
+                Application.DoEvents();
+            }
+        }
     }
 }
