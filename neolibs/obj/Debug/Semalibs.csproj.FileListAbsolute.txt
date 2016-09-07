@@ -1,9 +1,0 @@
-C:\Users\armand\Projects\VBU3XX\dev\PagerTesting\Utility\HybridVBU_util\HybridVBU_util\semalibs\Semalibs\bin\Debug\Semalibs.dll
-C:\Users\armand\Projects\VBU3XX\dev\PagerTesting\Utility\HybridVBU_util\HybridVBU_util\semalibs\Semalibs\bin\Debug\Semalibs.pdb
-C:\Users\armand\Projects\VBU3XX\dev\PagerTesting\Utility\HybridVBU_util\HybridVBU_util\semalibs\Semalibs\bin\Debug\semalibs.xml
-C:\Users\armand\Projects\VBU3XX\dev\PagerTesting\Utility\HybridVBU_util\HybridVBU_util\semalibs\Semalibs\obj\Debug\Sema.Dialogs.AboutBox.resources
-C:\Users\armand\Projects\VBU3XX\dev\PagerTesting\Utility\HybridVBU_util\HybridVBU_util\semalibs\Semalibs\obj\Debug\Sema.Dialogs.SelectErrorModeForm.resources
-C:\Users\armand\Projects\VBU3XX\dev\PagerTesting\Utility\HybridVBU_util\HybridVBU_util\semalibs\Semalibs\obj\Debug\Sema.Dialogs.SerialportSetupForm.resources
-C:\Users\armand\Projects\VBU3XX\dev\PagerTesting\Utility\HybridVBU_util\HybridVBU_util\semalibs\Semalibs\obj\Debug\Semalibs.csproj.GenerateResource.Cache
-C:\Users\armand\Projects\VBU3XX\dev\PagerTesting\Utility\HybridVBU_util\HybridVBU_util\semalibs\Semalibs\obj\Debug\Semalibs.dll
-C:\Users\armand\Projects\VBU3XX\dev\PagerTesting\Utility\HybridVBU_util\HybridVBU_util\semalibs\Semalibs\obj\Debug\Semalibs.pdb

@@ -285,19 +285,19 @@ namespace neolibs.Extensions
         }
 
         /// <summary>
-        /// Remove all specific string constants from an array
+        /// Remove all specific constants from an array
         /// </summary>
         /// <param name="source">array to remove from</param>
         /// <param name="val">value to remove</param>
-        /// <returns>new string with removed items</returns>
-        public static string[] RemoveAll(this string[] source, string val)
+        /// <returns>new array with removed items</returns>
+        public static T[] RemoveAll<T>(this T[] source, T val)
         {
-            string[] dest = new string[source.Length];
+            T[] dest = new T[source.Length];
 
             int i = 0;
-            foreach (string e in source)
+            foreach (T e in source)
             {
-                if (e != val)
+                if (!EqualityComparer<T>.Default.Equals(e, val))
                 {
                     dest[i] = e;
                     i++;
@@ -308,6 +308,47 @@ namespace neolibs.Extensions
             return dest;
         }
 
+        /// <summary>
+        /// Append a item at the end of the array
+        /// </summary>
+        /// <param name="source">array class instance</param>
+        /// <param name="val">value to append at the end</param>
+        /// <returns>array</returns>
+        public static T[] Append<T>(this T[] source, T val)
+        {
+            int index = source.Length;
+            Array.Resize<T>(ref source, index + 1);
+            source[index] = val;
+
+            return source;
+        }
+
+        /// <summary>
+        /// Insert item at a specific point in an array.
+        /// Please note that a lot of copying goes on with this method.
+        /// Thus it is not very efficient to insert into an array
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source">array ref</param>
+        /// <param name="Val">Value to insert</param>
+        /// <param name="idx">index where the value is to be inserted</param>
+        /// <returns>a copy of a new array</returns>
+        public static T[] InsertAt<T>(this T[] source, T Val, int idx)
+        {
+            int i;
+
+            Array.Resize<T>(ref source, source.Length + 1);
+
+            for(i=idx+1; i<source.Count(); i++)
+            {
+                source[i] = source[i - 1];
+            }
+
+            source[idx] = Val;
+
+            return source;
+
+        }
     }
 
     /// <summary>

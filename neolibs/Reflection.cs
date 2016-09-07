@@ -168,77 +168,136 @@ Library.
  */
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Reflection;
 
 namespace neolibs
 {
-    
     /// <summary>
-    /// Neo Systems Array utilities
+    /// Refelection utility class
     /// </summary>
-    public class ArrayUtils
+    public static class ReflectionUtils
     {
         /// <summary>
-        /// Compare two arrays
+        /// Get a method's parameters
         /// </summary>
-        /// <param name="a1">array 1</param>
-        /// <param name="a2">array 2</param>
-        /// <returns>bool (true if arrays are equal)</returns>
-        public static bool ArrayCompare(byte[] a1, byte[] a2)
+        /// <returns></returns>
+        public static string[] GetMethodParameters()
         {
-            if (a1.Length != a2.Length)
-                return false;
-
-            for (int i = 0; i < a1.Length; i++)
-                if (a1[i] != a2[i])
-                    return false;
-
-            return true;
+            throw new NotImplementedException("GetMethodParameters() is not implemented!");
         }
 
         /// <summary>
-        /// Fill a byte array with values (only tested for 2D array)
+        /// get an array of strings with property names and values
         /// </summary>
-        /// <param name="x"></param>
-        /// <param name="value"></param>
-        public static void Fill(byte[] x, byte value)
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static string[] GetClassPropertiesSimple(object obj)
         {
-            for (int i = 0; i <= x.GetUpperBound(0); i++)
-            {
-                x[i] = value;
-            }
-        }
+            List<string> d = new List<string>();
 
-        /// <summary>
-        /// Sum all the elements of an array
-        /// </summary>
-        /// <param name="arr">array of which the elemnts should be summed</param>
-        int SumArray(int[] arr)
-        {
-            try
+            foreach (var prop in obj.GetType().GetProperties())
             {
-                Type arrtype  = arr.GetType();
-                Type eltype   = arrtype.GetElementType();
-
-                if (eltype.ToString() == "System.Int32")
+                if (prop.GetIndexParameters().Length > 0)
                 {
-                    int result = 0;
-                    for (int i = 0; i < arr.GetUpperBound(0); i++)
+                    for(int i=0; i< prop.GetIndexParameters().Length; i++)
                     {
-                        result += arr[i];
+                        string s1 = string.Format("[{0}]{1} = {2}",i,prop.Name, prop.GetValue(obj, new object[] { i }));
+                        d.Add(s1);
                     }
-                    return result;
                 }
                 else
                 {
-                    throw new Exception("Cannot perform summing of array - element type not implemented.");
+                    string s2 = string.Format("{0} = {1} : {2}", prop.Name, prop.GetValue(obj, null), prop.GetIndexParameters().Length);
+                    d.Add(s2);
                 }
             }
-            catch(Exception e)
+
+            return d.ToArray();
+        }
+
+#if false
+        /// <summary>
+        /// get class properties
+        /// </summary>
+        /// <param name="obj">object to check</param>
+        /// <return>return value: string</return>
+        public static void GetClassProperties(object obj)
+        {
+            Type type = obj.GetType();
+
+            PropertyInfo[] properties = type.GetProperties();
+
+            // if this obj has sub properties, apply this process to those rather than this.
+            if (properties.Length > 0)
             {
-                throw new Exception(e.ToString() + "Cannot perform summing of array - general fail.");
+                foreach (PropertyInfo prop in obj.GetType().GetProperties())
+                {
+                    if (prop.PropertyType.FindInterfaces((t, c) => t == typeof(IEnumerable), null).Length > 0)
+                    {
+                        MethodInfo accessor = prop.GetGetMethod();
+                        MethodInfo[] accessors = prop.GetAccessors();
+
+                        foreach (object item in (IEnumerable)obj)
+                        {
+                            GetClassProperties(item);
+                        }
+                    }
+                    else if (prop.GetIndexParameters().Length > 0)
+                    {
+                        // get an integer count value, by incrementing a counter until the exception is thrown
+                        int count = 0;
+                        while (true)
+                        {
+                            try
+                            {
+                                prop.GetValue(obj, new object[] { count });
+                                count++;
+                            }
+                            catch (TargetInvocationException) { break; }
+                        }
+
+                        for (int i = 0; i < count; i++)
+                        {
+                            // process the items value
+                            GetClassProperties(prop.GetValue(obj, new object[] { i }));
+                        }
+                    }
+                    else
+                    {
+                        // is normal type so.
+                        GetClassProperties(prop.GetValue(obj, null));
+                    }
+                }
             }
+            else
+            {
+                // process to be applied to each property
+                Console.WriteLine("Property value: {0}", obj.ToString());
+            }
+        }
+#endif
+
+        /// <summary>
+        /// Return a string desciption of the class properties
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns>string</returns>
+        public static string GetClassPropertiesString(object obj)
+        {
+            string[] propstr = GetClassPropertiesSimple(obj);
+
+            StringBuilder str = new StringBuilder(4096);
+
+            foreach(string s in propstr)
+            {
+                str.AppendLine(s);
+            }
+
+            return str.ToString();
         }
     }
 }

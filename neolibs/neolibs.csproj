@@ -73,6 +73,7 @@
     <Compile Include="ListBoxUtils.cs" />
     <Compile Include="NeoConsole.cs" />
     <Compile Include="neolibs.cs" />
+    <Compile Include="Reflection.cs" />
     <Compile Include="scanf.cs" />
     <Compile Include="Scanner.cs" />
     <Compile Include="SelectErrorModeForm.cs">

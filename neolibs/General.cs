@@ -983,21 +983,6 @@ namespace neolibs.General
     }
 
     /// <summary>
-    /// Utility class for reflection
-    /// </summary>
-    public static class ReflectionUtils
-    {
-        /// <summary>
-        /// Get a method's parameters
-        /// </summary>
-        /// <returns></returns>
-        public static string[] GetMethodParameters()
-        {
-            throw new NotImplementedException("GetMethodParameters() is not implemented!");
-        }
-    }
-
-    /// <summary>
     /// BCD utilities
     /// </summary>
     public static class BCDutils

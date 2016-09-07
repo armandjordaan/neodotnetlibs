@@ -672,13 +672,33 @@
             <param name="index">index to remove at</param>
             <returns>new array with item removed</returns>
         </member>
-        <member name="M:neolibs.Extensions.ArrayExtensions.RemoveAll(System.String[],System.String)">
+        <member name="M:neolibs.Extensions.ArrayExtensions.RemoveAll``1(``0[],``0)">
             <summary>
-            Remove all specific string constants from an array
+            Remove all specific constants from an array
             </summary>
             <param name="source">array to remove from</param>
             <param name="val">value to remove</param>
-            <returns>new string with removed items</returns>
+            <returns>new array with removed items</returns>
+        </member>
+        <member name="M:neolibs.Extensions.ArrayExtensions.Append``1(``0[],``0)">
+            <summary>
+            Append a item at the end of the array
+            </summary>
+            <param name="source">array class instance</param>
+            <param name="val">value to append at the end</param>
+            <returns>array</returns>
+        </member>
+        <member name="M:neolibs.Extensions.ArrayExtensions.InsertAt``1(``0[],``0,System.Int32)">
+            <summary>
+            Insert item at a specific point in an array.
+            Please note that a lot of copying goes on with this method.
+            Thus it is not very efficient to insert into an array
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">array ref</param>
+            <param name="Val">Value to insert</param>
+            <param name="idx">index where the value is to be inserted</param>
+            <returns>a copy of a new array</returns>
         </member>
         <member name="T:neolibs.Extensions.ListViewExtensions">
             <summary>
@@ -1182,6 +1202,31 @@
             neoException Constructor
             </summary>
             <param name="Err">Last Error message</param>
+        </member>
+        <member name="T:neolibs.ReflectionUtils">
+            <summary>
+            Refelection utility class
+            </summary>
+        </member>
+        <member name="M:neolibs.ReflectionUtils.GetMethodParameters">
+            <summary>
+            Get a method's parameters
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:neolibs.ReflectionUtils.GetClassPropertiesSimple(System.Object)">
+            <summary>
+            get an array of strings with property names and values
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:neolibs.ReflectionUtils.GetClassPropertiesString(System.Object)">
+            <summary>
+            Return a string desciption of the class properties
+            </summary>
+            <param name="obj"></param>
+            <returns>string</returns>
         </member>
         <member name="T:neolibs.scanf">
             <summary>
@@ -1978,17 +2023,6 @@
             </summary>
             <returns>True if app can quit, false if not</returns>
         </member>
-        <member name="T:neolibs.General.ReflectionUtils">
-            <summary>
-            Utility class for reflection
-            </summary>
-        </member>
-        <member name="M:neolibs.General.ReflectionUtils.GetMethodParameters">
-            <summary>
-            Get a method's parameters
-            </summary>
-            <returns></returns>
-        </member>
         <member name="T:neolibs.General.BCDutils">
             <summary>
             BCD utilities
@@ -2077,6 +2111,19 @@
             Load method - NOT IMPLEMENTED - To be done in future!
             </summary>
             <param name="path">Path to load from</param>
+        </member>
+        <member name="T:neolibs.StringExtensions">
+            <summary>
+            String extensions
+            </summary>
+        </member>
+        <member name="M:neolibs.StringExtensions.RemoveAll(System.String,System.Char)">
+            <summary>
+            Remove all occurences of the character r in the string
+            </summary>
+            <param name="s">string object ref</param>
+            <param name="r">char to remove</param>
+            <returns>string</returns>
         </member>
         <member name="T:neolibs.StringUtils">
             <summary>
@@ -2241,6 +2288,19 @@
             </summary>
             <param name="num">Phone Number string</param>
             <returns>true if cellphone number, false if not a cellphone number</returns>
+        </member>
+        <member name="M:neolibs.StringUtils.CompactWhitespaces(System.String)">
+            <summary>
+            Compact white spaces
+            </summary>
+            <param name="s">string to compact</param>
+            <returns></returns>
+        </member>
+        <member name="M:neolibs.StringUtils.CompactWhitespaces(System.Text.StringBuilder)">
+            <summary>
+            Compact white spaces
+            </summary>
+            <param name="sb">Stringbuilder class instance</param>
         </member>
         <member name="T:neolibs.Supplier.PricingInfo">
             <summary>
@@ -2960,6 +3020,26 @@
             </summary>
             <param name="strIn">E-mail address to check</param>
             <returns>true if input text is a valid email address, false otherwise</returns>
+        </member>
+        <member name="T:neolibs.WebUtilsExtensions">
+            <summary>
+            webutils extension methods class
+            </summary>
+        </member>
+        <member name="M:neolibs.WebUtilsExtensions.WaitForDownload(System.Windows.Forms.WebBrowser)">
+            <summary>
+            Extension method to wait until a page is fully downloaded.
+            Will fully block any further execution on thread unitl page complete
+            </summary>
+            <param name="wb">webbrowser ref</param>
+        </member>
+        <member name="M:neolibs.WebUtilsExtensions.WaitTime(System.Windows.Forms.WebBrowser,System.Int32)">
+            <summary>
+            Wait for a certain time to expire while the browser does its thing
+            This routine will wait in chunks of 100 ms
+            </summary>
+            <param name="wb">webbrowser ref</param>
+            <param name="time_in_ms">time in ms to wait</param>
         </member>
     </members>
 </doc>

@@ -193,6 +193,8 @@ namespace neolibs
             return t;
         }
     }
+
+    /// <summary>
     /// neo Systems String utilities
     /// </summary>
     public class StringUtils

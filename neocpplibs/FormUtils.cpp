@@ -588,11 +588,7 @@ void ComboBoxUtils::Populate(char *Strings, ComboBox^ cb, int count, int strleng
 	}
 	catch (Exception^ e) 
 	{
-<<<<<<< HEAD
 		throw gcnew neolibs::NeoException(gcnew String("ComboBoxUtils::Populate Error occurred in ")+cb->Name,e);
-=======
-		throw gcnew NeoException(gcnew String("ComboBoxUtils::Populate Error occurred in ")+cb->Name,e);
->>>>>>> develop
 	}
 }
 

@@ -50,22 +50,7 @@
     <ClInclude Include="Stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="commsdefs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="genbuffer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="packed_struct_end.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="packed_struct_start.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="typedef.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="neocpplibs.h">
+    <ClInclude Include="Semacpplibs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

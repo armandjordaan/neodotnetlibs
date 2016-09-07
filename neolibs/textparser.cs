@@ -305,7 +305,7 @@ namespace neolibs
         /// <param name="ahead">The number of characters to move ahead</param>
         public void MoveAhead(int ahead)
         {
-            _pos = Math.Min(_pos + ahead, _text.Length);
+            _pos = System.Math.Min(_pos + ahead, _text.Length);
         }
 
         /// <summary>
