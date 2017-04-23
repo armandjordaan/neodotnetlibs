@@ -176,6 +176,8 @@ using System.Net;
 using System.IO;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Threading;
 
 namespace neolibs
 {
@@ -324,4 +326,168 @@ namespace neolibs
             return match.Groups[1].Value + domainName;
        }
     }
+
+    /// <summary>
+    /// webutils extension methods class
+    /// </summary>
+    public static class WebUtilsExtensions
+    {
+        /// <summary>
+        /// Extension method to wait until a page is fully downloaded.
+        /// Will fully block any further execution on thread unitl page complete
+        /// </summary>
+        /// <param name="wb">webbrowser ref</param>
+        public static void WaitForDownload(this WebBrowser wb)
+        {
+            while (wb.ReadyState != WebBrowserReadyState.Complete)
+            {
+                Application.DoEvents();
+            }
+        }
+
+        /// <summary>
+        /// Wait for a certain time to expire while the browser does its thing
+        /// This routine will wait in chunks of 100 ms
+        /// </summary>
+        /// <param name="wb">webbrowser ref</param>
+        /// <param name="time_in_ms">time in ms to wait</param>
+        public static void WaitTime(this WebBrowser wb, int time_in_ms)
+        {
+            int cnt = (time_in_ms / 100) + 1;
+
+            for (int i = 0; i < cnt; i++)
+            {
+                Thread.Sleep(100);
+                Application.DoEvents();
+            }
+        }
+
+        // DoWebLogin is based on the following original VB code:
+        //
+        // Public Class Form1   
+        //    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load  
+        //        'Part 1: Load Yahoo login page in Form_Load event  
+        //        WebBrowser1.Navigate("https://login.yahoo.com/")  
+        //    End Sub 
+
+        //    Private Sub WebBrowser1_DocumentCompleted(ByVal sender As System.Object, ByVal e As System.Windows.Forms.WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted  
+        //        'Part 2: Locate the Username TextBox and automatically input your username  
+        //        '<INPUT class=yreg_ipt id=username maxLength=96 size=17 name=login>  
+        //        Dim theElementCollection As HtmlElementCollection = WebBrowser1.Document.GetElementsByTagName("Input")  
+        //        For Each curElement As HtmlElement In theElementCollection  
+        //            Dim controlName As String = curElement.GetAttribute("id").ToString  
+        //            If controlName = "username" Then 
+        //                curElement.SetAttribute("Value", "your username")  
+        //            End If 
+        //        Next 
+
+        //        'Part 3: Locate the Password TextBox and automatically input your password  
+        //        '<INPUT class=yreg_ipt id=passwd type=password maxLength=64 size=17 value="" name=passwd>  
+        //        theElementCollection = WebBrowser1.Document.GetElementsByTagName("Input")  
+        //        For Each curElement As HtmlElement In theElementCollection  
+        //            Dim controlName As String = curElement.GetAttribute("id").ToString  
+        //            If controlName = "passwd" Then 
+        //                curElement.SetAttribute("Value", "your password")  
+        //            End If 
+        //        Next 
+
+        //        'Part 4: Locate the "Sign In" Button and automatically click it  
+        //        '<INPUT type=submit value="Sign In" name=.save>  
+        //        theElementCollection = WebBrowser1.Document.GetElementsByTagName("Input")  
+        //        For Each curElement As HtmlElement In theElementCollection  
+        //            If curElement.GetAttribute("value").Equals("Sign In") Then 
+        //                curElement.InvokeMember("click")  
+        //                'Javascript has a click method for we need to invoke on the current submit button element.  
+        //            End If 
+        //        Next 
+        //    End Sub 
+
+        //End Class 
+
+        /// <summary>
+        /// Do a login in a webbrowser  
+        /// </summary>
+        /// <param name="browser">browser instance</param>
+        /// <param name="usernametag">id of the username input to look for</param>
+        /// <param name="passwordtag">id of the password input tag to look for</param>
+        /// <param name="username">username to use to log in</param>
+        /// <param name="password">password to log in with</param>
+        /// <param name="clickstrvalue">click string to look for</param>
+        public static void DoWebLogin(this WebBrowser browser, string usernametag, string passwordtag, string username, string password, string clickstrvalue)
+        {
+            browser.Document.SetHtmlDocAttr("input", usernametag, "id", "Value", username);
+            browser.Document.SetHtmlDocAttr("input", passwordtag, "id", "Value", password);
+            browser.Document.ClickHtmlButton("input", "value", clickstrvalue);
+
+        }
+
+        /// <summary>
+        /// <para>
+        /// Extension method to HtmlDocument: set an attribute value of an element in an HTML document.
+        /// </para>
+        /// 
+        /// <para>
+        /// For example to set the attribute "Value" to "myusername" in the following tag:
+        /// </para>
+        /// <para>
+        /// <code>&lt;INPUT class=yreg_ipt id=username maxLength=96 size=17 name=login &gt;</code>        
+        /// </para>
+        /// <para>
+        /// usage: htmldoc.SetHtmlDocAttr("input","username","id","Value","myusername")
+        /// </para>
+        /// 
+        /// </summary>
+        /// <param name="htmldoc">Ref to the HtmlDocument instance</param>
+        /// <param name="tagnametosearch">What element to serach, eg "input"</param>
+        /// <param name="controlnametosearch">name of the control, eg "username"</param>
+        /// <param name="attrtosearch">What attribute value to search, eg "id"</param>
+        /// <param name="attrtoset">Attribute to set, eg "Value"</param>
+        /// <param name="valtoset">Value to set the attribute the value to, eg "myusername"</param>
+        public static void SetHtmlDocAttr(this HtmlDocument htmldoc, string tagnametosearch, string controlnametosearch, string attrtosearch, string attrtoset, string valtoset)
+        {
+            HtmlElementCollection elementCollection = htmldoc.GetElementsByTagName(tagnametosearch);
+            foreach (HtmlElement e in elementCollection)
+            {
+                string controlname = e.GetAttribute(attrtosearch).ToString();
+                if (controlname == controlnametosearch)
+                {
+                    e.SetAttribute(attrtoset, valtoset);
+                }
+            }
+        }
+
+        /// <summary>
+        /// <para>
+        /// Extension method to click an html button in a document
+        /// </para>
+        /// <para>
+        /// To click the button from the following Html tag:
+        /// </para>
+        /// <para>
+        /// <code>&lt; INPUT type=submit value="Sign In" name=.save &gt;</code>
+        /// </para>
+        /// <para>
+        /// Use as follow:
+        /// htmldoc.ClickHtmlButton("input", "value", "Sign In")
+        /// </para>
+        /// </summary>
+        /// <param name="htmldoc">Ref to HtmlDocument class</param>
+        /// <param name="tagnametosearch">Tag type to searhc, eg "input"</param>
+        /// <param name="attrtosearch">Property type to search, eg "value"</param>
+        /// <param name="valuetosearch">Value of the property to expect, eg "Sign in"</param>
+        public static void ClickHtmlButton(this HtmlDocument htmldoc, string tagnametosearch, string attrtosearch, string valuetosearch)
+        {
+            HtmlElementCollection elementCollection = htmldoc.GetElementsByTagName("Input");
+            foreach (HtmlElement e in elementCollection)
+            {
+                if (e.GetAttribute(attrtosearch).Equals(valuetosearch))
+                {
+                    // Javascript has a click method for we need to invoke on the current submit button element.  
+                    e.InvokeMember("click");
+                }
+            }
+        }
+
+    }
+
 }

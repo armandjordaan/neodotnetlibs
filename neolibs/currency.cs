@@ -221,10 +221,11 @@ namespace neolibs
 
         /// <summary>
         /// download currency info
+        /// OLD SERVICE - NO LONGER AVAILABLE
         /// </summary>
         /// <param name="SourceCurr">Source currency eg "USD"</param>
         /// <param name="DestCurr">Dest Currency eg "ZAR"</param>
-        public static void AddExhangeRate(string SourceCurr, string DestCurr)
+        private static void AddExhangeRateOld(string SourceCurr, string DestCurr)
         {
             try
             {
@@ -249,6 +250,32 @@ namespace neolibs
                 Currencies.Add(tc);
             }
             catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Add echange rate to be converted
+        /// </summary>
+        /// <param name="SourceCurr">Source currency</param>
+        /// <param name="DestCurr">Destination current</param>
+        public static void AddExhangeRate(string SourceCurr, string DestCurr)
+        {
+            try
+            {
+                string data = WebUtils.DownloadWebPage("https://www.google.com/finance/converter?a=1&from=" + SourceCurr + "&to=" + DestCurr);
+
+                string exchratestr = neolibs.StringUtils.GetTextBetweenMarkers(data, "<span class=bld>", "</span>");
+                string[] fields = exchratestr.Split(new char[] { ' ' });
+
+                double rate;
+                Double.TryParse(fields[0], out rate);
+
+                CurrencyConverter tc = new CurrencyConverter(SourceCurr, DestCurr, rate);
+                Currencies.Add(tc);
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }

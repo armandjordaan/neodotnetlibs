@@ -166,16 +166,19 @@ permanent authorization for you to choose that version for the
 Library.
 
  */
-
 using System;
+using System.IO;
+using System.Threading;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using neolibs;
 using System.Web;
+using System.Windows.Forms;
 
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using Gecko;
 
 namespace neolibs.Supplier
 {
@@ -375,6 +378,72 @@ namespace neolibs.Supplier
         }
 
         /// <summary>
+        /// Load the page data for this supplier
+        /// </summary>
+        /// <param name="wb">WebBrowser object</param>
+        /// <param name="pn">part number</param>
+        /// <param name="ToCurrency">Currency to report the values in</param>
+        public void LoadPageData(WebBrowser wb, string pn, string ToCurrency = "ZAR")
+        {
+            BuildUrl(pn);
+            m_defDestCurrency = ToCurrency;
+            m_partnumber = pn;
+            int retry = 4;
+            while (retry > 0)
+            {
+                retry--;
+                try
+                {
+                    wb.Navigate(Url);
+                    wb.WaitForDownload();
+                    Thread.Sleep(20000);
+                    m_webpagedata = wb.DocumentText;
+                    retry = 0;
+                }
+                catch (Exception ex)
+                {
+                    if (retry <= 0) throw ex;
+                }
+            }
+            m_webpagelines = m_webpagedata.Split(new char[] { '\n' });
+        }
+
+        /// <summary>
+        /// Load the page data for this supplier
+        /// </summary>
+        /// <param name="wb">Gecko WebBrowser object</param>
+        /// <param name="pn">part number</param>
+        /// <param name="ToCurrency">Currency to report the values in</param>
+        public void LoadPageData(GeckoWebBrowser wb, string pn, string ToCurrency = "ZAR")
+        {
+            BuildUrl(pn);
+            m_defDestCurrency = ToCurrency;
+            m_partnumber = pn;
+            int retry = 4;
+            while (retry > 0)
+            {
+                retry--;
+                try
+                {
+                    wb.Navigate(Url);
+                    for (int i = 0; i < 100; i++)
+                    {
+                        Thread.Sleep(100);
+                        Application.DoEvents();
+                    }
+                        
+                    m_webpagedata = wb.Document.Body.InnerHtml;
+                    retry = 0;
+                }
+                catch (Exception ex)
+                {
+                    if (retry <= 0) throw ex;
+                }
+            }
+            m_webpagelines = m_webpagedata.Split(new char[] { '\n' });
+        }
+
+        /// <summary>
         /// Get pricing information
         /// </summary>
         /// <returns></returns>
@@ -425,11 +494,16 @@ namespace neolibs.Supplier
         {
             try
             {
+                string qtystr;
+                int qty=0;
+                string unitpricestr;
+                double srcunitprice;
+
                 int state = 0;
                 List<PricingInfo> priceslist = new List<PricingInfo>(50);
                 int i;
 
-                for(i=0; (i<WebPageLines.Count()) && (state < 3); i++)
+                for(i=0; (i<WebPageLines.Count()) && (state < 11); i++)
                 {
                     string line = WebPageLines[i];
                     switch (state)
@@ -441,37 +515,61 @@ namespace neolibs.Supplier
                             }
                             break;
 
-                        case 1: // skip a line
+                        case 1: // skip a line: <th>Unit Price</th>
                             state = 2;
                             break;
 
-                        case 2: // analyse the table
-                            if (line.Contains("</table>"))
+                        case 2: // skip a line: <th>Extended Price</th>
+                            state = 3;
+                            break;
+
+                        case 3: // skip a line:  </tr>
+                            state = 4;
+                            break;
+
+                        case 4: // skip a line:  <tr>
+                            state = 6;
+                            break;
+
+                        case 6: // parse qty on line:  < td > 1 </ td > ----> (qty)
+                            qtystr = StringUtils.GetTextBetweenMarkers(line, "<td>", "</td>");
+                            qtystr = qtystr.Replace(",", "");
+                            qty = 0;
+                            Int32.TryParse(qtystr, out qty);
+                            state = 7;
+                            break;
+
+                        case 7: // parse unit price on line:  < td > 1 </ td > ----> (unit price)
+                            unitpricestr = StringUtils.GetTextBetweenMarkers(line, "<td>", "</td>");
+                            Double.TryParse(unitpricestr, out srcunitprice);
+                            double destprice = Currency.Convert("USD", "ZAR", srcunitprice);
+                            PricingInfo p = new PricingInfo("USD", "ZAR", srcunitprice, destprice, qty, 999999);
+                            priceslist.Add(p);
+                            state = 8;
+                            break;
+
+                        case 8: // skip a line: (<td >0.10</td>)
+                            state = 9;
+                            break;
+
+                        case 9: // skip a line: </tr>
+                            state = 10;
+                            break;
+
+                        case 10: // should be: <tr>
+                            if (line.Contains("<tr>"))
                             {
-                                state = 3;
+                                // then there are more prices to follow
+                                state = 6;
                             }
                             else
                             {
-                                line = line.Replace(",","");
-                                line = line.Replace("<tr><td align=center >","");
-                                line = line.Replace("</td><td align=\"right\" >",",");
-                                line = line.Replace("</td></tr>","");
-
-                                string[] lineitems = line.Split(new char[] {','});
-
-                                int qty;
-                                Int32.TryParse(lineitems[0],out qty);
-
-                                double srcunitprice;
-                                Double.TryParse(lineitems[1],out srcunitprice);
-
-                                double destprice = Currency.Convert("USD","ZAR",srcunitprice);
-                                PricingInfo p = new PricingInfo("USD","ZAR",srcunitprice,destprice,qty,999999);
-                                priceslist.Add(p);
-                            }                            
+                                // we are done
+                                state = 11;
+                            }
                             break;
 
-                        case 3: // done
+                        case 11:
                             break;
 
                         default:
@@ -506,13 +604,17 @@ namespace neolibs.Supplier
             try
             {
                 string res = "<UNKNOWN>";
-                foreach(string line in WebPageLines)
+                int i;
+                string line;
+                for (i = 0; (i < WebPageLines.Count()); i++)
                 {
-                    if (line.Contains("<tr><th align=right>Manufacturer</th>"))
+                    line = WebPageLines[i];
+                    if (line.Contains("<th>Manufacturer</th>"))
                     {
+                        line = WebPageLines[i + 6];
                         // this line has the manufacturer
                         string m1 = "<span itemprop=\"name\">";
-                        string m2 = "</span></a></span></h2></td></tr>";
+                        string m2 = "</span></a>";
                         int p1 = line.IndexOf(m1);
                         int p2 = line.IndexOf(m2,p1);
                         p1 += m1.Length;
@@ -537,17 +639,16 @@ namespace neolibs.Supplier
             try
             {
                 string res = "<UNKNOWN>";
-                foreach(string line in WebPageLines)
+                int i;
+                string line;
+                for (i = 0; (i < WebPageLines.Count()); i++)
                 {
-                    if (line.Contains("<tr><th align=right>Manufacturer Part Number</th>"))
+                    line = WebPageLines[i];
+                    if (line.Contains("<th>Manufacturer Part Number</th>"))
                     {
                         // this line has the manufacturer
-                        string m1 = "itemprop=\"model\">";
-                        string m2 = "</h1></td></tr>";
-                        int p1 = line.IndexOf(m1);
-                        int p2 = line.IndexOf(m2,p1);
-                        p1 += m1.Length;
-                        res = line.Substring(p1,p2-p1);
+                        line = WebPageLines[i + 4];
+                        res = line.Trim();
                         return res;
                     }
                 }
