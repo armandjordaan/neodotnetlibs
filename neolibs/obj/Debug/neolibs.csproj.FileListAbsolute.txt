@@ -20,3 +20,15 @@ C:\Users\armand\ownCloud\Projects\General\AutoBOMCosting\neodotnetlibs\neolibs\o
 C:\Users\armand\ownCloud\Projects\General\AutoBOMCosting\neodotnetlibs\neolibs\obj\Debug\neolibs.dll
 C:\Users\armand\ownCloud\Projects\General\AutoBOMCosting\neodotnetlibs\neolibs\obj\Debug\neolibs.pdb
 C:\Users\armand\ownCloud\Projects\General\AutoBOMCosting\neodotnetlibs\neolibs\obj\Debug\neolibs.csprojResolveAssemblyReference.cache
+C:\Users\armand\Dropbox\Projects\General\AutoBOMCosting\neodotnetlibs\neolibs\bin\Debug\neolibs.dll
+C:\Users\armand\Dropbox\Projects\General\AutoBOMCosting\neodotnetlibs\neolibs\bin\Debug\neolibs.pdb
+C:\Users\armand\Dropbox\Projects\General\AutoBOMCosting\neodotnetlibs\neolibs\bin\Debug\semalibs.xml
+C:\Users\armand\Dropbox\Projects\General\AutoBOMCosting\neodotnetlibs\neolibs\bin\Debug\Geckofx-Core.dll
+C:\Users\armand\Dropbox\Projects\General\AutoBOMCosting\neodotnetlibs\neolibs\bin\Debug\Geckofx-Winforms.dll
+C:\Users\armand\Dropbox\Projects\General\AutoBOMCosting\neodotnetlibs\neolibs\obj\Debug\neolibs.csprojResolveAssemblyReference.cache
+C:\Users\armand\Dropbox\Projects\General\AutoBOMCosting\neodotnetlibs\neolibs\obj\Debug\neolibs.Dialogs.AboutBox.resources
+C:\Users\armand\Dropbox\Projects\General\AutoBOMCosting\neodotnetlibs\neolibs\obj\Debug\neolibs.Dialogs.SelectErrorModeForm.resources
+C:\Users\armand\Dropbox\Projects\General\AutoBOMCosting\neodotnetlibs\neolibs\obj\Debug\neolibs.Dialogs.SerialportSetupForm.resources
+C:\Users\armand\Dropbox\Projects\General\AutoBOMCosting\neodotnetlibs\neolibs\obj\Debug\neolibs.csproj.GenerateResource.Cache
+C:\Users\armand\Dropbox\Projects\General\AutoBOMCosting\neodotnetlibs\neolibs\obj\Debug\neolibs.dll
+C:\Users\armand\Dropbox\Projects\General\AutoBOMCosting\neodotnetlibs\neolibs\obj\Debug\neolibs.pdb
