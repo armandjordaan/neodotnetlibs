@@ -339,4 +339,49 @@ namespace neolibs.Extensions
             lv.EndUpdate();
         }
     }
+
+    /// <summary>
+    /// List extension methods
+    /// </summary>
+    public static class ListExtensions
+    {
+        /// <summary>
+        /// Checks if a list contains any of the items in an array
+        /// </summary>
+        /// <typeparam name="T">Type</typeparam>
+        /// <param name="list">list class ref</param>
+        /// <param name="arr">array of items to check against</param>
+        public static bool ContainsAnyOf<T>(this List<T> list, T[] arr)
+        {
+            bool Contains = false;
+
+            foreach(T x in arr)
+            {
+                if (list.Contains(x))
+                {
+                    Contains = true;
+                }
+            }
+
+            return Contains;
+        }
+    }
+
+    /// <summary>
+    /// string class extensions
+    /// </summary>
+    public static class StringExtensions
+    {
+        /// <summary>
+        /// case insensitive contains
+        /// </summary>
+        /// <param name="source">source class</param>
+        /// <param name="toCheck">string to check for contains</param>
+        /// <param name="comp">comparison type</param>
+        /// <returns></returns>
+        public static bool Contains(this string source, string toCheck, StringComparison comp)
+        {
+            return source.IndexOf(toCheck, comp) >= 0;
+        }
+    }
 }

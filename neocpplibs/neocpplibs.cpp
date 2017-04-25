@@ -170,10 +170,10 @@ Library.
 // This is the main DLL file.
 
 #include "stdafx.h"
-#include "Semacpplibs.h"
+#include "neocpplibs.h"
 #include <memory.h>
 
-namespace Sema {
+namespace neolibs {
 namespace CPP {
 
 
@@ -183,7 +183,7 @@ namespace CPP {
 * Outputs: array object
 * Descr:   Create an array object filled with len bytes from data at ptr
 * *************************************************************************************** */
-array<unsigned char>^ Convert::ConvertToCLIArray(void* ptr, int len)
+array<unsigned char>^ NeoConvert::ConvertToCLIArray(void* ptr, int len)
 {
 	try
 	{
@@ -197,7 +197,7 @@ array<unsigned char>^ Convert::ConvertToCLIArray(void* ptr, int len)
 	}
 	catch(Exception^ e)
 	{
-		throw gcnew Sema::SemaException("Cannot create CLI array in Convert::ConvertToCLIArray.",e);
+		throw gcnew neolibs::NeoException("Cannot create CLI array in Convert::ConvertToCLIArray.",e);
 	}
 }
 
@@ -209,7 +209,7 @@ array<unsigned char>^ Convert::ConvertToCLIArray(void* ptr, int len)
 * Descr:   Copy contents of .NET array to ptr, with max number of bytes = maxlen or arr number
 *          of bytes
 * *************************************************************************************** */
-void Convert::ConvertCLIArrayToCArray(array<unsigned char>^ arr, void* ptr, int maxlen)
+void NeoConvert::ConvertCLIArrayToCArray(array<unsigned char>^ arr, void* ptr, int maxlen)
 {
 	try
 	{
@@ -220,7 +220,7 @@ void Convert::ConvertCLIArrayToCArray(array<unsigned char>^ arr, void* ptr, int 
 	}
 	catch(Exception^ e)
 	{
-		throw gcnew Sema::SemaException("Cannot copy CLI array in Convert::ConvertCLIArrayToCArray.",e);
+		throw gcnew neolibs::NeoException("Cannot copy CLI array in Convert::ConvertCLIArrayToCArray.",e);
 	}
 }
 
@@ -231,7 +231,7 @@ void Convert::ConvertCLIArrayToCArray(array<unsigned char>^ arr, void* ptr, int 
 * Outputs: None
 * Descr:   Copies the managed string to the memory buffer, memory buffer is prefilled with 0
 * *************************************************************************************** */
-void Convert::ConvertStringtoCharArray(String^ str, char* chstr, int maxlen)
+void NeoConvert::ConvertStringtoCharArray(String^ str, char* chstr, int maxlen)
 {
 	try
 	{
@@ -243,7 +243,7 @@ void Convert::ConvertStringtoCharArray(String^ str, char* chstr, int maxlen)
 	}
 	catch(Exception^ e)
 	{
-		throw gcnew Sema::SemaException("Cannot convert String^ to char array.",e);
+		throw gcnew neolibs::NeoException("Cannot convert String^ to char array.",e);
 	}
 }
 
@@ -268,9 +268,9 @@ String^ NullTerminatedStringUtils::GetTextByIndex(char *Text, int strlength, int
 	}
 	catch(...)
 	{
-		throw gcnew SemaException("Error in determining Text based on index");
+		throw gcnew NeoException("Error in determining Text based on index");
 	}
 }		
 
 } // end namespace CPP
-} // end namespace Sema
+} // end namespace neolibs

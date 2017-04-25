@@ -1,0 +1,4 @@
+[submodule "neoclibs"]
+	path = neoclibs
+	url = https://github.com/armandjordaan/neoclibs
+	branch = develop

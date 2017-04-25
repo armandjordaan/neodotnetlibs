@@ -171,15 +171,15 @@ Library.
 #ifndef FORMUTILS_H
 #define FORMUTILS_H
 
-#include <typedef.h>
+#include "typedef.h"
 
-namespace Sema {
+namespace neolibs {
 namespace CPP {
 
     using namespace System;
 	using namespace System::Windows::Forms;
-	using namespace Sema::Typedef;
-	using namespace Sema::ControlUtils;
+	using namespace neolibs::Typedef;
+	using namespace neolibs::ControlUtils;
 
 	public ref class DataGridViewUtils
 	{
@@ -240,6 +240,6 @@ namespace CPP {
 	};
 
 } // end namespace  CPP
-} // end namespace  Sema
+} // end namespace  neolibs
 #endif
 

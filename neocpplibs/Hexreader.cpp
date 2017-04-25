@@ -170,7 +170,7 @@ Library.
 #include "stdafx.h"
 #include "Hexreader.h"
 
-namespace Sema {
+namespace neolibs {
 namespace CPP {
 
 	using namespace System::Windows::Forms;
@@ -473,12 +473,12 @@ bool THexUtils::WriteFile(String^ Filename,array<Byte>^ Buffer,
     }
     catch(Exception^ e)
     {
-		throw gcnew Sema::SemaException("Problem with THexUtils::WriteFile",e);
+		throw gcnew neolibs::NeoException("Problem with THexUtils::WriteFile",e);
     }
 }
 
 
 
 } // namespace definition CPP
-} // namespace definition Sema
+} // namespace definition neolibs
 

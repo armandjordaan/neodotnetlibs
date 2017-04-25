@@ -17,3 +17,13 @@ C:\Users\armand\ownCloud\Projects\General\Terminal\Terminal\neolibs\neolibs\obj\
 C:\Users\armand\ownCloud\Projects\General\Terminal\Terminal\neolibs\neolibs\obj\Release\neolibs.csproj.GenerateResource.Cache
 C:\Users\armand\ownCloud\Projects\General\Terminal\Terminal\neolibs\neolibs\obj\Release\neolibs.dll
 C:\Users\armand\ownCloud\Projects\General\Terminal\Terminal\neolibs\neolibs\obj\Release\neolibs.pdb
+C:\Users\armand\ownCloud\Projects\CharlvNiekerk\DCTUtility\Design\Software\Utility\neodotnetlibs\neolibs\bin\Release\neolibs.dll
+C:\Users\armand\ownCloud\Projects\CharlvNiekerk\DCTUtility\Design\Software\Utility\neodotnetlibs\neolibs\bin\Release\neolibs.pdb
+C:\Users\armand\ownCloud\Projects\CharlvNiekerk\DCTUtility\Design\Software\Utility\neodotnetlibs\neolibs\bin\Release\neolibs.xml
+C:\Users\armand\ownCloud\Projects\CharlvNiekerk\DCTUtility\Design\Software\Utility\neodotnetlibs\neolibs\obj\Release\neolibs.csprojResolveAssemblyReference.cache
+C:\Users\armand\ownCloud\Projects\CharlvNiekerk\DCTUtility\Design\Software\Utility\neodotnetlibs\neolibs\obj\Release\neolibs.Dialogs.AboutBox.resources
+C:\Users\armand\ownCloud\Projects\CharlvNiekerk\DCTUtility\Design\Software\Utility\neodotnetlibs\neolibs\obj\Release\neolibs.Dialogs.SelectErrorModeForm.resources
+C:\Users\armand\ownCloud\Projects\CharlvNiekerk\DCTUtility\Design\Software\Utility\neodotnetlibs\neolibs\obj\Release\neolibs.Dialogs.SerialportSetupForm.resources
+C:\Users\armand\ownCloud\Projects\CharlvNiekerk\DCTUtility\Design\Software\Utility\neodotnetlibs\neolibs\obj\Release\neolibs.csproj.GenerateResource.Cache
+C:\Users\armand\ownCloud\Projects\CharlvNiekerk\DCTUtility\Design\Software\Utility\neodotnetlibs\neolibs\obj\Release\neolibs.dll
+C:\Users\armand\ownCloud\Projects\CharlvNiekerk\DCTUtility\Design\Software\Utility\neodotnetlibs\neolibs\obj\Release\neolibs.pdb
