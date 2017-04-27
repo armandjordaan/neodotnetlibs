@@ -1,5 +1,8 @@
 # README #
 
+# NOTICE:
+These are the old version of the libraries
+
 # neodotnetlibs
 Neo Systems .NET libraries
 This is the Neo Systems C# library.
